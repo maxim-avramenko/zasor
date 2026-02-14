@@ -1,0 +1,1059 @@
+table {
+  width: 100%;
+  border: none;
+  margin: 50px auto;
+}
+table tbody tr:nth-child(2n+1) {
+  background: #fdfdfd;
+}
+table th {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 25px 10px;
+}
+table tbody tr td:first-child {
+  border-radius: 8px 0 0 8px;
+  border-bottom: 1px solid #dbdbdb;
+  font-style: italic;
+  font-weight: bold;
+}
+table tbody td {
+  border: none;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+  border-bottom-width: medium;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  padding: 0px 15px;
+  font-size: 18px;
+  vertical-align: top;
+}
+
+
+
+
+
+
+
+
+
+/* ===== FIX.CSS - ФИКСЫ ДЛЯ МЕНЮ И СТИЛЕЙ ===== */
+
+/* ===== 1. LAZY LOADING ДЛЯ ИЗОБРАЖЕНИЙ ===== */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    transform: translateZ(0);
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+img[loading="lazy"]:not(.loaded) {
+    background: #f5f5f5 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="20" fill="none" stroke="%23ddd" stroke-width="4"/></svg>') no-repeat center;
+    background-size: 30px 30px;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+/* ===== 2. УЛУЧШЕННОЕ МЕНЮ В ШАПКЕ - ДЕСКТОП ===== */
+@media (min-width: 1024px) {
+    /* Основное меню - всегда видимо на десктопе */
+    .header .menu {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .header .menu-item.has-child {
+        position: relative;
+    }
+
+    .header .sub-item.has-child {
+        position: relative;
+    }
+
+    .header .sub-sub-item.has-child {
+        position: relative;
+    }
+
+    /* Второй уровень меню - увеличенная зона взаимодействия */
+    .header .sub-menu {
+        display: block !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        width: 220px !important;
+        background: #fff !important;
+        padding: 15px 0 !important;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.15) !important;
+        z-index: 1000 !important;
+        transition: opacity 0.2s ease, visibility 0.2s ease !important;
+        border-radius: 8px !important;
+        border: 1px solid #f0f0f0 !important;
+        top: 100% !important;
+        left: 0 !important;
+    }
+
+    /* Третий уровень меню - увеличенная зона взаимодействия */
+    .header .sub-sub-menu {
+        display: block !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: 100% !important;
+        top: -15px !important;
+        width: 240px !important;
+        background: #fff !important;
+        padding: 15px 0 !important;
+        margin-left: 5px !important;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.15) !important;
+        z-index: 1001 !important;
+        transition: opacity 0.2s ease, visibility 0.2s ease !important;
+        border-radius: 8px !important;
+        border: 1px solid #f0f0f0 !important;
+    }
+
+    /* Четвертый уровень меню - увеличенная зона взаимодействия */
+    .header .sub-sub-sub-menu {
+        display: block !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: 100% !important;
+        top: -15px !important;
+        width: 240px !important;
+        background: #fff !important;
+        padding: 15px 0 !important;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.15) !important;
+        z-index: 1002 !important;
+        transition: opacity 0.2s ease, visibility 0.2s ease !important;
+        border-radius: 8px !important;
+        border: 1px solid #f0f0f0 !important;
+    }
+
+    /* Увеличенные области наведения для пунктов меню */
+    .header .menu-item.has-child > .menu-link {
+        padding: 12px 20px !important;
+    }
+
+    .header .sub-item > .sub-link {
+        padding: 12px 20px !important;
+        display: block !important;
+        min-height: 40px !important;
+        line-height: 1.4 !important;
+    }
+
+    .header .sub-sub-item > .sub-sub-link {
+        padding: 12px 20px !important;
+        display: block !important;
+        min-height: 40px !important;
+        line-height: 1.4 !important;
+    }
+
+    .header .sub-sub-sub-item > .sub-sub-sub-link {
+        padding: 12px 20px !important;
+        display: block !important;
+        min-height: 40px !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Показ второго уровня при наведении на пункт первого уровня */
+    .header .menu-item.has-child:hover > .sub-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Показ третьего уровня при наведении на пункт второго уровня */
+    .header .sub-item.has-child:hover > .sub-sub-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Показ четвертого уровня при наведении на пункт третьего уровня */
+    .header .sub-sub-item.has-child:hover > .sub-sub-sub-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Задержка скрытия меню при уходе курсора */
+    .header .sub-menu,
+    .header .sub-sub-menu,
+    .header .sub-sub-sub-menu {
+        transition: opacity 0.3s ease, visibility 0.3s ease !important;
+    }
+
+    /* Стили для пунктов меню с увеличенными отступами */
+    .header .sub-menu li {
+        margin-bottom: 0 !important;
+    }
+
+    .header .sub-sub-menu li {
+        margin-bottom: 0 !important;
+    }
+
+    .header .sub-sub-sub-menu li {
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Стили для ссылок с улучшенной читаемостью */
+    .header .sub-menu a,
+    .header .sub-sub-menu a,
+    .header .sub-sub-sub-menu a {
+        color: #373737 !important;
+        text-decoration: none !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 12px 20px !important;
+        font-size: 15px !important;
+        transition: all 0.2s ease !important;
+        border-bottom: 1px solid #f8f8f8 !important;
+    }
+
+    .header .sub-menu a:hover,
+    .header .sub-sub-menu a:hover,
+    .header .sub-sub-sub-menu a:hover {
+        color: #f43b3b !important;
+        background-color: #f8f8f8 !important;
+    }
+
+    /* Убираем границу у последнего пункта */
+    .header .sub-menu li:last-child a,
+    .header .sub-sub-menu li:last-child a,
+    .header .sub-sub-sub-menu li:last-child a {
+        border-bottom: none !important;
+    }
+
+    /* Улучшенные стрелки для пунктов с подменю */
+    .header .sub-item.has-child > .sub-link:after {
+        content: '›' !important;
+        display: block !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 18px !important;
+        color: #999 !important;
+        border: none !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .header .sub-sub-item.has-child > .sub-sub-link:after {
+        content: '›' !important;
+        display: block !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 18px !important;
+        color: #999 !important;
+        border: none !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .header .sub-item.has-child > .sub-link:hover:after,
+    .header .sub-sub-item.has-child > .sub-sub-link:hover:after {
+        color: #f43b3b !important;
+    }
+
+    /* Гарантия что меню не пропадает при движении между уровнями */
+    .header .sub-menu:hover,
+    .header .sub-sub-menu:hover,
+    .header .sub-sub-sub-menu:hover {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Плавный переход между меню разных уровней */
+    .header .menu-item.has-child,
+    .header .sub-item.has-child,
+    .header .sub-sub-item.has-child {
+        transition: all 0.2s ease !important;
+    }
+}
+
+/* ===== 3. МОБИЛЬНАЯ ВЕРСИЯ МЕНЮ ===== */
+@media (max-width: 1023px) {
+    /* Восстановление оригинального поведения мобильного меню */
+    .header .wrap-nav {
+        position: fixed !important;
+        right: 0 !important;
+        top: 0 !important;
+        transform: translateX(100%) !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: all 0.3s ease !important;
+        width: 360px !important;
+        max-width: 80% !important;
+        height: 100vh !important;
+        background: #ffffff !important;
+        display: block !important;
+        padding: 60px 10px 20px 30px !important;
+        overflow-y: auto !important;
+        z-index: 9999 !important;
+    }
+
+    .header .wrap-nav.open {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    /* Подменю в мобильной версии */
+    .header .sub-menu {
+        position: static !important;
+        width: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        padding: 5px 0 !important;
+        border: none !important;
+        margin-left: 15px !important;
+    }
+
+    .header .sub-menu.active {
+        display: block !important;
+    }
+
+    .header .sub-sub-menu {
+        position: static !important;
+        width: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin-left: 0 !important;
+        padding: 9px 5px 8px 20px !important;
+        border: none !important;
+    }
+
+    .header .sub-sub-menu.active {
+        display: block !important;
+    }
+
+    .header .sub-sub-sub-menu {
+        position: static !important;
+        width: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        padding: 10px 5px 10px 30px !important;
+        border: none !important;
+    }
+
+    .header .sub-sub-sub-menu.active {
+        display: block !important;
+    }
+
+    /* Стрелки для мобильного меню */
+    .header .menu-item.has-child .menu-link:after {
+        content: '▼' !important;
+        font-size: 10px !important;
+        margin-left: 5px !important;
+        border: none !important;
+        background: transparent !important;
+        position: static !important;
+        transform: none !important;
+    }
+
+    /* Стили для ссылок в мобильном меню */
+    .header .sub-menu a,
+    .header .sub-sub-menu a,
+    .header .sub-sub-sub-menu a {
+        color: #373737 !important;
+        text-decoration: none !important;
+        display: block !important;
+        padding: 8px 15px !important;
+        font-size: 14px !important;
+        border-bottom: none !important;
+    }
+
+    .header .sub-menu a:hover,
+    .header .sub-sub-menu a:hover,
+    .header .sub-sub-sub-menu a:hover {
+        color: #f43b3b !important;
+        background-color: transparent !important;
+    }
+}
+
+/* ===== 4. ФИКСЫ ДЛЯ ЭЛЕМЕНТОВ УПРАВЛЕНИЯ МЕНЮ ===== */
+/* Гарантия что кнопка бургер-меню видна на мобильных */
+.header .open-nav {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .header .open-nav {
+        display: flex !important;
+    }
+}
+
+/* Фикс для оверлея */
+.overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+}
+
+.overlay.open {
+    display: block;
+}
+
+/* Фикс для кнопки закрытия */
+.close-nav {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .close-nav {
+        display: flex !important;
+    }
+}
+
+/* ===== 5. СТИЛИ ТОЛЬКО ДЛЯ МЕНЮ В КОНТЕНТЕ СТРАНИЦЫ ===== */
+.service-deep-menu {
+    margin-bottom: 30px;
+}
+
+.service-deep-menu .deep-menu-level-1,
+.service-deep-menu .deep-menu-level-2,
+.service-deep-menu .deep-menu-level-3,
+.service-deep-menu .deep-menu-level-4 {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-deep-menu .deep-menu-level-2 { padding-left: 20px; }
+.service-deep-menu .deep-menu-level-3 { padding-left: 40px; }
+.service-deep-menu .deep-menu-level-4 { padding-left: 60px; }
+
+.service-deep-menu .deep-menu-item {
+    margin: 8px 0;
+}
+
+.service-deep-menu .deep-menu-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    min-height: 40px;
+    line-height: 1.4;
+}
+
+.service-deep-menu .deep-menu-link:hover {
+    background-color: #f5f5f5;
+}
+
+.service-deep-menu .deep-menu-link.level-1 { font-weight: bold; }
+.service-deep-menu .deep-menu-link.level-2 { font-weight: 500; }
+.service-deep-menu .deep-menu-link.level-3 { font-size: 0.9em; }
+.service-deep-menu .deep-menu-link.level-4 { font-size: 0.85em; color: #666; }
+
+.service__nav ul.service-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.service__nav ul.service-submenu li {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.service__nav ul.service-submenu li:last-child {
+    border-bottom: none;
+}
+
+.service__nav ul.service-submenu li.has-child > a:after {
+    content: " ›";
+    float: right;
+    color: #999;
+    font-size: 16px;
+}
+
+.service__nav ul.sub-sub-menu,
+.service__nav ul.sub-sub-sub-menu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    background: white;
+    min-width: 280px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    z-index: 1000;
+    padding: 15px 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.service__nav ul.sub-sub-menu li,
+.service__nav ul.sub-sub-sub-menu li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.service__nav ul.sub-sub-menu li:last-child,
+.service__nav ul.sub-sub-sub-menu li:last-child {
+    border-bottom: none;
+}
+
+.service__nav ul.sub-sub-menu a,
+.service__nav ul.sub-sub-sub-menu a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.service__nav ul.sub-sub-menu a:hover,
+.service__nav ul.sub-sub-sub-menu a:hover {
+    color: #007bff;
+}
+
+.service__nav ul.service-submenu li.has-child:hover > ul {
+    display: block;
+}
+
+/* ===== 6. ДЕКОРАТИВНЫЕ СТИЛИ ===== */
+.menu li.menu-item:nth-child(2) {
+    position: relative;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.menu li.menu-item:nth-child(2)::before,
+.menu li.menu-item:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #333;
+}
+
+.menu li.menu-item:nth-child(2)::before {
+    top: 5px;
+    left: 5px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.menu li.menu-item:nth-child(2)::after {
+    bottom: 5px;
+    right: 5px;
+    border-left: none;
+    border-top: none;
+}
+
+/* ===== 7. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ===== */
+.docs-gskzn-showing {
+    font-weight: lighter;
+    padding: 2px;
+}
+
+.docs-gskzn-showing li {
+    list-style: circle;
+    list-style-position: inside;
+}
+
+.docs-gskzn-showing span {
+    padding-right: 5px;
+}
+
+.docs-gskzn-showing a {
+    text-decoration: none;
+}
+
+.docs-gskzn-showing a:hover {
+    text-decoration: underline;
+}
+
+.fancybox-slide--html .fancybox-close-small::before {
+    content: "\ea0f";
+}
+
+/* Иконки */
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Специфичные настройки для services-block */
+.services-block__pictures .services-block__pic {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.services-block__subtitle {
+    font-size: 100%;
+}
+
+/* ===== 8. POPUP СТИЛИ ===== */
+#exit-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#popup-content {
+    background: url("/web/img/services-block/tg-gs-kzn.webp") no-repeat center;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    max-width: 80%;
+    width: 400px;
+    height: 511px;
+    max-height: 100%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#popup-content-two {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background: #fff;
+    width: 400px;
+    max-width: 80%;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 100%;
+    max-height: 185px;
+}
+
+#popup-content-two h2 {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#popup-content-two p, h2 {
+    cursor: default;
+    margin-top: 10px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: #888;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+#close-btn:hover {
+    color: #333;
+    background: #f0f0f0;
+}
+
+#buy-btn {
+    color: #fff;
+}
+
+#popup-content-two a {
+    margin: 1em 1em;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 1em 1em;
+    text-transform: uppercase;
+    overflow: hidden;
+    color: white; 
+    background: #102229;
+    font-size: clamp(0.8125rem, 0.7581rem + 0.2419vw, 1rem);
+    border-radius: 8px;
+}
+
+#popup-content-two a:before {
+    left: -0.7em;
+}
+
+#popup-content-two a:after {
+    right: -0.7em;
+}
+
+#popup-content-two b:after {
+    content: "";
+    display: inline-block;
+    padding: 0.325em;
+    transform: rotate(45deg);
+    color: #f30a28;
+    vertical-align: -1px;
+    border: solid;
+    border-left: none;
+    border-bottom: none;
+    margin-left: 10px;
+}
+
+#popup-content-two b::after:hover {
+    margin-left: 10px;
+}
+
+/* ===== 9. РАЗНЫЕ ФИКСЫ ===== */
+/* 10 03 2025 */
+.box-video {
+    display: flex;
+    gap: 20px;
+}
+
+.myVideo {
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 6px 8px 14px rgba(0,0,0,0.1);
+    border-radius: 6px;
+}
+
+.map-yandex {
+    margin-bottom: 50px;
+}
+
+/* 22 07 2023 */
+.footer__ur {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 10px;
+}
+
+/* 12 10 2022 */
+.about__pic img {
+    box-shadow: 6px 8px 14px rgba(0,0,0,0.1);
+}
+
+.about__pic img:hover {
+    box-shadow: 6px 8px 140px rgba(0,0,0,0.1);
+}
+
+* img {
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+}
+
+/* 27 04 2022 */
+.services-block__img img {
+    -webkit-transform: skewX(-5deg);
+    -moz-transform: skewX(-5deg);
+    -ms-transform: skewX(-5deg);
+    -o-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+}
+
+#Callback_attach {
+    display: none;
+}
+
+.fl_upld label, .form-field .fl_upld label {
+    display: none;
+}
+
+.url {
+    display: flex;
+    font-size: 13px !important;
+    justify-content: space-between;
+    width: 33%;
+}
+
+.schema-ul-footer {
+    letter-spacing: .7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2a2a29;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.schema-ul-footer li {
+    display: inline;
+    letter-spacing: inherit;
+}
+
+/* 27 01 2022 */ 
+.about__gallery.slide-up {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.next {
+    transform: rotate(0.5turn);
+    margin-top: -8px;
+}
+
+.services-block__link_text {
+    font-style: italic;
+}
+
+.services-block__article {
+    max-height: 764px;
+}
+
+.service__article > .slide-right li {
+    display: inline;
+    font-weight: lighter;
+}
+
+.caption > .slide-left li {
+    display: flex;
+    font-weight: lighter;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btn-border {
+    z-index: 100;
+}
+
+/* 14 03 2022 */
+.services__item {
+    padding: 0px 10px 21px 19px;
+}
+
+/* Навигация Яндекс */
+a.navigator-yandex {
+    font-weight: normal !important;
+    color: #000 !important;
+    display: none !important;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin-top: -15px;
+}
+
+a.navigator-yandex-desktop {
+    margin-left: -15px;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+
+/* ===== 10. MEDIA QUERIES ===== */
+@media screen and (max-width: 1920px) {
+    a.navigator-yandex { display: none !important; }
+    a.navigator-yandex-desktop { display: initial !important; }
+} 
+
+@media screen and (max-width: 1280px) {
+    a.navigator-yandex { display: none !important; }
+    a.navigator-yandex-desktop { display: initial !important; }
+}
+
+@media screen and (max-width: 1023px) {
+    a.navigator-yandex { display: initial !important; }
+    a.navigator-yandex-desktop { display: none !important; }
+    
+    .advantages {
+        margin-top: 210px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    a.navigator-yandex { display: initial !important; }
+    a.navigator-yandex-desktop { display: none !important; }
+    
+    .advantages {
+        margin-top: 225px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    a.navigator-yandex { display: initial !important; }
+    a.navigator-yandex-desktop { display: none !important; }
+    
+    .advantages {
+        margin-top: 450px;
+    }
+    
+    #popup-content {
+        background-size: contain;
+        background-color: #fff;
+    }
+}
+
+@media screen and (max-width: 423px) {
+    a.navigator-yandex { display: initial !important; }
+    a.navigator-yandex-desktop { display: none !important; }
+    
+    .advantages {
+        margin-top: 500px;
+    }
+    
+    #popup-content {
+        height: 431px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    a.navigator-yandex { display: initial !important; }
+    a.navigator-yandex-desktop { display: none !important; }
+    
+    .advantages {
+        margin-top: 593px;
+    }
+    
+    #popup-content {
+        height: 430px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #popup-content-two a {
+        font-size: 12px;
+    }
+    
+    #popup-content {
+        height: 380px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    a.navigator-yandex { display: initial !important; }
+    a.navigator-yandex-desktop { display: none !important; }
+    
+    .advantages {
+        margin-top: 593px;
+    }
+}
+
+/* Яндекс карта */
+.map-yandex {
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* ===== 11. ВАЖНЫЕ ФИКСЫ В КОНЦЕ ===== */
+/* Гарантия что основное меню всегда видно на десктопе */
+@media (min-width: 1024px) {
+    .header .wrap-nav .menu,
+    .header .wrap-nav .sub-menu,
+    .header .wrap-nav .sub-sub-menu,
+    .header .wrap-nav .sub-sub-sub-menu {
+        visibility: visible !important;
+    }
+
+    /* Отключение любых скрывающих стилей для меню в шапке на десктопе */
+    .header * {
+        visibility: visible !important;
+    }
+
+    /* Фикс для правильного отображения стрелок в подменю */
+    .header .sub-item.has-child > .sub-link:after {
+        display: block !important;
+    }
+
+    /* Фикс для z-index чтобы меню было поверх всех элементов */
+    .header .menu,
+    .header .sub-menu,
+    .header .sub-sub-menu,
+    .header .sub-sub-sub-menu {
+        z-index: 9999 !important;
+    }
+
+    /* Улучшенные ховер-эффекты */
+    .header .menu-item.has-child:hover > .sub-menu,
+    .header .sub-item.has-child:hover > .sub-sub-menu,
+    .header .sub-sub-item.has-child:hover > .sub-sub-sub-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+    }
+}
+
+/* Фикс для предотвращения конфликтов с основными стилями */
+.header .wrap-nav {
+    transition: all 0.3s ease !important;
+}
+
+/* Гарантия что логотип всегда кликабелен */
+.header__logo {
+    z-index: 10000 !important;
+}
+
+/* Фикс для позиционирования мобильного меню */
+@media (max-width: 1023px) {
+    .header {
+        z-index: 9999 !important;
+    }
+    
+    .header .container {
+        z-index: 10000 !important;
+    }
+}

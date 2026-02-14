@@ -1,0 +1,35 @@
+#resolver 127.0.0.11 ipv6=off;
+proxy_cache_path /tmp/nginx/cache keys_zone=mycache:10m;
+
+server {
+    listen       80;
+    server_name  www.${DOMAIN_NAME};
+    return       301 $scheme://${DOMAIN_NAME}$request_uri;
+}
+
+server {
+    listen       80 default;
+    server_name  ${DOMAIN_NAME};
+
+    index index.php;
+    root   /var/www/html/zasor/public_html;
+
+    location ~* \.(css|js|gif|jpe?g|png|webp|svg|json|woff|ttf|ico|mp3|map)$ {
+        try_files $uri $uri/ =404;
+        expires 1h;
+    }
+
+    location ~* \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_keep_conn on;
+        fastcgi_pass   zasor-php-fpm:9000;
+        fastcgi_index  index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_intercept_errors on;
+        fastcgi_read_timeout 3600;
+    }
+
+    location / {
+        try_files $uri /index.php$is_args$query_string;
+    }
+}
