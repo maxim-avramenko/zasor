@@ -24,8 +24,8 @@ if (!ini_get('mbstring.internal_encoding')) {
 }
 
 // Comment next two lines on production
-//define('YII_DEBUG', null);
-//defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
+define('YII_DEBUG', 1);
+defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL', 3);
 
 require __DIR__ . '/../vendor/yiisoft/yii/framework/yii.php';
 
