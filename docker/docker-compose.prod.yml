@@ -53,7 +53,7 @@ services:
 
   zasor-php-fpm:
     #    image: zasor/php-fpm-8.2-mysql:dev
-    image: renat/php-fpm-7.4-xdebug-mysql:dev
+    image: zasor/php-fpm-7.4-xdebug-mysql:prod
     #    image: boiler/php-fpm-8.2-xdebug-imap-mysql:dev
     expose:
       - "9000"
