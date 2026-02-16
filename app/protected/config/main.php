@@ -112,7 +112,11 @@ return [
         ],
         'cache' => [
             'class' => 'CFileCache',
-            'behaviors' => ['clear' => ['class' => 'application.modules.yupe.extensions.tagcache.TaggingCacheBehavior']]
+            'behaviors' => [
+                'clear' => [
+                    'class' => 'application.modules.yupe.extensions.tagcache.TaggingCacheBehavior'
+                ]
+            ]
         ],
         /**
          * Configuration of urlManager
@@ -174,6 +178,7 @@ return [
                     'class' => 'CFileLogRoute',
                     // On production recommended use only `error, warning`
                     'levels' => 'error, warning, info, trace, profile',
+                    'logFile'=>'application.log',
                 ]
             ]
         ],

@@ -24,3 +24,4 @@ m1zv@^,jXU85P,
 ```
 
 scp -r vendor root@89.23.99.205:/root/zasor/app/
+scp -r modules root@89.23.99.205:/root/zasor/app/protected/config/modules
