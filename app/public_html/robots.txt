@@ -1,23 +1,7 @@
 User-agent: *
 
-Disallow: /admin
-Disallow: /backend
-Disallow: /portraits
-Disallow: /debug
-Disallow: /lock
-Disallow: /politika-konfidencialnosti
-Disallow: /informaciya-na-sayte-ne-yavlyaetsya-publichnoy-ofertoy
-Disallow: /?
-Disallow: /dizayn-logotipa
-Disallow: /dizayn-razrabotka-proizvodstvo-mercha
-Disallow: /brendirovanie-i-dizayn-meropriyatiy
-Disallow: /dizayn-maketov-dlya-naruzhnoy-reklamy-banery-afishi-pillarsy-vyveski-toledo-rezhimnye-tablichki
-Disallow: /dizayn-razrabotka-konstruirovanie-upakovki
-Disallow: /dizayn-nagradnoy-atributiki
-Disallow: /razrabotka-brendbuka-i-firmennogo-stilya
-Disallow: /dizayn-vnutrenney-korporativnoy-sredy-vnutrennie-vyveski-doski-potrebitelya-doski-pocheta-informacionnye-stendy-tablichki-navigacionnye
-Disallow: /dizayn-poligrafii
-Disallow: /dizayn-oformlenie-brendirovanie-kartochek-tovarov-na-marketpleysah
+Disallow: /cgi-sys/
+Disallow: /cgi-bin/
 
-Host: https://gs-kzn.ru/
-Sitemap: https://gs-kzn.ru/sitemap.xml
+Host: https://zasorunetkzn.ru/
+Sitemap: https://zasorunetkzn.ru/sitemap.xml

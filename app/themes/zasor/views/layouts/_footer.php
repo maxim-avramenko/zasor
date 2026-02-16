@@ -1,3 +1,88 @@
+<footer>
+    <div class="container">
+        <div class="footer">
+            <div class="col">
+                <div class="footer-logo">
+                    <div class="footer-logo-box">
+                        <img src="/images/footer-logo.png" alt="Logo zasorunet">
+                        <div class="footer-logo-description">
+                            Устранение засоров в Казани
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">2015 - 2025 © Все права защищены</div>
+                <div class="prav-info-footer">
+                    <ul>
+                        <li>ИП Тимиров А. И.</li>
+                        <li>ОГРНИП: 313167431700057</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Услуги :</h4>
+                <ul>
+                    <li><a itemprop="url" href="/gidrodinamicheskaya-promyvka-kanalizacii.html">Промывка канализации</a></li>
+                    <li><a itemprop="url" href="/mehanicheskaya-chistka-kanalizacii.html">Прочистка канализации</a></li>
+                    <li><a itemprop="url" href="/kombinirovannaya-kanalopromyvochnaya-mashina.html">Комбинированная каналопромывочная машина</a></li>
+                    <li><a itemprop="url" href="/uslugi-ilososa.html">Услуги илососа</a></li>
+                    <li><a itemprop="url" href="/uslugi-assenizatora.html">Услуги ассенизатора</a></li>
+                    <li><a itemprop="url" href="/otkachka-avtomoek.html">Очистка автомоек</a></li>
+                    <li><a itemprop="url" href="/parogenerator.html">Аренда парогенератора</a></li>
+                    <li><a itemprop="url" href="/ochistka-chistka-zhiroulovitelya.html">Прочистка жироуловителей</a></li>
+                    <li><a itemprop="url" href="/otkachka-vygrebnyh-yam.html">Откачка выгребных ям</a></li>
+                    <li><a itemprop="url" href="/obsluzhivanie-kns.html">Обслуживание КНС и ЛОС</a></li>
+                    <li><a itemprop="url" href="/obsledovanie-trub.html">Обследование канализации</a></li>
+                    <li><a itemprop="url" href="/razmorozka-trub.html">Разморозка труб</a></li>
+                    <li><a itemprop="url" href="/ruchnaya-chistka-kolodca.html">Ручная очистка канализационных колодцев</a></li>
+                    <li><a itemprop="url" href="/vodovoz.html">Водовоз - Доставка воды</a></li>
+                    <li><a itemprop="url" href="/polivomoechnaya-mashina-kdm.html">Услуга КДМ - поливомойка</a></li>
+                    <li><a itemprop="url" href="/ispytaniya-truboprovodov-na-prochnost-plotnost-i-germetichnost.html">Испытания трубопроводов - опрессовка труб</a></li>
+                    <li><a itemprop="url" href="/arenda-pnevmozaglushki-dlya-trub.html">Пневмозаглушки для канализационных труб</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>Контакты :</h4>
+                <div class="footer-contact-description">Прочистка, Откачка,<br>Устранение засоров в Казани</div>
+                <div class="footer-tel">
+                    <span class="icon-phone"></span><a itemprop="telephone" href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a>
+                    <span>Круглосуточно</span>
+                </div>
+                <div class="footer-btn">
+                    <a class="btn-wh" href="whatsapp://send?phone=79172612455" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                </div>
+                <div class="adres" itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress">
+                    <span itemprop="postalCode">420061</span> <br><span itemprop="addressCountry">Россия</span>, <span itemprop="addressRegion">Республика Татарстан</span>, <span itemprop="addressLocality">Казань</span>,<br> <span itemprop="streetAddress">ул. Николая Ершова, 27И</span>
+                </div>
+                <div class="footer-mail">
+                    <a href="mailto:zasor116@mail.ru">zasor116@mail.ru</a>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Информация :</h4>
+                <div class="prav-info">
+                    Информация на сайте носит справочный характер и не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации. <br> Уточняйте информацию и цены у наших менеджеров по телефону
+                </div>
+                <div class="footer-app-commercial-section">
+                    <div class="footer-app-commercial-section-sub">
+                        <span>Удобное приложение для наших клиентов</span>
+                        <a href="#" title="На данный момент приложение на доработке"><img src="/images/AppStore.webp" alt=""></a>
+                        <a href="#" title="На данный момент приложение на доработке"><img src="/images/GooglePlay.webp" alt=""></a>
+                    </div>
+                    <div class="footer-qr-commercial-block">
+                        <img src="/images/qr.webp" alt="qr-app">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-dev">
+        <div class="container by-site">
+            <span>Разработка и SEO-Продвижение - <a href="https://zmweb.ru">zMWeb</a></span>
+        </div>
+    </div>
+</footer>
+
+<?php /* ?>
 <footer class="footer slide-up">
     <div class="container">
         <a href="/" class="footer__logo">
@@ -173,3 +258,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+
+<?php */ ?>

@@ -14,7 +14,7 @@ server {
     index index.php;
     root   /var/www/html/zasor/public_html;
 
-    location ~* \.(css|js|gif|jpe?g|png|webp|svg|json|woff|ttf|ico|mp3|map)$ {
+    location ~* \.(css|js|gif|jpe?g|png|webp|svg|json|woff|ttf|ico|map|scss)$ {
         try_files $uri $uri/ =404;
         expires 1h;
     }

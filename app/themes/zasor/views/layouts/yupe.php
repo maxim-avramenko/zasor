@@ -1,53 +1,94 @@
-<!DOCTYPE html>
-<html lang="<?= Yii::app()->getLanguage(); ?>">
+<?php
+/** @var $content string */
+?>
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html lang="RU"><!-- <![endif]-->
 <?php
 Yii::import('application.components.UniversalAltHelper');
 ?>
-
 <head>
-    <?php
-    \yupe\components\TemplateEvent::fire(GalleryThemeEvents::HEAD_START);
-    
-    // Preload критических ресурсов
-    Yii::app()->clientScript->registerLinkTag('preload', null, '/web/css/main.min.css', null, [
-        'as' => 'style'
-    ]);
-    
-    // CSS файлы
-    Yii::app()->clientScript->registerCssFile('/web/css/main.min.css');
-    Yii::app()->clientScript->registerCssFile('/web/css/fix.css');
-    
-    // Preload для jQuery
-    Yii::app()->clientScript->registerLinkTag('preload', null, Yii::app()->clientScript->getCoreScriptUrl() . '/jquery.min.js', null, [
-        'as' => 'script'
-    ]);
-    ?>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="yandex-verification" content="6bb6e7ff9ea7e7e1" />
-
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name = "viewport" content = "width = device-width, initial-scale=1, user-scalable=yes">
+    <meta name="language" content="ru"/>
+    <meta name="author" content="zMWeb.ru">
+    <!-- verification -->
+    <meta name="google-site-verification" content="u_cz4Fsx2r7_OAat8usanCxz4f4EeAa5VHZnjvpw7V8">
+    <meta name="yandex-verification" content="2c9fa77bec8ae7e3" />
+    <meta name="yandex-verification" content="cd1a81877b5889d3" />
+    <!-- verification END -->
     <title><?= CHtml::encode($this->title); ?></title>
     <meta name="description" content="<?= CHtml::encode($this->description); ?>"/>
     <?php if ($this->canonical): ?>
         <link rel="canonical" href="<?= CHtml::encode($this->canonical); ?>"/>
     <?php endif; ?>
+    <?php
+    \yupe\components\TemplateEvent::fire(GalleryThemeEvents::HEAD_START);
+    
+    // Preload критических ресурсов
+//    Yii::app()->clientScript->registerLinkTag('preload', null, '/css/main.css', null, [
+//        'as' => 'style'
+//    ]);
+    
+    // CSS файлы
+//    Yii::app()->clientScript->registerCssFile('/css/swiper.css');
+//    Yii::app()->clientScript->registerCssFile('/web/css/fix.css');
+    
+    // Preload для jQuery
+//    Yii::app()->clientScript->registerLinkTag('preload', null, Yii::app()->clientScript->getCoreScriptUrl() . '/jquery.min.js', null, [
+//        'as' => 'script'
+//    ]);
+    ?>
+
+    <!-- css -->
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="https://atuin.ru/demo/fancybox/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="/css/swiper.css" rel="stylesheet" type="text/css">
+    <!-- js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+
+
+
 
     <!-- Favicon -->
-    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <!-- fav icon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ZasoruNET" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- Гео-метатеги -->
-    <meta name="geo.region" content="RU-TA" />
+    <meta name="geo.region" content="RU" />
     <meta name="geo.placename" content="Казань" />
-    <meta name="geo.position" content="55.7279352;49.1740352" />
-    <meta name="ICBM" content="55.7279352, 49.1740352" />
+    <meta name="geo.position" content="55.848509;49.156316" />
+    <meta name="ICBM" content="55.848509, 49.156316" />
+    <meta property="og:url" content="https://zasorunetkzn.ru/">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" content="https://zasorunetkzn.ru/images/541_1.jpg">
+    <meta property="og:image:secure_url" content="https://zasorunetkzn.ru/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="245" />
+    <meta property="og:image:height" content="26" />
+
+    <!-- title description -->
+    <meta property="og:description" content="<?= CHtml::encode($this->description); ?>">
+    <meta property="og:title" content="<?= CHtml::encode($this->title); ?>">
+    <!-- title description END-->
 
     <!-- Переменные Yii -->
     <script type="text/javascript" defer>
@@ -63,121 +104,99 @@ Yii::import('application.components.UniversalAltHelper');
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Галерея стиля - Рекламное агентство полного цикла",
-        "alternateName": "Галерея стиля",
-        "description": "Рекламное агентство полного цикла в Казани. Разработка брендов, наружная реклама, дизайн, брендирование. 15 лет опыта.",
-        "url": "https://gs-kzn.ru/",
+        "name": "Устранение засоров в Казани по доступным ценам",
+        "alternateName": "Устранение засоров в Казани",
+        "description": "Услуги по устранению засоров в Казани и пригороде по разумным ценам с наличным и безналичным расчетом. Даем гарантию на все виды выполняемых нами работ. Возможно как единоразовое так и постоянное сотрудничество. Звоните!",
+        "url": "https://zasorunetkzn.ru",
         "inLanguage": "ru",
         "publisher": {
             "@type": "Organization",
-            "name": "Галерея стиля",
-            "legalName": "ООО \"МС\"",
-            "url": "https://gs-kzn.ru/",
-            "logo": "https://gs-kzn.ru/web/img/icons/logo.png",
+            "name": "Устранение засоров в Казани",
+            "legalName": "",
+            "url": "https://zasorunetkzn.ru/",
+            "logo": "https://zasorunetkzn.ru/web/img/icons/logo.png",
             "foundingDate": "2016",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "ул. Г. Ахунова, дом 20, офис №7",
+                "streetAddress": "",
                 "addressLocality": "Казань",
                 "addressRegion": "Республика Татарстан", 
-                "postalCode": "420064",
+                "postalCode": "",
                 "addressCountry": "RU"
             },
             "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+7-843-240-53-00",
+                "telephone": "",
                 "contactType": "customer service",
-                "email": "2404300@mail.ru",
+                "email": "",
                 "areaServed": "RU",
                 "availableLanguage": ["Russian"]
             },
             "sameAs": [
-                "https://vk.com/gallerystyle",
-                "https://t.me/gs_kzn", 
-                "https://www.youtube.com/channel/UC5uh1dbScphYHwTteD-QJQA"
+                "https://zasorunetkzn.ru"
             ]
         },
         "potentialAction": {
             "@type": "SearchAction",
             "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://gs-kzn.ru/search?q={search_term_string}"
+                "urlTemplate": "https://zasorunetkzn.ru/search?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
         }
     }
     </script>
 
-    <!-- Микроразметка Organization -->
+    <!-- schema json -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Галерея стиля",
-        "legalName": "ООО \"МС\"",
-        "url": "https://gs-kzn.ru/",
-        "logo": "https://gs-kzn.ru/web/img/icons/logo.png",
-        "description": "Рекламное агентство полного цикла в Казани. Разработка брендов, наружная реклама, дизайн, брендирование",
-        "foundingDate": "2016",
-        "taxID": "1659081677",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "ул. Г. Ахунова, дом 20, офис №7",
-            "addressLocality": "Казань",
-            "addressRegion": "Республика Татарстан",
-            "postalCode": "420064",
-            "addressCountry": "RU"
-        },
-        "contactPoint": [
-            {
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "",
+            "url": "https://zasorunetkzn.ru/",
+            "logo": "/icon192x192.png",
+            "image": "/logo.png",
+            "description": "Услуги по устранению засоров в Казани и пригороде по разумным ценам с наличным и безналичным расчетом. Даем гарантию на все виды выполняемых нами работ. Возможно как единоразовое так и постоянное сотрудничество. Звоните!",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ул. Николая Ершова, 27И",
+                "addressLocality": "Казань",
+                "addressRegion": "Татарстан Республика",
+                "postalCode": "420061",
+                "addressCountry": "Россия"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "55.848509",
+                "longitude": "49.156316"
+            },
+            "openingHours": "Mo-Su",
+            "telephone": "+7 (917) 261 24 55",
+            "priceRange": "$$",
+            "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+7-843-240-53-00",
-                "contactType": "customer service",
-                "email": "2404300@mail.ru",
-                "areaServed": "RU",
-                "availableLanguage": ["Russian"]
+                "telephone": "+7 (917) 261 24 55",
+                "contactType": "sales"
             }
-        ],
-        "email": "2404300@mail.ru",
-        "telephone": "+7-843-240-53-00",
-        "sameAs": [
-            "https://vk.com/gallerystyle",
-            "https://t.me/gs_kzn",
-            "https://www.youtube.com/channel/UC5uh1dbScphYHwTteD-QJQA"
-        ],
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-                "opens": "09:00",
-                "closes": "17:00"
-            }
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "bestRating": "5",
-            "ratingCount": "47",
-            "reviewCount": "47"
         }
-    }
     </script>
+    <!-- schema json END -->
 
-<!-- Yandex.Metrika counter 2-->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    ym(87534884, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/87534884" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-
+        ym(62366107, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/62366107" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 
     <?php \yupe\components\TemplateEvent::fire(GalleryThemeEvents::HEAD_END); ?>
 </head>
@@ -185,244 +204,74 @@ Yii::import('application.components.UniversalAltHelper');
 <body>
 <?php \yupe\components\TemplateEvent::fire(GalleryThemeEvents::BODY_START); ?>
 
-<div class="wrapper">
 
     <?php $this->renderPartial('//layouts/_header'); ?>
 
-    <?php if ($this->breadcrumbs) { ?>
+    <?php $this->widget(
+            'application.modules.menu.widgets.MenuWidget', array(
+                    'name'         => 'menyu-v-shapke',
+                    'params'       => array('hideEmptyItems' => true),
+                    'view'         => 'main',
+                    'viewParams' => array(
+                            'htmlOptions' => array(
+                                    'class' => 'menu-class',
+                                    'id'    => 'menu-id',
+                            )
+                    ),
+            )
+    ); ?>
 
-        <main>
-            <div class="container">
 
-                <?php $this->renderPartial('//layouts/_sub_header'); ?>
-
-                <?php $this->renderPartial('//layouts/_breadcrumbs'); ?>
-
-                <?= $content; ?>
-
-            </div>
-        </main>
-
-    <?php } else { ?>
-
-        <?= $content; ?>
-
-    <?php } ?>
+    <?= $content; ?>
 
     <?php $this->renderPartial('//layouts/_footer'); ?>
 
-</div>
+
 
 <?php \yupe\components\TemplateEvent::fire(GalleryThemeEvents::BODY_END); ?>
 
-<?php $this->renderPartial('//layouts/_modal'); ?>
-<div class='notifications top-right' id="notifications"></div>
+<?php //$this->renderPartial('//layouts/_modal'); ?>
+
 
 <!-- Подключаем скрипты с оптимизацией -->
 <?php
 // jQuery с defer
-Yii::app()->clientScript->registerCoreScript('jquery', [
-    'defer' => 'defer'
-]);
-
-// Основные скрипты с defer
-Yii::app()->clientScript->registerScriptFile(
-    '/web/js/main.js', 
-    CClientScript::POS_END,
-    ['defer' => 'defer']
-);
-
-Yii::app()->clientScript->registerScriptFile(
-    '/web/js/auto-alt.js', 
-    CClientScript::POS_END,
-    ['defer' => 'defer']
-);
+//Yii::app()->clientScript->registerCoreScript('jquery', [
+//    'defer' => 'defer'
+//]);
+//
+//// Основные скрипты с defer
+//Yii::app()->clientScript->registerScriptFile(
+//    '/web/js/main.min.js',
+//    CClientScript::POS_END,
+//    ['defer' => 'defer']
+//);
+//
+//Yii::app()->clientScript->registerScriptFile(
+//    '/js/swiper-main.js',
+//    CClientScript::POS_END,
+//    ['defer' => 'defer']
+//);
 
 // Яндекс.Метрика с async
-$yandexMetrika = "
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, 'script', 'https://yastatic.net/metrika/tag.js', 'ym');
-
-    ym(87534884, 'init', {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-    });
-";
-
-Yii::app()->clientScript->registerScript('yandex-metrika', $yandexMetrika, CClientScript::POS_END, [
-    'async' => true
-]);
+//$yandexMetrika = "
+//    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+//    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+//    (window, document, 'script', 'https://yastatic.net/metrika/tag.js', 'ym');
+//
+//    ym(87534884, 'init', {
+//        clickmap:true,
+//        trackLinks:true,
+//        accurateTrackBounce:true,
+//        webvisor:true
+//    });
+//";
+//
+//Yii::app()->clientScript->registerScript('yandex-metrika', $yandexMetrika, CClientScript::POS_END, [
+//    'async' => true
+//]);
 ?>
-
-<script type="text/javascript" defer>
-document.addEventListener('DOMContentLoaded', function() {
-    const BASE_SITE = 'Галерея стиля';
-    const BASE_REGION = 'Казань';
-    
-    // Lazy Loading для изображений
-    const images = document.querySelectorAll('img:not([loading])');
-    const viewportHeight = window.innerHeight;
-    
-    const criticalImages = [
-        'logo.png',
-        'logo-sm.png', 
-        'services-block/1.webp',
-        'star.png'
-    ];
-    
-    images.forEach(img => {
-        const src = img.src.toLowerCase();
-        const isCritical = criticalImages.some(critical => src.includes(critical));
-        const rect = img.getBoundingClientRect();
-        const isAboveFold = rect.top < viewportHeight * 1.5;
-        
-        if (!isCritical && !isAboveFold) {
-            img.setAttribute('loading', 'lazy');
-            
-            img.addEventListener('load', function() {
-                this.classList.add('loaded');
-            });
-            
-            img.addEventListener('error', function() {
-                console.log('Error loading image:', this.src);
-                this.classList.add('loaded');
-            });
-        } else {
-            img.classList.add('loaded');
-        }
-        
-        img.classList.add('lazy-processed');
-    });
-    
-    // Автоматическое добавление title для ссылок
-    function getCurrentPage() {
-        const path = window.location.pathname;
-        const pageMap = {
-            '/': 'Главная страница',
-            '/services': 'Услуги',
-            '/portfolio': 'Портфолио', 
-            '/about': 'О компании',
-            '/contacts': 'Контакты',
-            '/news': 'Новости'
-        };
-        
-        for (const [key, value] of Object.entries(pageMap)) {
-            if (path === key || path.startsWith(key + '/')) {
-                return value;
-            }
-        }
-        
-        return 'Страница сайта';
-    }
-    
-    function getLinkType(url, text) {
-        if (!url || url === '/' || url === '#' || url === '#modal') {
-            return 'main';
-        }
-        
-        if (url.startsWith('tel:') || /^\+7|8\s?\(\d{3}\)/.test(text)) {
-            return 'phone';
-        }
-        
-        if (url.startsWith('mailto:') || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
-            return 'email';
-        }
-        
-        if (url.startsWith('http') && !url.includes('gs-kzn.ru')) {
-            return 'external';
-        }
-        
-        return 'internal';
-    }
-    
-    function generateTitle(linkText, linkUrl, linkElement = null) {
-        const pageContext = getCurrentPage();
-        const linkType = getLinkType(linkUrl, linkText);
-        
-        if (linkElement && 
-            (linkText.toLowerCase().includes('подробнее') || 
-             linkElement.classList.contains('btn-border') ||
-             linkElement.classList.contains('btn-gradient')) &&
-            linkElement.closest('.services-block__item')) {
-            
-            const card = linkElement.closest('.services-block__item');
-            const titleElement = card.querySelector('.services-block__subtitle');
-            if (titleElement) {
-                const serviceTitle = titleElement.textContent.trim();
-                return `Узнать подробнее об услуге: ${serviceTitle} | ${BASE_SITE} - ${BASE_REGION}`;
-            }
-        }
-        
-        if (linkElement && 
-            linkText.toLowerCase().includes('подробнее') &&
-            linkElement.closest('.services-block__item, .portfolio-item, .card')) {
-            
-            const card = linkElement.closest('.services-block__item, .portfolio-item, .card');
-            const titleElement = card.querySelector('h3, .title, .subtitle, .card-title');
-            if (titleElement) {
-                const itemTitle = titleElement.textContent.trim();
-                return `Узнать подробнее: ${itemTitle} | ${BASE_SITE} - ${BASE_REGION}`;
-            }
-        }
-        
-        const templates = {
-            'main': `Перейти на главную страницу | Рекламное агентство полного цикла ${BASE_SITE} - ${BASE_REGION}`,
-            'internal': `${linkText} - ${pageContext} | Рекламное агентство полного цикла ${BASE_SITE} - ${BASE_REGION}`,
-            'external': `${linkText} - внешний ресурс | ${BASE_SITE} - ${BASE_REGION}`,
-            'phone': `Позвонить в ${BASE_SITE} по номеру ${linkText} | ${BASE_REGION}`,
-            'email': `Написать письмо в ${BASE_SITE} | ${linkText}`
-        };
-        
-        return templates[linkType] || templates['internal'];
-    }
-    
-    function generateSocialTitle(url) {
-        const socialMap = {
-            'vk.com': 'ВКонтакте',
-            't.me': 'Telegram', 
-            'youtube.com': 'YouTube',
-            'instagram.com': 'Instagram',
-            'facebook.com': 'Facebook',
-            '2gis.com': '2GIS',
-            'yandex.ru': 'Яндекс'
-        };
-        
-        for (const [domain, name] of Object.entries(socialMap)) {
-            if (url.includes(domain)) {
-                return `Мы в ${name} | Рекламное агентство полного цикла ${BASE_SITE} - ${BASE_REGION}`;
-            }
-        }
-        
-        return `Социальная сеть | Рекламное агентство полного цикла ${BASE_SITE} - ${BASE_REGION}`;
-    }
-    
-    // Обрабатываем все ссылки без title
-    const allLinks = document.querySelectorAll('a:not([title])');
-    allLinks.forEach(link => {
-        const linkText = link.textContent.trim();
-        const linkUrl = link.getAttribute('href');
-        
-        let title = '';
-        
-        if (linkUrl && linkUrl.startsWith('http') && !linkUrl.includes('gs-kzn.ru')) {
-            title = generateSocialTitle(linkUrl);
-        } else if (link.classList.contains('icon-telegram') || linkUrl?.includes('t.me')) {
-            title = `Мы в Telegram | Рекламное агентство полного цикла ${BASE_SITE} - ${BASE_REGION}`;
-        } else if (link.classList.contains('icon-vk') || linkUrl?.includes('vk.com')) {
-            title = `Мы в ВКонтакте | Рекламное агентство полного цикла ${BASE_SITE} - ${BASE_REGION}`;
-        } else if (link.classList.contains('icon-youtube') || linkUrl?.includes('youtube.com')) {
-            title = `Мы в YouTube | Рекламное агентство полного цикла ${BASE_SITE} - ${BASE_REGION}`;
-        } else {
-            title = generateTitle(linkText, linkUrl, link);
-        }
-        
-        link.title = title;
-    });
-});
-</script>
-
+<script type="text/javascript" src="/js/swiper-main.js"></script>
+<!--<script src="/js/main.min.js"></script>-->
 </body>
 </html>

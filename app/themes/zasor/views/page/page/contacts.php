@@ -19,6 +19,9 @@ $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
 
 ?>
 
+
+
+<?php /* ?>
 <div class="contacts slide-up">
     <div class="contacts__map">
 
@@ -27,6 +30,7 @@ $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
         <?php } ?>
 
     </div>
+
     <div class="contacts__form">
 
         <?php if (Yii::app()->hasModule('callback')): ?>
@@ -35,3 +39,4 @@ $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
 
     </div>
 </div>
+<?php */ ?>

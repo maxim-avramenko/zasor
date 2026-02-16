@@ -23,7 +23,7 @@ $this->breadcrumbs = ['Контакты ARTLIFE FEST'];
 
                     <p>Позвоните нам: <a href="tel:88002004640" style="color: #000; font-weight: bold">8 800 200 46 40</a></p>
                     <p>Напишите нам: <a href="mailto:hello@artlife-pro.com" style="color: #000; font-weight: bold"> hello@artlife-pro.com</a></p>
-                    <h3 style="color: #000; font-weight: bold">До встречи на фестивале!</p>
+                    <h3 style="color: #000; font-weight: bold">До встречи на фестивале!</h3>
                 </div>
 
             </div>

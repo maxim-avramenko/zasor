@@ -1,1 +1,4 @@
 /html/
+/docker-compose.override.yml
+/traefik/letsencrypt/acme.json
+/.env

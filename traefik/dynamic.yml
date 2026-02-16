@@ -1,0 +1,26 @@
+http:
+  middlewares:
+    dashboard-auth:
+      basicAuth:
+        users:
+          - "admin:$2y$05$2OABx2X1bzaQX.YYy1H2fuxtLLPalTcy6xEBDShVWbJkWzgGDLHQC"
+
+  routers:
+    dashboard:
+      rule: "Host(`traefik.zasorunet.webtm.ru`)"
+      service: api@internal
+      entryPoints:
+        - websecure
+      middlewares:
+        - dashboard-auth
+      tls:
+        certResolver: le
+
+tls:
+  options:
+    default:
+      minVersion: VersionTLS12
+      sniStrict: true
+
+
+# docker run --rm httpd:2.4-alpine htpasswd -nbB admin 94788fe5475f4b3400c4cf1b684c92ae

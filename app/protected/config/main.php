@@ -135,7 +135,7 @@ return [
                 'sitemap.xml' => 'sitemap/sitemap/index',
 
                 // For correct work of installer
-                '/install/default/<action:\w+>' => '/install/default/<action>',
+                //'/install/default/<action:\w+>' => '/install/default/<action>',
                 '/backend' => '/yupe/backend/index',
                 '/backend/login' => '/user/account/backendlogin',
                 '/backend/<action:(AjaxFileUpload|AjaxImageUpload|AjaxImageUploadCKE|index|settings|flushDumpSettings|modulesettings|saveModulesettings|themesettings|modupdate|help|ajaxflush|transliterate)>' => '/yupe/backend/<action>',

@@ -202,7 +202,9 @@ class PageBackendController extends yupe\components\controllers\BackController
                 'model' => $model,
                 'languages' => $this->yupe->getLanguagesList(),
                 'pages' => Page::model()->getFormattedList(),
-                'galleryList' => $galleryList
+                'galleryList' => $galleryList,
+                'menuId' => null,
+                'menuParentId' => null,
             ]
         );
     }

@@ -16,7 +16,7 @@
  * $this->widget('application.modules.menu.widgets.MenuWidget', array(
  *     'name' => 'top-menu',
  *     'params' => array('hideEmptyItems' => true),
- *     'layoutParams' => array('htmlOptions' => array(
+ *     'viewParams' => array('htmlOptions' => array(
  *         'class' => 'jqueryslidemenu',
  *         'id' => 'myslidemenu',
  *      )),

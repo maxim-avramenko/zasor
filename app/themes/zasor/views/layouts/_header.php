@@ -1,5 +1,43 @@
-    
 
+<header class="header">
+    <div class="container">
+        <div class="header-logo">
+            <img src="/images/logo.webp" alt="Logo zasorunet">
+            <div class="header-logo-description">
+                Устранение засоров в Казани
+            </div>
+        </div>
+        <div class="header-app">
+            <div class="app-box">
+                <div class="header-app-description">Удобное приложение для наших клиентов <span class="icon-question" rel="tooltip" data-title="На данный момент приложение на доработке" title=""></span></div>
+                <ul>
+                    <li><a href="#"><img src="/images/AppStore.webp" alt="AppStore zasorunet"></a></li>
+                    <li><a href="#"><img src="/images/GooglePlay.webp" alt="GooglePlay zasorunet"></a></li>
+                    <li><img src="/images/qr.webp" alt="qr app"></li>
+                </ul>
+            </div>
+            <div class="header-contacts">
+                <div class="around-the-clock">
+                    <img src="/images/24_7.webp" alt="">
+                </div>
+                <div class="header-social">
+                    <ul>
+                        <li><a href="https://t.me/Zasorynet" rel="nofollow" target="_blank"><span class="icon-telegram"></span></a></li>
+                        <li><a href="whatsapp://send?phone=79172612455" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span></a></li>
+                        <li><a href="https://youtu.be/Ylvzt8IknEU" target="_blank"><span class="icon-youtube2"></span></a></li>
+                        <li><a href="tel:+79172612455"><span class="icon-phone"></span></a></li>
+                    </ul>
+                </div>
+                <div class="header-phone">
+                    <a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a>
+                    <time>Круглосуточно</time>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<?php /*
 <header class="header">
     <div class="container">
 <a href="/" class="header__logo">
@@ -78,4 +116,5 @@
     </div>
 
 </header>
-    
+
+<?php */ ?>
