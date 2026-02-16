@@ -177,7 +177,7 @@ return [
                 [
                     'class' => 'CFileLogRoute',
                     // On production recommended use only `error, warning`
-                    'levels' => 'error, warning, info, trace, profile',
+                    'levels' => 'error',
                     'logFile'=>'application.log',
                 ]
             ]
