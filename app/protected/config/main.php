@@ -126,7 +126,7 @@ return [
             'class' => 'yupe\components\urlManager\LangUrlManager',
             'langParam' => 'language',
             'urlFormat' => 'path',
-            'urlSuffix' => '',
+            'urlSuffix' => '.html',
             /**
              * Removing index.php from url
              * @link http://yiiframework.ru/doc/guide/ru/quickstart.apache-nginx-config
