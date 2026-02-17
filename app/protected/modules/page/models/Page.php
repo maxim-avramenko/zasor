@@ -9,6 +9,7 @@
  * @property string $update_time
  * @property string $date
  * @property string $title
+ * @property string $title_short
  * @property string $slug
  * @property string $short_text
  * @property string $full_text
@@ -23,6 +24,7 @@
  * @property string $meta_title
  *
  * @property string $preamble
+ * @property string $body
  * @property string $text_3
  * @property string $text_4
  * @property string $text_5
@@ -31,6 +33,7 @@
  *
  *
  * @property string $view
+ * @property string $layout
  */
 
 Yii::import('application.modules.gallery.models.Gallery');
@@ -73,12 +76,12 @@ class Page extends yupe\models\YModel
     public function rules()
     {
         return [
-            ['title, slug, text_3,text_4, text_5, short_text, full_text, preamble, meta_keywords, meta_description', 'filter', 'filter' => 'trim'],
-            ['title, slug, meta_keywords, meta_title, meta_description', 'filter', 'filter' => [new CHtmlPurifier(), 'purify']],
+            ['title, title_short, slug, body, text_3,text_4, text_5, short_text, full_text, preamble, meta_keywords, meta_description', 'filter', 'filter' => 'trim'],
+            ['title, title_short, slug, meta_keywords, meta_title, meta_description', 'filter', 'filter' => [new CHtmlPurifier(), 'purify']],
             ['date, title, slug, full_text', 'required', 'on' => ['update', 'insert']],
             ['status, is_protected, is_service, category_id, parent_id', 'numerical', 'integerOnly' => true],
             ['parent_id, category_id, one_gallery_id, two_gallery_id', 'default', 'setOnEmpty' => true, 'value' => null],
-            ['title, slug, meta_keywords, view', 'length', 'max' => 1024],
+            ['title, title_short, slug, meta_keywords, view, layout', 'length', 'max' => 1024],
             ['lang', 'length', 'max' => 2],
             ['lang', 'default', 'value' => Yii::app()->sourceLanguage],
             ['lang', 'in', 'range' => array_keys(Yii::app()->getModule('yupe')->getLanguagesList())],
@@ -94,7 +97,7 @@ class Page extends yupe\models\YModel
             ],
             ['category_id, one_gallery_id, two_gallery_id', 'default', 'setOnEmpty' => true, 'value' => null],
             [
-                'id, parent_id, meta_keywords, meta_title, meta_description, create_time, update_time, date, title, slug, short_text, text_3,text_4, text_5, full_text, user_id, status, is_service, is_protected, lang, preamble',
+                'id, parent_id, meta_keywords, meta_title, meta_description, create_time, update_time, date, title, title_short, slug, short_text, body, text_3,text_4, text_5, full_text, user_id, status, is_service, is_protected, lang, preamble',
                 'safe',
                 'on' => 'search'
             ],
@@ -222,6 +225,7 @@ class Page extends yupe\models\YModel
             'update_time' => Yii::t('PageModule.page', 'Updated at'),
             'date' => Yii::t('PageModule.page', 'Date'),
             'title' => Yii::t('PageModule.page', 'Title'),
+            'title_short' => Yii::t('PageModule.page', 'Title Short'),
             'slug' => Yii::t('PageModule.page', 'Alias'),
             'image' => Yii::t('PageModule.page', 'Image'),
             'link' => Yii::t('PageModule.page', 'Link'),
@@ -239,9 +243,11 @@ class Page extends yupe\models\YModel
 
             'preamble' => Yii::t('PageModule.page', 'Преамбула'),
             'view' => Yii::t('PageModule.page', 'View'),
+            'layout' => Yii::t('PageModule.page', 'Layout'),
             'one_gallery_id' => Yii::t('PageModule.service', 'Верхняя галлерея'),
             'two_gallery_id' => Yii::t('PageModule.service', 'Нижняя галлерея'),
 
+            'body' => Yii::t('PageModule.page', 'Body'),
             'text_3' => Yii::t('PageModule.page', 'Третий текст'),
             'text_4' => Yii::t('PageModule.page', 'Четвертый текст'),
             'text_5' => Yii::t('PageModule.page', 'Пятый текст'),
@@ -307,8 +313,10 @@ class Page extends yupe\models\YModel
             $criteria->compare('date', date('Y-m-d', strtotime($this->date)));
         }
         $criteria->compare('title', $this->title, true);
+        $criteria->compare('title_short', $this->title_short, true);
         $criteria->compare('t.slug', $this->slug, true);
         $criteria->compare('short_text', $this->short_text, true);
+        $criteria->compare('body', $this->body, true);
         $criteria->compare('text_3', $this->text_3, true);
         $criteria->compare('text_4', $this->text_4, true);
         $criteria->compare('text_5', $this->text_5, true);

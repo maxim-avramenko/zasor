@@ -147,6 +147,12 @@
 
         <div class="row">
             <div class="col-sm-7">
+                <?= $form->textFieldGroup($model, 'title_short'); ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-7">
                 <?= $form->slugFieldGroup($model, 'slug', ['sourceAttribute' => 'title']); ?>
             </div>
         </div>
@@ -277,6 +283,15 @@
                 <?= $form->textFieldGroup(
                     $model,
                     'view'
+                ); ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-7">
+                <?= $form->textFieldGroup(
+                    $model,
+                    'layout'
                 ); ?>
             </div>
         </div>
