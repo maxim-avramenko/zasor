@@ -5,7 +5,7 @@ use yupe\components\controllers\FrontController;
 
 class PageController extends FrontController
 {
-    public string $schema = '';
+    public ?string $schema = '';
 
     public function actionIndex()
     {
