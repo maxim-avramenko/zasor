@@ -5,6 +5,9 @@ $this->keywords = Yii::app()->getModule('yupe')->siteKeyWords;
 
 $this->canonical = $this->createAbsoluteUrl(Yii::app()->request->getPathInfo());
 
+$this->schema = <<<EOF
+
+EOF;
 
 ?>
 

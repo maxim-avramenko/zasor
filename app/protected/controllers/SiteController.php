@@ -16,6 +16,8 @@ use yupe\components\controllers\FrontController;
 
 class SiteController extends FrontController
 {
+    public ?string $schema = null;
+
     /**
      * Отображение главной страницы
      *
