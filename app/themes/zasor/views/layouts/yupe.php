@@ -99,6 +99,7 @@ Yii::import('application.components.UniversalAltHelper');
         var yupeCartWidgetUrl = '<?= Yii::app()->createUrl('/cart/cart/widget/'); ?>';
     </script>
 
+    <?php /*  ?>
     <!-- Микроразметка WebSite -->
     <script type="application/ld+json">
     {
@@ -181,11 +182,11 @@ Yii::import('application.components.UniversalAltHelper');
         }
     </script>
     <!-- schema json END -->
-
+    <?php */ ?>
     <?php if (!empty($this->schema)): ?>
         <script type="application/ld+json">
-      <?php echo $this->schema; ?>
-    </script>
+          <?php echo $this->schema; ?>
+        </script>
     <?php endif; ?>
 
     <!-- Yandex.Metrika counter -->
