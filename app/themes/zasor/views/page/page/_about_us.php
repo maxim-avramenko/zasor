@@ -23,6 +23,7 @@ $this->schema = $model->json_head;
     <div class="container">
         <div class="about-us-block">
             <div class="col">
+                <h1><?php echo $model->title; ?></h1>
                 <?php echo $model->short_text; ?>
             </div>
             <div class="col">
