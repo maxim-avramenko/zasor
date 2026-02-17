@@ -58,8 +58,6 @@ $this->menu = [
 <?= $this->renderPartial(
     '_form',
     [
-        'menuId'       => $menuId,
-        'menuParentId' => $menuParentId,
         'pages'        => $pages,
         'model'        => $model,
         'languages'    => $languages,
