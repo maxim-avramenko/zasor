@@ -13,8 +13,9 @@ $this->keywords = $model->meta_keywords;
 
 $this->canonical = Yii::app()->createAbsoluteUrl('page/page/view', ['slug' => $model->slug]);
 
-$this->layout = "//layouts/yupe_svc";
+$this->layout = "//layouts/yupe";
 
+$this->schema = $model->json_head;
 ?>
 
 <?php

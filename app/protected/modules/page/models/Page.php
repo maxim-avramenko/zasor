@@ -24,10 +24,12 @@
  * @property string $meta_title
  *
  * @property string $preamble
+ * @property string|null $json_head
  * @property string $body
  * @property string $text_3
  * @property string $text_4
  * @property string $text_5
+ * @property string $json_head
  * @property Gallery $gallery *
  * @property-read Page $parent
  *
@@ -51,6 +53,7 @@ class Page extends yupe\models\YModel
     const SERVICE_NO = 0;
     const SERVICE_YES = 1;
 
+    public ?string $json_head = null;
 
     /**
      * @return string the associated database table name
@@ -76,7 +79,7 @@ class Page extends yupe\models\YModel
     public function rules()
     {
         return [
-            ['title, title_short, slug, body, text_3,text_4, text_5, short_text, full_text, preamble, meta_keywords, meta_description', 'filter', 'filter' => 'trim'],
+            ['title, title_short, slug, body, json_head, text_3,text_4, text_5, short_text, full_text, preamble, meta_keywords, meta_description', 'filter', 'filter' => 'trim'],
             ['title, title_short, slug, meta_keywords, meta_title, meta_description', 'filter', 'filter' => [new CHtmlPurifier(), 'purify']],
             ['date, title, slug, full_text', 'required', 'on' => ['update', 'insert']],
             ['status, is_protected, is_service, category_id, parent_id', 'numerical', 'integerOnly' => true],
@@ -97,7 +100,7 @@ class Page extends yupe\models\YModel
             ],
             ['category_id, one_gallery_id, two_gallery_id', 'default', 'setOnEmpty' => true, 'value' => null],
             [
-                'id, parent_id, meta_keywords, meta_title, meta_description, create_time, update_time, date, title, title_short, slug, short_text, body, text_3,text_4, text_5, full_text, user_id, status, is_service, is_protected, lang, preamble',
+                'id, parent_id, meta_keywords, meta_title, meta_description, create_time, update_time, date, title, title_short, slug, short_text, body, text_3,text_4, text_5, full_text, json_head, user_id, status, is_service, is_protected, lang, preamble',
                 'safe',
                 'on' => 'search'
             ],
@@ -247,6 +250,7 @@ class Page extends yupe\models\YModel
             'one_gallery_id' => Yii::t('PageModule.service', 'Верхняя галлерея'),
             'two_gallery_id' => Yii::t('PageModule.service', 'Нижняя галлерея'),
 
+            'json_head' => Yii::t('PageModule.page', 'JSON Head'),
             'body' => Yii::t('PageModule.page', 'Body'),
             'text_3' => Yii::t('PageModule.page', 'Третий текст'),
             'text_4' => Yii::t('PageModule.page', 'Четвертый текст'),
@@ -424,5 +428,14 @@ class Page extends yupe\models\YModel
         return ($this->parent === null) ? '---' : $this->parent->title;
     }
 
+    public function getJsonHead()
+    {
+        return $this->json_head;
+    }
 
+    public function setJsonHead($json): self
+    {
+        $this->json_head = $json;
+        return $this;
+    }
 }

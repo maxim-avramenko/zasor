@@ -366,6 +366,11 @@
                 <?= $form->textAreaGroup($model, 'meta_description'); ?>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <?= $form->textAreaGroup($model, 'json_head'); ?>
+            </div>
+        </div>
     </div>
 </div>
 
