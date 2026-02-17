@@ -15,7 +15,7 @@ $this->canonical = Yii::app()->createAbsoluteUrl('/page/page/view', ['slug' => $
 $this->pageH1 = $model->title;
 
 $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
-
+$this->schema = $model->json_head;
 ?>
 <div class="page-contacts">
     <div class="container">

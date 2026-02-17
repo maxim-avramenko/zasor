@@ -25,3 +25,21 @@ m1zv@^,jXU85P,
 
 scp -r vendor root@89.23.99.205:/root/zasor/app/
 scp -r modules root@89.23.99.205:/root/zasor/app/protected/config/modules
+
+https://zasorunetkzn.ru/contacts.html
+
+https://zasorunetkzn.ru/about_us.html
+
+https://zasorunetkzn.ru/price.html
+
+===============================
+
+https://zasorunetkzn.ru/uslugi.html -шаблон услуг
+
+==============================
+
+https://zasorunetkzn.ru/uslugi-assenizatora.html - это шаблон услуги
+
+==============================
+
+404
