@@ -41,85 +41,47 @@ if ($model->parent) {
 $this->breadcrumbs[] = $model->title;
 
 ?>
+<div class="serves-page">
+    <div class="container">
+        <div class="block-flex">
+            <div class="block-one-serves-page">
+                <h1><?= $model->title ?></h1>
+                <div class="box-text-one-serves-page">
+                    <?= $model->preamble ?>
+                </div>
+                <div class="price-page-serves">
+                    Цена от:<div class="price-view">5 000</div>руб.
+                </div>
+                <div class="txt-call-serves-page"><span>Звоните</span> <img src="/images/hd-24_7.webp" alt=""></div>
+                <div class="phone-call-serves-page">
+                    <a class="btn-phone-serves-page" href="tel:+<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a>
+                    <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                </div>
+            </div>
+            <div class="block-two-serves-page">
+                <div class="image-block-two-serves-page">
+                    <img src="<?= $model->getImageUrl(500, 500, true); ?>" alt="<?= $model->title ?>">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php if ($model->one_gallery_id && Yii::app()->hasModule('gallery')) : ?>
+
+    <?php $this->widget(
+            'gallery.widgets.GalleryWidget',
+            [
+                    'galleryId' => $model->one_gallery_id,
+                    'limit' => 9,
+                    'view' => 'service'
+            ]
+    ); ?>
+
+<?php endif; ?>
+
+<?php /* ?>
 <div class="service">
-    <h1><?= $model->title ?></h1>
-    <div class="caption caption-service">
-        <div class="caption__text slide-left">
-            <?= $model->preamble ?>
-        </div>
-        <div class="caption__img">
-            <img src="<?= $model->getImageUrl(500, 250, true); ?>" alt="<?= $model->title ?>">
-        </div>
-    </div>
-    <div class="heading heading-service slide-up">
-        <div class="heading__items">
-            <div class="heading__item">
-                <span class="icon icon-clock">
-                </span>
-                <p>
-
-                    <?php if (Yii::app()->getModule('yupe')->companyWorkTime) { ?>
-                        <?= Yii::app()->getModule('yupe')->companyWorkTime ?>
-                    <?php } ?>
-
-                    <?php if (Yii::app()->getModule('yupe')->companyEmail) { ?>
-                        <a href="mailto:<?= Yii::app()->getModule('yupe')->companyEmail ?>" target="_blank">
-                            <?= Yii::app()->getModule('yupe')->companyEmail ?>
-                        </a>
-                    <?php } ?>
-                </p>
-            </div>
-            <div class="heading__item">
-                <span class="icon icon-map">
-                </span>
-                <p>
-                    <?= Yii::app()->getModule('yupe')->companyCountry ?>,
-                    <?= Yii::app()->getModule('yupe')->companyRegion ?>,
-                    <?= Yii::app()->getModule('yupe')->companyCity ?>,
-                    <?= Yii::app()->getModule('yupe')->companyStreet ?>,
-                    <?= Yii::app()->getModule('yupe')->companyOffice ?>
-                </p>
-            </div>
-        </div>
-        <div class="heading__contacts">
-
-            <?php if (Yii::app()->getModule('yupe')->companyPhone) {
-                $cleanPhone = yupe\helpers\YTel::cleanPh(Yii::app()->getModule('yupe')->companyPhone);;
-                ?>
-                <a href="tel:<?= $cleanPhone ?>" class="heading__tel"> <span class="icon-phone">
-                        </span><?= Yii::app()->getModule('yupe')->companyPhone ?></a>
-            <?php } ?>
-
-            <div class="socials">
-                <?php if (Yii::app()->getModule('yupe')->companyEmail) { ?>
-                    <a href="mailto:<?= Yii::app()->getModule('yupe')->companyEmail ?>" target="_blank">
-                        <span class="icon-envelope"></span>
-                    </a>
-                <?php } ?>
-
-                <?php if (Yii::app()->getModule('yupe')->companyInstagramm) { ?>
-                    <a href="<?= Yii::app()->getModule('yupe')->companyInstagramm ?>" target="_blank">
-                        <span class="icon-instagram"></span>
-                    </a>
-                <?php } ?>
-
-                <?php if (Yii::app()->getModule('yupe')->companyVk) { ?>
-                    <a href="<?= Yii::app()->getModule('yupe')->companyVk ?>" target="_blank">
-                        <span class="icon-vk"></span>
-                    </a>
-                <?php } ?>
-
-                <?php if (Yii::app()->getModule('yupe')->companyYoutube) { ?>
-                    <a href="<?= Yii::app()->getModule('yupe')->companyYoutube ?>" target="_blank">
-                        <span class="icon-youtube"></span>
-                    </a>
-                <?php } ?>
-            </div>
-        </div>
-        <a href="#modal" data-fancybox class="heading__callback">
-            Заказать звонок
-        </a>
-    </div>
 
     <div class="service__article">
 
@@ -216,3 +178,4 @@ $this->breadcrumbs[] = $model->title;
         </div>
     </div>
 </div>
+<?php */ ?>
