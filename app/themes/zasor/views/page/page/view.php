@@ -80,6 +80,15 @@ $this->breadcrumbs[] = $model->title;
 
 <?php endif; ?>
 
+<div class="vopros-section">
+    <div class="container">
+        <div class="question">
+            Остались вопросы ?
+            <span>Спросите <img src="/images/24_7.webp" alt=""> <a href="tel:<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a></span>
+        </div>
+    </div>
+</div>
+
 <?php /* ?>
 <div class="service">
 
