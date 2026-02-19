@@ -157,6 +157,12 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-sm-7">
+                <?= $form->textFieldGroup($model, 'price'); ?>
+            </div>
+        </div>
+
         <div class='row'>
             <div class="col-sm-7">
                 <?php
@@ -274,6 +280,34 @@
                     ]
                 ); ?>
                 <?= $form->error($model, 'text_5'); ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <?= $form->labelEx($model, 'text_6'); ?>
+                <?php $this->widget(
+                    $this->module->getVisualEditor(),
+                    [
+                        'model' => $model,
+                        'attribute' => 'text_6',
+                    ]
+                ); ?>
+                <?= $form->error($model, 'text_6'); ?>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <?= $form->labelEx($model, 'text_7'); ?>
+                <?php $this->widget(
+                    $this->module->getVisualEditor(),
+                    [
+                        'model' => $model,
+                        'attribute' => 'text_7',
+                    ]
+                ); ?>
+                <?= $form->error($model, 'text_7'); ?>
             </div>
         </div>
 

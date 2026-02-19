@@ -29,6 +29,9 @@
  * @property string $text_3
  * @property string $text_4
  * @property string $text_5
+ * @property string $text_6
+ * @property string $text_7
+ * @property float $price
  * @property string $json_head
  * @property Gallery $gallery *
  * @property-read Page $parent
@@ -79,11 +82,11 @@ class Page extends yupe\models\YModel
     public function rules()
     {
         return [
-            ['title, title_short, slug, body, json_head, text_3,text_4, text_5, short_text, full_text, preamble, meta_keywords, meta_description', 'filter', 'filter' => 'trim'],
+            ['title, title_short, slug, body, json_head, text_3,text_4, text_5, text_6, text_7, price, short_text, full_text, preamble, meta_keywords, meta_description', 'filter', 'filter' => 'trim'],
             ['title, title_short, slug, meta_keywords, meta_title, meta_description', 'filter', 'filter' => [new CHtmlPurifier(), 'purify']],
             ['date, title, slug, full_text', 'required', 'on' => ['update', 'insert']],
             ['status, is_protected, is_service, category_id, parent_id', 'numerical', 'integerOnly' => true],
-            ['parent_id, category_id, one_gallery_id, two_gallery_id', 'default', 'setOnEmpty' => true, 'value' => null],
+            ['parent_id, category_id, one_gallery_id, two_gallery_id, text_6, text_7, price', 'default', 'setOnEmpty' => true, 'value' => null],
             ['title, title_short, slug, meta_keywords, view, layout', 'length', 'max' => 1024],
             ['lang', 'length', 'max' => 2],
             ['lang', 'default', 'value' => Yii::app()->sourceLanguage],
@@ -100,7 +103,7 @@ class Page extends yupe\models\YModel
             ],
             ['category_id, one_gallery_id, two_gallery_id', 'default', 'setOnEmpty' => true, 'value' => null],
             [
-                'id, parent_id, meta_keywords, meta_title, meta_description, create_time, update_time, date, title, title_short, slug, short_text, body, text_3,text_4, text_5, full_text, json_head, user_id, status, is_service, is_protected, lang, preamble',
+                'id, parent_id, meta_keywords, meta_title, meta_description, create_time, update_time, date, title, title_short, slug, short_text, body, text_3,text_4, text_5, text_6, text_7, price, full_text, json_head, user_id, status, is_service, is_protected, lang, preamble',
                 'safe',
                 'on' => 'search'
             ],
@@ -255,6 +258,9 @@ class Page extends yupe\models\YModel
             'text_3' => Yii::t('PageModule.page', 'Третий текст'),
             'text_4' => Yii::t('PageModule.page', 'Четвертый текст'),
             'text_5' => Yii::t('PageModule.page', 'Пятый текст'),
+            'text_6' => Yii::t('PageModule.page', 'Шестой текст'),
+            'text_7' => Yii::t('PageModule.page', 'Седьмой текст'),
+            'price' => Yii::t('PageModule.page', 'Цена'),
             'order' => Yii::t('PageModule.page', 'Порядок сортировки'),
 
         ];
@@ -324,6 +330,9 @@ class Page extends yupe\models\YModel
         $criteria->compare('text_3', $this->text_3, true);
         $criteria->compare('text_4', $this->text_4, true);
         $criteria->compare('text_5', $this->text_5, true);
+        $criteria->compare('text_6', $this->text_6, true);
+        $criteria->compare('text_7', $this->text_7, true);
+        $criteria->compare('price', $this->price, true);
         $criteria->compare('full_text', $this->full_text, true);
         $criteria->compare('user_id', $this->user_id);
         $criteria->compare('t.status', $this->status);
