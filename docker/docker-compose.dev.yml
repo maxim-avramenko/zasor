@@ -57,6 +57,7 @@ services:
     networks:
       - "zasor"
     volumes:
+      - ./php/php.ini:/usr/local/etc/php/php.ini
       - ./app:/var/www/html/zasor
       - "zasor-php-tmp:/tmp"
       - "zasor-composer-data:/home/${USER}/.composer"
@@ -75,6 +76,7 @@ services:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
     volumes:
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
       - ./dump.db:/docker-entrypoint-initdb.d
       - "zasor-db-data:/var/lib/mysql"
     networks:
