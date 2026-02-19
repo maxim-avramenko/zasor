@@ -61,7 +61,7 @@ $this->breadcrumbs[] = $model->title;
             </div>
             <div class="block-two-serves-page">
                 <div class="image-block-two-serves-page">
-                    <img src="<?= $model->getImageUrl(500, 500, true); ?>" alt="<?= $model->title ?>">
+                    <img src="<?= $model->getImageUrl(); ?>" alt="<?= $model->title ?>">
                 </div>
             </div>
         </div>
