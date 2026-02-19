@@ -38,7 +38,7 @@ class FileUploadBehavior extends CActiveRecordBehavior
     /**
      * @var string allowed file types.
      */
-    public $types = 'jpg,jpeg,png,gif';
+    public $types = 'jpg,jpeg,png,gif,webp';
 
     /**
      *
