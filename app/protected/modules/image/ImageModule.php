@@ -34,7 +34,7 @@ class ImageModule extends WebModule
     /**
      * @var string
      */
-    public $allowedExtensions = 'jpg,jpeg,png,gif';
+    public $allowedExtensions = 'jpg,jpeg,png,gif,webp';
     /**
      * @var int
      */
