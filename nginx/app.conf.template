@@ -10,7 +10,7 @@ server {
 server {
     listen       80 default;
     server_name  ${DOMAIN_NAME};
-
+    client_max_body_size 8M;
     index index.php;
     root   /var/www/html/zasor/public_html;
 
