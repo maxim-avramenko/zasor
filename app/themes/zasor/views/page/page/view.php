@@ -294,7 +294,7 @@ $this->breadcrumbs[] = $model->title;
                         </div>
                         <div class="list-serves-page-serves-box">
                             <div class="images-serves">
-                                <img src="<?= $service->getImageUrl(300, 300, true); ?>" alt="<?php echo $service->title;?>">
+                                <img src="<?= $service->getImageUrl(500, 500, true); ?>" alt="<?php echo $service->title;?>">
                             </div>
                             <div class="btn-serves">
                                 <a href="/<?php echo $service->slug; ?>">Подробнее</a>
