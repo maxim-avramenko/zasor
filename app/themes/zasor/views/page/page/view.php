@@ -80,6 +80,160 @@ $this->breadcrumbs[] = $model->title;
 
 <?php endif; ?>
 
+<div class="technical-specifications">
+    <div class="container">
+        <?php echo $model->full_text; ?>
+    </div>
+</div>
+
+<div class="serves-page-content-1">
+    <div class="container">
+        <?php echo $model->text_3; ?>
+    </div>
+</div>
+<div class="advantage-serves-page">
+        <div class="container">
+            <div class="block-flex">
+                <!-- 1 -->
+                <div class="advantage-serves-page-box">
+                    <div class="advantage-clock">
+						<span class="ico-clock">
+							<img src="/images/time.webp" alt="">
+						</span>
+                    </div>
+                    <div class="advantage-content">
+                        <h2>Удобно и быстро</h2>
+                        <p>У нас есть возможность записать вас на удобный день и время.</p>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="advantage-serves-page-box">
+                    <div class="advantage-clock">
+						<span class="ico-fsat-track">
+							<img src="/images/fast track.webp" alt="">
+						</span>
+                    </div>
+                    <div class="advantage-content">
+                        <h2>Срочно</h2>
+                        <p>Выполняем экстренные/срочные вызовы</p>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="advantage-serves-page-box">
+                    <div class="advantage-clock">
+						<span class="ico-rub">
+							<img src="/images/icon-rub.webp" alt="">
+						</span>
+                    </div>
+                    <div class="advantage-content">
+                        <h2>Честные цены</h2>
+                        <p>Никаких скрытых доплат. Все необходимо работы, определят мастера аварийной бригады на месте.</p>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="advantage-serves-page-box">
+                    <div class="advantage-clock">
+						<span class="ico-m-r">
+							<img src="/images/m-r.webp" alt="">
+						</span>
+                    </div>
+                    <div class="advantage-content">
+                        <h2>Оплата за результат</h2>
+                        <p>Все процедуры проводятся у вас на глазах.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="list-serves">
+    <div class="container">
+        <div class="block-flex">
+            <div class="list-serves-text">
+                <h3><?php echo $model->title; ?></h3>
+                <div class="list-serves-slist">
+                    <?php echo $model->text_4; ?>
+                </div>
+                <div class="list-serves-contacts">
+                    <div class="ls-box-contacts">
+                        <div class="ls-contacts"><a href="tel:<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a></div>
+                        <time>Круглосуточно 24 / 7</time>
+                    </div>
+                    <div class="ls-wh">
+                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="list-serves-images">
+                <div class="sl-img">
+                    <img src="/images/content-images.webp" alt=""> <!-- upload -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="service-block-price">
+    <div class="container">
+        <div class="block-flex">
+            <!-- 1 -->
+            <div class="block-sr-price-one">
+                <h2><?php echo $model->title; ?></h2>
+                <div class="whats-the-price-block">
+                    <?php echo $model->text_5; ?>
+                </div>
+                <div class="block-sr-oplata-nds">
+                    Работаем с
+                    <div class="box-sr-oplata-nds">
+                        <strong>НДС <span>и без</span> НДС</strong>
+                        <ul>
+                            <li>Возможен наличныйи безналичный расчет.</li>
+                            <li>Заключаем договор на обслуживание.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="block-sr-price-two">
+                <div class="ring-box">
+                    <div class="ring-box-logo">
+                        <img src="images/logo.webp" alt="Logo zasorunet">
+                        <div class="header-logo-description">
+                            Устранение засоров в Казани
+                        </div>
+                    </div>
+                    <div class="ring-box-phone">
+                        <a href="tel:<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a>
+                        <div class="work-24">
+                            <img src="images/24_7.webp" alt="">
+                            <time><b>Круглосуточно</b></time>
+                        </div>
+                    </div>
+                    <div class="ring-box-content">
+                        Все подробности узнавайте по телефону.
+                        Оказываем бесплатную подробную консультацию.
+                    </div>
+                    <div class="ring-box-wh-btn">
+                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="btn-work-area-time">
+            <div class="btn-work-area-time-item">
+                <a class="btn-wh" href="whatsapp://send?phone=<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                <div class="section-10-block-tel">Остались вопросы ? - <a class="tel-light" href="tel:<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="vopros-section">
     <div class="container">
         <div class="question">
