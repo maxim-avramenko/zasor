@@ -29,7 +29,7 @@ $this->schema = $model->json_head;
             <div class="col">
                 <!-- <img src="images/about-us.png" alt="about-us"> -->
 <!--                <img src="/images/uslugi/o-nas/2.webp" alt="about-us">-->
-                <img src="<?= $model->getImageUrl(500, 500, true); ?>" alt="<?= $model->title ?>">
+                <img src="<?= $model->getImageUrl(); ?>" alt="<?= $model->title ?>">
             </div>
         </div>
     </div>
