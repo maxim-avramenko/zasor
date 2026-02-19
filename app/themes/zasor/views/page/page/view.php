@@ -2,6 +2,7 @@
 /**
  * @var $this PageController
  * @var $model Page
+ * @var $allServices array<Page>
  **/
 ?>
 
@@ -50,7 +51,7 @@ $this->breadcrumbs[] = $model->title;
                     <?= $model->preamble ?>
                 </div>
                 <div class="price-page-serves">
-                    Цена от:<div class="price-view">5 000</div>руб.
+                    Цена от:<div class="price-view"><?php echo $model->price; ?></div>руб.
                 </div>
                 <div class="txt-call-serves-page"><span>Звоните</span> <img src="/images/hd-24_7.webp" alt=""></div>
                 <div class="phone-call-serves-page">
@@ -278,6 +279,33 @@ $this->breadcrumbs[] = $model->title;
         </div>
     </div>
 
+<?php if ($allServices) { ?>
+    <div class="list-serves-page-serves">
+        <div class="container">
+            <ul>
+                <?php foreach ($allServices as $service) { ?>
+                    <li>
+                        <div class="heading-serves">
+                            <h3><?php echo $service->title;?></h3>
+                        </div>
+
+                        <div class="description-serves">
+                            <?php echo $service->preamble?>
+                        </div>
+                        <div class="list-serves-page-serves-box">
+                            <div class="images-serves">
+                                <img src="<?= $service->getImageUrl(300, 200, true); ?>" alt="<?php echo $service->title;?>">
+                            </div>
+                            <div class="btn-serves">
+                                <a href="/<?php echo $service->slug; ?>">Подробнее</a>
+                            </div>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+<?php } ?>
 <div class="vopros-section">
     <div class="container">
         <div class="question">

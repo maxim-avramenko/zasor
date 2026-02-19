@@ -42,8 +42,11 @@ class PageController extends FrontController
             throw new CHttpException(404, Yii::t('PageModule.page', 'Page article was not found!'));
         }
 
+        $allServices = Page::model()->findAllByAttributes(
+            ['is_service' => Page::PROTECTED_YES],
+            ['order' => 't.`order` ASC, t.id DESC']);
 
-        $this->render($model->view ?: 'view', ['model' => $model]);
+        $this->render($model->view ?: 'view', ['model' => $model, 'allServices' => $allServices]);
 
     }
 
