@@ -62,6 +62,7 @@ class YupeModule extends WebModule
     public $companyYoutube;
     public $companyWorkTime;
     public $companySpanPhone;
+    public $companyDescription;
 
     /**
      * @var string
@@ -368,6 +369,7 @@ class YupeModule extends WebModule
             'companyYoutube' => Yii::t('YupeModule.yupe', 'companyYoutube'),
             'companyWorkTime' => Yii::t('YupeModule.yupe', 'companyWorkTime'),
             'companySpanPhone' => Yii::t('YupeModule.yupe', 'companySpanPhone'),
+            'companyDescription' => Yii::t('YupeModule.yupe', 'companyDescription'),
 
         ];
     }
@@ -411,7 +413,8 @@ class YupeModule extends WebModule
             'companyVk',
             'companyYoutube',
             'companyWorkTime',
-            'companySpanPhone'
+            'companySpanPhone',
+            'companyDescription',
         ];
     }
 
@@ -448,7 +451,8 @@ class YupeModule extends WebModule
                     'companyVk',
                     'companyYoutube',
                     'companyWorkTime',
-                    'companySpanPhone'
+                    'companySpanPhone',
+                    'companyDescription'
                 ],
             ],
 
