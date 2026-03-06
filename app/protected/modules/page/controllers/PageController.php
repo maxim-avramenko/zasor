@@ -35,7 +35,6 @@ class PageController extends FrontController
 
     public function actionView($slug)
     {
-
         $model = $this->getByAlias($slug);
 
         if (!$model) {
@@ -44,10 +43,45 @@ class PageController extends FrontController
 
         $allServices = Page::model()->findAllByAttributes(
             ['is_service' => Page::PROTECTED_YES],
-            ['order' => 't.`order` ASC, t.id DESC']);
+            ['order' => 't.`order` ASC, t.id DESC']
+        );
 
-        $this->render($model->view ?: 'view', ['model' => $model, 'allServices' => $allServices]);
+        $breadcrumbs = $this->buildBreadcrumbs($model);
 
+        $this->render(
+            $model->view ?: 'view',
+            ['model' => $model, 'allServices' => $allServices, 'breadcrumbs' => $breadcrumbs]
+        );
+    }
+
+    /**
+     * @param Page $model
+     * @return array
+     */
+    protected function buildBreadcrumbs(Page $model)
+    {
+        $breadcrumbs = [
+            Yii::t('PageModule.page', 'Главная') => Yii::app()->homeUrl,
+        ];
+
+        $ancestors = [];
+        $current = $model;
+
+        while ($current->parent) {
+            array_unshift($ancestors, $current->parent);
+            $current = $current->parent;
+        }
+
+        foreach ($ancestors as $ancestor) {
+            $breadcrumbs[$ancestor->title] = [
+                '/page/page/view',
+                'slug' => $ancestor->slug,
+            ];
+        }
+
+        $breadcrumbs[] = $model->title;
+
+        return $breadcrumbs;
     }
 
     /**

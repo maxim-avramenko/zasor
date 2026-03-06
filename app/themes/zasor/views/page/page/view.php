@@ -20,28 +20,16 @@ $this->schema = $model->json_head;
 ?>
 
 <?php
-
-$this->breadcrumbs = [
-    'Главная' => ['/site/index'],
-    'Услуги' => ['/page/page/index']
-];
-
-if ($model->parent) {
-    $parent = $model->parent; // Дизайн логотипа
-    
-    // Если у родителя есть свой родитель (Дизайн), добавляем его
-    if ($parent->parent) {
-        $this->breadcrumbs[$parent->parent->title] = ['/page/page/view', 'slug' => $parent->parent->slug];
-    }
-    
-    // Добавляем родителя (Дизайн логотипа)
-    $this->breadcrumbs[$parent->title] = ['/page/page/view', 'slug' => $parent->slug];
-}
-
-// Добавляем текущую страницу
-$this->breadcrumbs[] = $model->title;
-
+$breadcrumbs = isset($breadcrumbs) ? $breadcrumbs : [];
+$this->breadcrumbs = $breadcrumbs;
 ?>
+
+<?php if (!empty($breadcrumbs)) : ?>
+<div class="container breadcrumbs-container">
+    <?php $this->renderPartial('//layouts/_breadcrumbs', ['breadcrumbs' => $breadcrumbs]); ?>
+</div>
+<?php endif; ?>
+
 <div class="serves-page">
     <div class="container">
         <div class="block-flex">
