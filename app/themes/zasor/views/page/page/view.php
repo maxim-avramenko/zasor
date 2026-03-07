@@ -227,7 +227,7 @@ $this->breadcrumbs = $breadcrumbs;
                             <?php
                             $serviceNavItems = isset($serviceNavItems) ? $serviceNavItems : [];
                             foreach ($serviceNavItems as $index => $parentPage) :
-                                $parentUrl = Yii::app()->createUrl('/page/page/view', ['slug' => $parentPage->path]);
+                                $parentUrl = Yii::app()->createUrl('/page/page/view', ['slug' => $parentPage->slug]);
                             ?>
                             <div class="swiper-slide" data-swiper-slide-index="<?= $index ?>">
                                 <div class="service__nav">
@@ -236,7 +236,7 @@ $this->breadcrumbs = $breadcrumbs;
                                     </div>
                                     <ul>
                                         <?php foreach ($parentPage->childPages as $childPage) :
-                                            $childUrl = Yii::app()->createUrl('/page/page/view', ['slug' => $childPage->path]);
+                                            $childUrl = Yii::app()->createUrl('/page/page/view', ['slug' => $childPage->slug]);
                                         ?>
                                         <li><a href="<?= $childUrl ?>" title="<?= CHtml::encode($childPage->title) ?>"><?= CHtml::encode($childPage->title) ?></a></li>
                                         <?php endforeach; ?>
