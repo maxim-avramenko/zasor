@@ -72,7 +72,8 @@ class Redactor extends \CInputWidget
             'uploadFileFields' => [
                 Yii::app()->getRequest()->csrfTokenName => Yii::app()->getRequest()->csrfToken,
             ],
-            'replaceDivs' => false
+            'replaceDivs' => false,
+            'removeWithoutAttr' => false,
         ];
     }
 
