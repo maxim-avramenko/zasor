@@ -1,0 +1,12 @@
+services:
+
+  proxy:
+    networks:
+      - traefik
+      - zasor
+
+networks:
+  traefik:
+    external: true
+  zasor:
+    external: true

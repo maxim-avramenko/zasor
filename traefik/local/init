@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# create docker networks for services
+NETWORKS=(
+  project21
+  selenoid
+  monitoring
+  traefik
+  static
+  wordpress
+  console
+  pipo
+  hcaptcha
+  tournament
+  core_network
+  backend-network
+  frontend-network
+)
+
+check-network()
+{
+    echo $(docker network ls --format "{{.Name}}" | grep -x "${i}")
+}
+
+if [[ ${#@} > 0 ]]; then
+    NETWORKS=(${@})
+fi
+
+# create docker external networks
+for i in "${NETWORKS[@]}"
+do
+    CHECK_NETWORK=$(check-network)
+    if [[ ${#CHECK_NETWORK} == 0 ]]; then
+        docker network create ${i}
+        echo "Creating new network: '${i}'"
+    else
+        echo "Network '"${i}"' already exist"
+    fi
+done
+
+unset i
+unset NETWORKS
+unset CHECK_NETWORK
+echo "Start traefik service ..."
+# start revert-proxy service
+docker-compose up -d
