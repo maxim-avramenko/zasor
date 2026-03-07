@@ -416,7 +416,7 @@ class DCategoryTreeBehavior extends DCategoryBehavior
             $category = $category->{$this->parentRelation};
         }
 
-        return implode(array_reverse($uri), $separator);
+        return implode($separator, array_reverse($uri));
     }
 
     /**
@@ -459,7 +459,7 @@ class DCategoryTreeBehavior extends DCategoryBehavior
             $item = $item->{$this->parentRelation};
         }
 
-        return implode($inverse ? $titles : array_reverse($titles), $separator);
+        return implode($separator, $inverse ? $titles : array_reverse($titles));
     }
 
     /**

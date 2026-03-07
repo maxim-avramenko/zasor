@@ -177,7 +177,7 @@ class Page extends yupe\models\YModel
             ],
             'service' => [
                 'condition' => 't.is_service = :is_service',
-                'params' => [':is_service' => self::PROTECTED_YES],
+                'params' => [':is_service' => self::SERVICE_YES],
             ],
         ];
     }

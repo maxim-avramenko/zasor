@@ -7,8 +7,17 @@ alwaysApply: true
 
 ## Стек
 
-- **Yii 1.1** (Yupe CMS), PHP 7.4
+- **Yii 1.1** (Yupe CMS), **PHP 7.4** (строго, без исключений)
 - **Docker**: nginx, php-fpm, MySQL 8, Adminer
+
+## PHP 7.4 — обязательно
+
+Всегда использовать **только PHP 7.4**. Не применять синтаксис и API PHP 8+:
+
+- `implode($glue, $array)` — порядок: сначала glue, потом array
+- Без typed properties (кроме явно указанных в проекте)
+- Без named arguments, match, nullsafe operator `?->`
+- Без union types, attributes, enums
 
 ## Docker-сервисы
 

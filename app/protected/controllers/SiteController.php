@@ -25,9 +25,15 @@ class SiteController extends FrontController
      */
     public function actionIndex()
     {
-         \Yii::import('application.components.UniversalAltHelper');
+        \Yii::import('application.components.UniversalAltHelper');
 
-        $this->render('index');
+        $servicePages = \Page::model()
+            ->published()
+            ->service()
+            ->language(\Yii::app()->getLanguage())
+            ->findAll(['order' => 't.order ASC, t.date DESC']);
+
+        $this->render('index', ['servicePages' => $servicePages]);
     }
 
     /**
