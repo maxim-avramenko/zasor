@@ -203,7 +203,33 @@ $this->breadcrumbs = $breadcrumbs;
         </div>
     </div>
 </div>
+<?php if ($allServices) { ?>
+    <div class="list-serves-page-serves">
+        <div class="container">
+            <ul>
+                <?php foreach ($allServices as $service) { ?>
+                    <li>
+                        <div class="heading-serves">
+                            <h3><?php echo $service->title;?></h3>
+                        </div>
 
+                        <div class="description-serves">
+                            <?php echo $service->preamble?>
+                        </div>
+                        <div class="list-serves-page-serves-box">
+                            <div class="images-serves">
+                                <img src="<?= $service->getImageUrl(500, 500, true); ?>" alt="<?php echo $service->title;?>">
+                            </div>
+                            <div class="btn-serves">
+                                <a href="/<?php echo $service->slug; ?>">Подробнее</a>
+                            </div>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+<?php } ?>
 <div>
     <div class="container">
         <div class="btn-work-area-time">
@@ -299,33 +325,7 @@ $this->breadcrumbs = $breadcrumbs;
         </div>
     </div>
 
-<?php if ($allServices) { ?>
-    <div class="list-serves-page-serves">
-        <div class="container">
-            <ul>
-                <?php foreach ($allServices as $service) { ?>
-                    <li>
-                        <div class="heading-serves">
-                            <h3><?php echo $service->title;?></h3>
-                        </div>
 
-                        <div class="description-serves">
-                            <?php echo $service->preamble?>
-                        </div>
-                        <div class="list-serves-page-serves-box">
-                            <div class="images-serves">
-                                <img src="<?= $service->getImageUrl(500, 500, true); ?>" alt="<?php echo $service->title;?>">
-                            </div>
-                            <div class="btn-serves">
-                                <a href="/<?php echo $service->slug; ?>">Подробнее</a>
-                            </div>
-                        </div>
-                    </li>
-                <?php } ?>
-            </ul>
-        </div>
-    </div>
-<?php } ?>
 <div class="vopros-section">
     <div class="container">
         <div class="question">
