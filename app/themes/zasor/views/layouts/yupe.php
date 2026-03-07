@@ -228,7 +228,13 @@ Yii::import('application.components.UniversalAltHelper');
             )
     ); ?>
 
-    <?php $this->renderPartial('//layouts/_breadcrumbs'); ?>
+    <?php if (!empty($this->breadcrumbs)) : ?>
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <?php $this->renderPartial('//layouts/_breadcrumbs'); ?>
+        </div>
+    </div>
+    <?php endif; ?>
 
     <?= $content; ?>
 

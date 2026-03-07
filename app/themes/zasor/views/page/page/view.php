@@ -24,14 +24,6 @@ $breadcrumbs = isset($breadcrumbs) ? $breadcrumbs : [];
 $this->breadcrumbs = $breadcrumbs;
 ?>
 
-<?php if (!empty($breadcrumbs)) : ?>
-<div class="breadcrumbs-container">
-    <div class="container">
-        <?php $this->renderPartial('//layouts/_breadcrumbs', ['breadcrumbs' => $breadcrumbs]); ?>
-    </div>
-</div>
-<?php endif; ?>
-
 <div class="serves-page">
     <div class="container">
         <div class="block-flex">
