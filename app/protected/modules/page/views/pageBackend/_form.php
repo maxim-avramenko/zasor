@@ -311,6 +311,20 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-sm-12">
+                <?= $form->labelEx($model, 'text_8'); ?>
+                <?php $this->widget(
+                    $this->module->getVisualEditor(),
+                    [
+                        'model' => $model,
+                        'attribute' => 'text_8',
+                    ]
+                ); ?>
+                <?= $form->error($model, 'text_8'); ?>
+            </div>
+        </div>
+
 
         <div class="row">
             <div class="col-sm-7">
