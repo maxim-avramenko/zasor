@@ -41,10 +41,15 @@ class PageController extends FrontController
             throw new CHttpException(404, Yii::t('PageModule.page', 'Page article was not found!'));
         }
 
-        $allServices = Page::model()->findAllByAttributes(
-            ['is_service' => Page::PROTECTED_YES],
-            ['order' => 't.`order` ASC, t.id DESC']
-        );
+        $criteria = new CDbCriteria([
+            'condition' => 't.parent_id = :parent_id AND t.status = :status',
+            'params' => [
+                ':parent_id' => $model->id,
+                ':status' => Page::STATUS_PUBLISHED,
+            ],
+            'order' => 't.`order` ASC, t.id DESC',
+        ]);
+        $allServices = Page::model()->findAll($criteria);
 
         $serviceNavItems = $this->getServiceNavItems();
 
