@@ -322,6 +322,9 @@ $this->breadcrumbs = $breadcrumbs;
             <div class="serves-content serves-content-seo">
                 <?php echo $model->text_7; ?>
             </div>
+            <div class="serves-content serves-content-seo">
+                <?php echo $model->text_8; ?>
+            </div>
         </div>
     </div>
 

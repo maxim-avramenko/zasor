@@ -43,3 +43,7 @@ https://zasorunetkzn.ru/uslugi-assenizatora.html - это шаблон услу�
 ==============================
 
 404
+
+cp docker/docker-compose.local.override.yml docker-compose.override.yml
+
+docker build --no-cache -f 7.4.base.dev.Dockerfile -t renat/php-fpm-7.4-xdebug-mysql:dev .
