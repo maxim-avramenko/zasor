@@ -31,7 +31,7 @@
  * @property string $text_5
  * @property string $text_6
  * @property string $text_7
- * @property float $price
+ * @property string|null $price
  * @property string $json_head
  * @property Gallery $gallery *
  * @property-read Page $parent
