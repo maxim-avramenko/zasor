@@ -285,7 +285,7 @@ Yii::import('application.components.UniversalAltHelper');
 //    'async' => true
 //]);
 ?>
-<script type="text/javascript" src="/js/swiper-main.js"></script>
-<!--<script src="/js/main.min.js"></script>-->
+<!--<script type="text/javascript" src="/js/swiper-main.js"></script>-->
+<script type="text/javascript" src="/js/main.min.js"></script>
 </body>
 </html>

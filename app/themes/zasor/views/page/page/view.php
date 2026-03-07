@@ -215,6 +215,271 @@ $this->breadcrumbs = $breadcrumbs;
     </div>
 </div>
 
+    <div class="menu-serves">
+        <div class="container">
+            <div class="service__list">
+                <div class="title title-line">
+                    Наши услуги
+                </div>
+                <div class="service__slider">
+                    <div class="service-slider swiper-container-initialized swiper-container-horizontal" style="cursor: grab;">
+                        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1815px, 0px, 0px);">
+                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="10" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/kombinirovannaya-kanalopromyvochnaya-mashina.html">Кoмбиниpoвaнная каналопромывочная машина</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-azs-avtomojki.html">Комбинированная каналопромывочная машина для АЗС и автомоек</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-chastnyj-sektor.html">Комбинированная каналопромывочная машина для частного сектора</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-dorozhnaya-infrastruktura.html">Комбинированная каналопромывочная машина для дорожной инфраструктуры</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-kommunalnoe-hozyajstvo.html">Комбинированная каналопромывочная машина для коммунального хозяйства</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-promyshlennye-predpriyatiya.html">Комбинированная каналопромывочная машина для промышленных предприятий</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-stroitelstvo-i-remont-setej.html">Комбинированная каналопромывочная машина для строительства и ремонта сетей</a></li>
+                                    </ul>
+                                </div>
+                            </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="11" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/polivomoechnaya-mashina-kdm.html">Поливомоечная машина</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-dorozhnogo-stroitelstva.html">Аренда поливомоечной машины для дорожного строительства</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-kommunalnogo-hozyajstva.html">Аренда поливомоечной машины для коммунального хозяйства</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-promyshlennyh-i-skladskih-territorij.html">Аренда поливомоечной машины для промышленных и складских территорий</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-stroitelnoj-ploshhadki.html">Аренда поливомоечной машины для строительной площадки</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-zimnego-soderzhaniya-dorog.html">Аренда поливомоечной машины для зимнего содержания дорог</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/spetc-primenenie-polivomoechnoi-mashiny-kdm.html">Спецприменение поливомоечной машины КДМ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="0" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/gidrodinamicheskaya-promyvka-kanalizacii.html">Промывка канализации</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-chastnom-dome.html">Промывка канализации в частном доме</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-kvartire.html">Промывка канализации в квартире</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-kottedzhe.html">Промывка канализации в коттедже</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-taunxause.html">Промывка канализации в таунхаусе</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-na-azs.html">Промывка канализации на АЗС</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-na-predpriyatii.html">Промывка канализации на предприятии</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-mnogokvartirnom-dome.html">Промывка канализации в многоквартирном доме</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="1" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/mehanicheskaya-chistka-kanalizacii.html">Прочистка канализации</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-chastnom-dome.html">Прочистка канализации в частном доме</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-kvartire.html">Прочистка канализации в квартире</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-kottedzhe.html">Прочистка канализации в коттедже</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-taunhause.html">Прочистка канализации в таунхаусе</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-na-azs.html">Прочистка канализации на АЗС</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-na-predpriyatii.html">Прочистка канализации на предприятии</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-mnogokvartirnom-dome.html">Прочистка канализации в многоквартирном доме</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="2" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/obsledovanie-trub.html">Обследование канализации</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/obsledovanie-trub/obsledovanie-kanalizacii-v-chastnom-dome.html">Обследование канализации в частном доме</a></li>
+                                        <li><a href="/obsledovanie-trub/obsledovanie-kanalizacii-v-kvartire.html">Обследование канализации в квартире</a></li>
+                                        <li><a href="/obsledovanie-trub/obsledovanie-kanalizacii-v-kottedzhe.html">Обследование канализации в коттедже</a></li>
+                                        <li><a href="/obsledovanie-trub/obsledovanie-kanalizacii-v-taunhause.html">Обследование канализации в таунхаусе</a></li>
+                                        <li><a href="/obsledovanie-trub/obsledovanie-kanalizacii-na-azs.html">Обследование канализации на АЗС</a></li>
+                                        <li><a href="/obsledovanie-trub/obsledovanie-kanalizacii-na-predpriyatii.html">Обследование канализации на предприятии</a></li>
+                                        <li><a href="/obsledovanie-trub/obsledovanie-livnevoi-kanalizacii.html">Обследование ливневой канализации</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="3" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/otkachka-vygrebnyh-yam.html">Откачка выгребных ям</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/otkachka-vygrebnyh-yam/otkachka-vygrebnoj-yamy-v-chastnom-dome.html">Откачка выгребной ямы в частном доме</a></li>
+                                        <li><a href="/otkachka-vygrebnyh-yam/otkachka-vygrebnoj-yamy-v-chastnom-sektore.html">Откачка выгребной ямы в частном секторе</a></li>
+                                        <li><a href="/otkachka-vygrebnyh-yam/otkachka-vygrebnoj-yamy-v-kottedzhe.html">Откачка выгребной ямы в коттедже</a></li>
+                                        <li><a href="/otkachka-vygrebnyh-yam/otkachka-vygrebnoj-yamy-v-taunhause.html">Откачка выгребной ямы в таунхаусе</a></li>
+                                        <li><a href="/otkachka-vygrebnyh-yam/otkachka-vygrebnoj-yamy-na-azs.html">Откачка выгребной ямы на АЗС</a></li>
+                                        <li><a href="/otkachka-vygrebnyh-yam/otkachka-vygrebnoj-yamy-na-predpriyatii.html">Откачка выгребной ямы на предприятии</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="4" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/obsluzhivanie-kns.html">Обслуживание КНС</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/obsluzhivanie-kns/obsluzhivanie-kns-i-los-dlya-kottedzhnykh-poselkov.html">Обслуживание КНС для коттеджных поселков</a></li>
+                                        <li><a href="/obsluzhivanie-kns/obsluzhivanie-kns-i-los-dlya-promyshlennykh-predpriyatij.html">Обслуживание КНС для промышленных предприятий</a></li>
+                                        <li><a href="/obsluzhivanie-kns/obsluzhivanie-kns-i-los-dlya-selskogo-khozyajstva.html">Обслуживание КНС для сельского хозяйства</a></li>
+                                        <li><a href="/obsluzhivanie-kns/obsluzhivanie-kns-i-los-dlya-tc-otelej-restoranov.html">Обслуживание КНС для ТЦ, отелей, ресторанов</a></li>
+                                        <li><a href="/obsluzhivanie-kns/obsluzhivanie-kns-i-los-dlya-zhkh.html">Обслуживание КНС для ЖКХ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="5" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/uslugi-assenizatora.html">Услуги ассенизатора</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/uslugi-assenizatora/uslugi-assenizatora-v-chastnom-dome.html">Услуги ассенизатора в частном доме</a></li>
+                                        <li><a href="/uslugi-assenizatora/uslugi-assenizatora-v-chastnom-sektore.html">Услуги ассенизатора в частном секторе</a></li>
+                                        <li><a href="/uslugi-assenizatora/uslugi-assenizatora-v-kottedzhe.html">Услуги ассенизатора в коттедже</a></li>
+                                        <li><a href="/uslugi-assenizatora/uslugi-assenizatora-v-taunhause.html">Услуги ассенизатора в таунхаусе</a></li>
+                                        <li><a href="/uslugi-assenizatora/uslugi-assenizatora-na-azs.html">Услуги ассенизатора на АЗС</a></li>
+                                        <li><a href="/uslugi-assenizatora/uslugi-assenizatora-na-predpriyatii.html">Услуги ассенизатора на предприятии</a></li>
+                                        <li><a href="/uslugi-assenizatora/uslugi-assenizatora-v-mnogokvartirnom-dome.html">Услуги ассенизатора в многоквартирном доме</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="6" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/razmorozka-trub.html">Разморозка труб</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/razmorozka-trub/razmorozka-trub-v-chastnom-dome.html">Разморозка труб в частном доме</a></li>
+                                        <li><a href="/razmorozka-trub/razmorozka-trub-v-kottedzhe.html">Разморозка труб в коттедже</a></li>
+                                        <li><a href="/razmorozka-trub/razmorozka-trub-v-taunhause.html">Разморозка труб в таунхаусе</a></li>
+                                        <li><a href="/razmorozka-trub/razmorozka-trub-na-predpriyatii.html">Разморозка труб на предприятии</a></li>
+                                        <li><a href="/razmorozka-trub/razmorozka-trub-na-stroyke.html">Разморозка труб на стройке</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="7" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/otkachka-avtomoek.html">Очистка автомоек</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Очистка автомоек самообслуживания</a></li>
+                                        <li><a href="javascript:void(0)">Очистка автоматизированных автомоек</a></li>
+                                        <li><a href="javascript:void(0)">Очистка портальных автомоек</a></li>
+                                        <li><a href="javascript:void(0)">Очистка конвейерных автомоек</a></li>
+                                        <li><a href="javascript:void(0)">Очистка детейлинг центров</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="8" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/uslugi-ilososa.html">Услуги илососа</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/uslugi-ilososa/uslugi-ilososa-v-chastnom-dome.html">Услуги илососа в частном доме</a></li>
+                                        <li><a href="/uslugi-ilososa/uslugi-ilososa-v-chastnom-sektore.html">Услуги илососа в частном секторе</a></li>
+                                        <li><a href="/uslugi-ilososa/uslugi-ilososa-v-kottedzhe.html">Услуги илососа в коттедже</a></li>
+                                        <li><a href="/uslugi-ilososa/uslugi-ilososa-v-taunxause.html">Услуги илососа в таунхаусе</a></li>
+                                        <li><a href="/uslugi-ilososa/uslugi-ilososa-na-azs.html">Услуги илососа на АЗС</a></li>
+                                        <li><a href="/uslugi-ilososa/uslugi-ilososa-na-predpriyatii.html">Услуги илососа на предприятии</a></li>
+                                        <li><a href="/uslugi-ilososa/uslugi-ilososa-v-mnogokvartirnom-dome.html">Услуги илососа в многоквартирном доме</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="9" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/parogenerator.html">Аренда парогенератора</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/parogenerator/proparka-avtotsistern.html">Пропарка автоцистерн</a></li>
+                                        <li><a href="/parogenerator/proparka-benzovozov.html">Пропарка бензовозов</a></li>
+                                        <li><a href="/parogenerator/proparka-fundamenta.html">Пропарка фундамента</a></li>
+                                        <li><a href="/parogenerator/proparka-oborudovaniya.html">Пропарка оборудования</a></li>
+                                        <li><a href="/parogenerator/proparka-truboprovodov.html">Пропарка трубопроводов</a></li>
+                                        <li><a href="/parogenerator/razmorozka-kanalizacii-parom.html">Разморозка канализации паром</a></li>
+                                        <li><a href="/parogenerator/razmorozka-otopleniya-otogrev-trub.html">Разморозка отопления, отогрев труб</a></li>
+                                        <li><a href="/parogenerator/razmorozka-trub-parom.html">Разморозка труб паром</a></li>
+                                        <li><a href="/parogenerator/udalenie-bituma-parogeneratorom.html">Удаление битума парогенератором</a></li>
+                                        <li><a href="/parogenerator/udalenie-snega-i-lda-parogeneratorom.html">Удаление снега и льда парогенератором</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="10" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/kombinirovannaya-kanalopromyvochnaya-mashina.html">Кoмбиниpoвaнная каналопромывочная машина</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-azs-avtomojki.html">Комбинированная каналопромывочная машина для АЗС и автомоек</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-chastnyj-sektor.html">Комбинированная каналопромывочная машина для частного сектора</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-dorozhnaya-infrastruktura.html">Комбинированная каналопромывочная машина для дорожной инфраструктуры</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-kommunalnoe-hozyajstvo.html">Комбинированная каналопромывочная машина для коммунального хозяйства</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-promyshlennye-predpriyatiya.html">Комбинированная каналопромывочная машина для промышленных предприятий</a></li>
+                                        <li><a href="/kombinirovannaya-kanalopromyvochnaya-mashina/kombinirovannaya-kanalopromyvochnaya-mashina-stroitelstvo-i-remont-setej.html">Комбинированная каналопромывочная машина для строительства и ремонта сетей</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide" data-swiper-slide-index="11" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/polivomoechnaya-mashina-kdm.html">Поливомоечная машина</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-dorozhnogo-stroitelstva.html">Аренда поливомоечной машины для дорожного строительства</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-kommunalnogo-hozyajstva.html">Аренда поливомоечной машины для коммунального хозяйства</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-promyshlennyh-i-skladskih-territorij.html">Аренда поливомоечной машины для промышленных и складских территорий</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-stroitelnoj-ploshhadki.html">Аренда поливомоечной машины для строительной площадки</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/arenda-polivomoechnoi-mashiny-dlya-zimnego-soderzhaniya-dorog.html">Аренда поливомоечной машины для зимнего содержания дорог</a></li>
+                                        <li><a href="/polivomoechnaya-mashina-kdm/spetc-primenenie-polivomoechnoi-mashiny-kdm.html">Спецприменение поливомоечной машины КДМ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/gidrodinamicheskaya-promyvka-kanalizacii.html">Промывка канализации</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-chastnom-dome.html">Промывка канализации в частном доме</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-kvartire.html">Промывка канализации в квартире</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-kottedzhe.html">Промывка канализации в коттедже</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-taunxause.html">Промывка канализации в таунхаусе</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-na-azs.html">Промывка канализации на АЗС</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-na-predpriyatii.html">Промывка канализации на предприятии</a></li>
+                                        <li><a href="/gidrodinamicheskaya-promyvka-kanalizacii/promyvka-kanalizacii-v-mnogokvartirnom-dome.html">Промывка канализации в многоквартирном доме</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" style="width: 287.5px; margin-right: 15px;">
+                                <div class="service__nav">
+                                    <div class="service__title">
+                                        <a href="/mehanicheskaya-chistka-kanalizacii.html">Прочистка канализации</a>
+                                    </div>
+                                    <ul>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-chastnom-dome.html">Прочистка канализации в частном доме</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-kvartire.html">Прочистка канализации в квартире</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-kottedzhe.html">Прочистка канализации в коттедже</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-taunhause.html">Прочистка канализации в таунхаусе</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-na-azs.html">Прочистка канализации на АЗС</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-na-predpriyatii.html">Прочистка канализации на предприятии</a></li>
+                                        <li><a href="/mehanicheskaya-chistka-kanalizacii/elektromehanicheskaya-prochistka-kanalizacii-v-mnogokvartirnom-dome.html">Прочистка канализации в многоквартирном доме</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                    <div class="swiper-button-next service-slider-btn" tabindex="0" role="button" aria-label="Next slide">
+                        <img src="/images/icons/arrow.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <div class="serves-map">
     <div class="container">
