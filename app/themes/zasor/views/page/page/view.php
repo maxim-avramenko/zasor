@@ -25,8 +25,10 @@ $this->breadcrumbs = $breadcrumbs;
 ?>
 
 <?php if (!empty($breadcrumbs)) : ?>
-<div class="container breadcrumbs-container">
-    <?php $this->renderPartial('//layouts/_breadcrumbs', ['breadcrumbs' => $breadcrumbs]); ?>
+<div class="breadcrumbs-container">
+    <div class="container">
+        <?php $this->renderPartial('//layouts/_breadcrumbs', ['breadcrumbs' => $breadcrumbs]); ?>
+    </div>
 </div>
 <?php endif; ?>
 

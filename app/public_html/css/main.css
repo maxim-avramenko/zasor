@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
 @import url(../css/swiper.min.css);
-/* @import url(../css/service.scss);*/
 @import url(../css/settings.scss);
 @import url(../css/header.scss); 
 /* CSS Document */
@@ -412,10 +411,38 @@ body {
   font-size: 14px;
 }
 /* =========!!!======== */
-
-
-
-
+.breadcrumbs-container {
+  width: 100%;
+  background: #fff;
+  padding-top: 2%;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
+.breadcrumbs span:last-child {
+  color: red;
+}
+.breadcrumbs span a {
+  color: #282828;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.breadcrumbs span a::after {
+  content: '/';
+  display: block;
+  font-size: inherit;
+  color: inherit;
+  margin: 0 4px;
+  -webkit-transition: none;
+  -o-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
 
 
 
@@ -3169,7 +3196,6 @@ a.btn-wh-serves-page {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	filter: blur(5px);
 	pointer-events: none;
 }
 
@@ -3373,13 +3399,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f92da",endCo
 }
 
 .price-page {
-	margin-bottom: 160px;
 }
 .price {
 	margin-top: 60px;
 }
 .price-block {
-	margin: 0 auto;
+	margin-bottom: 160px;
 	justify-content: center;
 	display: flex;
 }

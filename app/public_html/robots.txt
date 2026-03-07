@@ -1,7 +1,3 @@
 User-agent: *
 
-Disallow: /cgi-sys/
-Disallow: /cgi-bin/
-
-Host: https://zasorunetkzn.ru/
-Sitemap: https://zasorunetkzn.ru/sitemap.xml
+Disallow: /

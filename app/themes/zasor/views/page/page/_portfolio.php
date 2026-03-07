@@ -19,6 +19,7 @@ $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
 ?>
 
 <div class="portfolio">
+    <div class="container">
     <div class="portfolio__block">
 
         <?php $this->widget(
@@ -56,5 +57,6 @@ $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
                 </p>
             </div>
         </div>
+    </div>
     </div>
 </div>
