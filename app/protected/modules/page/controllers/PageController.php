@@ -46,12 +46,47 @@ class PageController extends FrontController
             ['order' => 't.`order` ASC, t.id DESC']
         );
 
+        $serviceNavItems = $this->getServiceNavItems();
+
         $breadcrumbs = $this->buildBreadcrumbs($model);
 
         $this->render(
             $model->view ?: 'view',
-            ['model' => $model, 'allServices' => $allServices, 'breadcrumbs' => $breadcrumbs]
+            [
+                'model' => $model,
+                'allServices' => $allServices,
+                'serviceNavItems' => $serviceNavItems,
+                'breadcrumbs' => $breadcrumbs,
+            ]
         );
+    }
+
+    /**
+     * Возвращает страницы первого уровня (без parent_id) с дочерними страницами
+     * для блока навигации услуг.
+     *
+     * @return Page[]
+     */
+    protected function getServiceNavItems()
+    {
+        $criteria = new CDbCriteria([
+            'condition' => '(t.parent_id IS NULL OR t.parent_id = 0)'
+                . ' AND t.is_service = :is_service AND t.status = :status',
+            'params' => [
+                ':is_service' => Page::SERVICE_YES,
+                ':status' => Page::STATUS_PUBLISHED,
+            ],
+            'order' => 't.`order` ASC, t.id DESC',
+            'with' => [
+                'childPages' => [
+                    'condition' => 'childPages.status = :child_status',
+                    'params' => [':child_status' => Page::STATUS_PUBLISHED],
+                    'order' => 'childPages.`order` ASC, childPages.id DESC',
+                ],
+            ],
+        ]);
+
+        return Page::model()->findAll($criteria);
     }
 
     /**
