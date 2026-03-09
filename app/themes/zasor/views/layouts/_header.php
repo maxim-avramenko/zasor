@@ -33,8 +33,28 @@
             <?php endif; ?>
             <div class="header-contacts">
                 <div class="around-the-clock">
-                    <img src="/images/24_7.webp" alt="">
+                    <button type="button" class="around-the-clock-btn" aria-label="Прослушать сообщение">
+                        <img src="/images/24_7.webp" alt="Круглосуточно">
+                    </button>
+                    <audio id="audio-24-7" preload="metadata">
+                        <source src="/robots.m4a" type="audio/mp4">
+                    </audio>
                 </div>
+                <script>
+                (function() {
+                    var btn = document.querySelector('.around-the-clock-btn');
+                    var audio = document.getElementById('audio-24-7');
+                    if (!btn || !audio) return;
+                    btn.addEventListener('click', function() {
+                        if (audio.paused) {
+                            audio.play();
+                        } else {
+                            audio.pause();
+                            audio.currentTime = 0;
+                        }
+                    });
+                })();
+                </script>
                 <?php
                 $hasSocial = !empty($yupe->companyTelegram) || !empty($yupe->companyPhone) || !empty($yupe->companyYoutube) || !empty($yupe->companyInstagramm) || !empty($yupe->companyVk) || !empty($yupe->companyIMO);
                 if ($hasSocial):

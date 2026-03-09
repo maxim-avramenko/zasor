@@ -659,6 +659,12 @@ span[data-title] {
 	min-width: 40px;
 	min-height: 46px;
 }
+.around-the-clock-btn {
+	cursor: pointer;
+	border: 0;
+	background: none;
+	padding: 0;
+}
 .around-the-clock img {
 	width: 46px;
 	height: 46px;
