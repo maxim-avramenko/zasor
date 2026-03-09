@@ -27,6 +27,11 @@ class SiteController extends FrontController
     {
         \Yii::import('application.components.UniversalAltHelper');
 
+        $yupe = \Yii::app()->getModule('yupe');
+        $this->title = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : $yupe->siteName;
+        $this->description = !empty($yupe->mainPageDescription) ? $yupe->mainPageDescription : $yupe->siteDescription;
+        $this->keywords = !empty($yupe->mainPageKeywords) ? $yupe->mainPageKeywords : $yupe->siteKeyWords;
+
         $servicePages = \Page::model()
             ->published()
             ->service()

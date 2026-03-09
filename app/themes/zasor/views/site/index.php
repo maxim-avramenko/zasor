@@ -1,34 +1,36 @@
 <?php
-$this->title = Yii::app()->getModule('yupe')->siteName;
-$this->description = Yii::app()->getModule('yupe')->siteDescription;
-$this->keywords = Yii::app()->getModule('yupe')->siteKeyWords;
-
 $this->canonical = $this->createAbsoluteUrl(Yii::app()->request->getPathInfo());
 
 $this->schema = <<<EOF
 
 EOF;
 
+$yupe = Yii::app()->getModule('yupe');
+$mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->companyDescription) ? $yupe->companyDescription : $yupe->siteName);
 ?>
 
     <main class="first-area">
         <div class="container">
-            <h1>Устранение засоров<br>в Казани и округе</h1>
+            <?php if (!empty($mainH1)): ?>
+            <h1><?= CHtml::encode($mainH1) ?></h1>
+            <?php endif; ?>
             <div class="box-first-area">
                 <div class="col-first-area-left">
                     <div class="first-area-oplata">
                         <div class="first-area-oplata-nds">Работаем с <span><strong>НДС</strong> и без <strong>НДС</strong></span></div>
                         <div class="first-area-oplata-nal">Принимаем оплату:<span>наличный и безналичный расчет</span></div>
                     </div>
+                    <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="first-area-zakaz">
                         <div class="first-area-wh">
-                            <a href="whatsapp://send?phone=79172612455&text=Добрый день!"><img src="/images/hd-24_7.webp" alt="">
+                            <a href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>&text=Добрый день!"><img src="/images/hd-24_7.webp" alt="">
                                 <span>Заказать аварийную службу</span></a>
                         </div>
                         <div class="first-area-phone">
-                            <a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a>
+                            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                         </div>
                     </div>
+                    <?php endif; ?>
                     <div class="first-area-say">
                         <div class="first-area-say-head">
                             <div class="owner"><img src="/images/owner.png" alt=""></div>
@@ -40,19 +42,28 @@ EOF;
                     </div>
                 </div>
                 <div class="col-first-area-right">
+                    <?php
+                    $hasAppBlock = !empty($yupe->companyApplicationQR) || !empty($yupe->companyApplicationAppStore) || !empty($yupe->companyApplicationGooglePlay);
+                    if ($hasAppBlock):
+                    ?>
                     <div class="border-figure">
                         <div class="border-radius-fff">
                             <span class="icon-question qr-head" rel="tooltip" data-title="На данный момент приложение на доработке" title=""></span>
-                            <img src="/images/qr.webp" alt="">
+                            <?php if (!empty($yupe->companyApplicationQR)): ?><img src="/<?= ltrim($yupe->companyApplicationQR, '/') ?>" alt="qr"><?php endif; ?>
                             <div class="box-google-apple-store-images">
                                 <ul>
-                                    <li><a href="#"><img src="/images/icons/app-store-logo.webp" alt=""></a></li>
-                                    <li><a href="#"><img src="/images/icons/google-store-logo.webp" alt=""></a></li>
+                                    <?php if (!empty($yupe->companyApplicationAppStore)): ?>
+                                    <li><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img src="/images/icons/app-store-logo.webp" alt=""></a></li>
+                                    <?php endif; ?>
+                                    <?php if (!empty($yupe->companyApplicationGooglePlay)): ?>
+                                    <li><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img src="/images/icons/google-store-logo.webp" alt=""></a></li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                             <div class="border-radius-fff-text">установить<br>приложение</div>
                         </div>
                     </div>
+                    <?php endif; ?>
                     <!-- <img src="/images/bg-head.webp" alt="Устранение засоров"> -->
                     <!-- Swiper -->
                     <div class="swiper mySwiper">
@@ -111,8 +122,8 @@ EOF;
             <div class="list-services-h2">
                 <h2>Услуги</h2>
                 <div class="snip">
-                    <div class="box-snip">Осуществляем прочистку засоров круглосуточно – <strong>24 часа в сутки 7 дней в неделю</strong></div>
-                    <a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a>
+                    <div class="box-snip">Осуществляем прочистку засоров <?php if (!empty($yupe->companyWorkTime)): ?><?= CHtml::encode($yupe->companyWorkTime) ?><?php else: ?>круглосуточно<?php endif; ?> – <strong>24 часа в сутки 7 дней в неделю</strong></div>
+                    <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
                 </div>
             </div>
             <div class="main-services">
@@ -147,23 +158,30 @@ EOF;
                     <div class="commercial-section-h3">
                         Быстрая подача<br>профессиональной техники
                     </div>
+                    <?php if (!empty($yupe->companyApplicationQR) || !empty($yupe->companyApplicationAppStore) || !empty($yupe->companyApplicationGooglePlay)): ?>
                     <div class="app-commercial-section">
                         Отслеживание<br>через приложение
-                        <img src="images/AppStore.webp" alt="">
-                        <img src="images/GooglePlay.webp" alt="">
+                        <?php if (!empty($yupe->companyApplicationAppStore)): ?><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img src="images/AppStore.webp" alt=""></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyApplicationGooglePlay)): ?><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img src="images/GooglePlay.webp" alt=""></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyApplicationQR)): ?>
                         <div class="qr-commercial-block">
-                            <img src="images/qr.webp" alt="qr">
+                            <img src="/<?= ltrim($yupe->companyApplicationQR, '/') ?>" alt="qr">
                         </div>
+                        <?php endif; ?>
                     </div>
+                    <?php endif; ?>
+                    <?php if (!empty($yupe->companyPhone) || !empty($yupe->companyTelegram) || !empty($yupe->companyWorkTime)): ?>
                     <div class="phone-col-commercial">
+                        <?php if (!empty($yupe->companyTelegram) || !empty($yupe->companyPhone)): ?>
                         <ul>
-                            <li><a href="https://t.me/Zasorynet" rel="nofollow" target="_blank"><span class="icon-telegram"></span></a></li>
-                            <li><a href="whatsapp://send?phone=79172612455" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span></a></li>
-                            <li><a href="tel:+79172612455"><span class="icon-phone"></span></a></li>
+                            <?php if (!empty($yupe->companyTelegram)): ?><li><a href="<?= CHtml::encode($yupe->companyTelegram) ?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span></a></li><?php endif; ?>
+                            <?php if (!empty($yupe->companyPhone)): ?><li><a href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span></a></li><li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>"><span class="icon-phone"></span></a></li><?php endif; ?>
                         </ul>
-                        <a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a>
-                        <time>Круглосуточно</time>
+                        <?php endif; ?>
+                        <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyWorkTime)): ?><time><?= CHtml::encode($yupe->companyWorkTime) ?></time><?php endif; ?>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -231,7 +249,7 @@ EOF;
                 </a>
                 <div class="info-completed-works-gallery">
                     <div>Более 10 лет <br>опыта</div>
-                    <div><a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a><br></div>
+                    <?php if (!empty($yupe->companyPhone)): ?><div><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><br></div><?php endif; ?>
                     <div class="info-completed-works-gallery-description">
                         <strong>10897</strong><span>+</span>
                         <span>Успешно<br>выполненных задач</span>
@@ -246,16 +264,20 @@ EOF;
                 <div class="column">
                     <h2>Область нашей деятельности</h2>
                     <span class="icon-location"></span>
+                    <?php if (!empty($yupe->citiesList)): ?>
                     <div class="work-area-content">
-                        <p>Набережных Челнах, Нижнекамске,Альметевске, Лениногорске, Менделеевске  А также города: Зеленодольск, Айша, Столбище, Высокая Гора, Арск, Ореховка, Загородный клуб, Базарные матаки, Залесный, Нагорный, Дербышки, Рыбная слобода, Мирный, Куюки, Большие клыки, Малые клыки, Самосырово, Орловка, Осиново, Верхний Услон, Васильево, Пестрецы, Волжск, Лаишево, Богатые Сабы, Займище, Набережные Моркваши, Богородское, Салмычи, Алтан, Константиновка, Усады, Бор. Матюшино, Борисково, Вознесение </p>
+                        <p><?= nl2br(CHtml::encode($yupe->citiesList)) ?></p>
                     </div>
+                    <?php endif; ?>
                     <div class="work-area-snip">
-                        Осуществляем прочистку засоров<span>круглосуточно – 24 часа в сутки 7 дней в неделю</span>
+                        Осуществляем прочистку засоров<span><?php if (!empty($yupe->companyWorkTime)): ?> <?= CHtml::encode($yupe->companyWorkTime) ?><?php else: ?>круглосуточно<?php endif; ?> – 24 часа в сутки 7 дней в неделю</span>
                     </div>
+                    <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="btn-work-area">
-                        <a class="tel" href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a>
-                        <a class="btn-wh" href="whatsapp://send?phone=79172612455" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                        <a class="tel" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                        <a class="btn-wh" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <div class="column">
                     <!-- MAP script -->
@@ -272,9 +294,11 @@ EOF;
                     <div class="tszh-uk-block-content">
                         <p><strong>Большой объём - большая скидка</strong> Особые условия для ТСЖ и ЖКХ. Подробнеости уточняйте по телефону</p>
                     </div>
+                    <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="tszh-uk-block-tel">
-                        Подробности - <a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a>
+                        Подробности - <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                     </div>
+                    <?php endif; ?>
                 </div>
                 <div class="column">
                     <img src="images/city.png" alt="img">
@@ -296,12 +320,14 @@ EOF;
                     <li><span>Кафе и Рестораны</span></li>
                     <li><span>Офисы и Бизнес-центры</span></li>
                     <li><span>АЗС и Автомойки</span></li>
+                    <?php if (!empty($yupe->companyPhone)): ?>
                     <li>
                         <div class="btn-work-area">
-                            <a class="btn-wh" href="whatsapp://send?phone=79172612455" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
-                            <div class="section-10-block-tel">Подробности - <a class="tel-light" href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a></div>
+                            <a class="btn-wh" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                            <div class="section-10-block-tel">Подробности - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
                         </div>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -357,12 +383,14 @@ EOF;
             </div>
         </div>
     </div>
+    <?php if (!empty($yupe->companyPhone)): ?>
     <div class="section-12">
         <div class="container">
             <div class="question">
                 Остались вопросы ?
-                <span>Спросите <img src="images/24_7.webp" alt=""> <a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a></span>
+                <span>Спросите <img src="images/24_7.webp" alt=""> <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></span>
             </div>
         </div>
     </div>
+    <?php endif; ?>
 

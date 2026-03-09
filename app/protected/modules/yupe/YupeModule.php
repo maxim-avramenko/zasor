@@ -64,6 +64,19 @@ class YupeModule extends WebModule
     public $companySpanPhone;
     public $companyDescription;
 
+    public $companyPostalCode;
+    public $citiesList;
+    public $companyTelegram;
+    public $companyIMO;
+    public $mainPageTitle;
+    public $mainPageDescription;
+    public $mainPageKeywords;
+    public $companyApplicationQR;
+    public $companyApplicationAppStore;
+    public $companyApplicationGooglePlay;
+    public $footerWarningText;
+    public $footerDisclaimerText;
+
     /**
      * @var string
      */
@@ -370,6 +383,18 @@ class YupeModule extends WebModule
             'companyWorkTime' => Yii::t('YupeModule.yupe', 'companyWorkTime'),
             'companySpanPhone' => Yii::t('YupeModule.yupe', 'companySpanPhone'),
             'companyDescription' => Yii::t('YupeModule.yupe', 'companyDescription'),
+            'companyPostalCode' => Yii::t('YupeModule.yupe', 'companyPostalCode'),
+            'citiesList' => Yii::t('YupeModule.yupe', 'citiesList'),
+            'companyTelegram' => Yii::t('YupeModule.yupe', 'companyTelegram'),
+            'companyIMO' => Yii::t('YupeModule.yupe', 'companyIMO'),
+            'mainPageTitle' => Yii::t('YupeModule.yupe', 'mainPageTitle'),
+            'mainPageDescription' => Yii::t('YupeModule.yupe', 'mainPageDescription'),
+            'mainPageKeywords' => Yii::t('YupeModule.yupe', 'mainPageKeywords'),
+            'companyApplicationQR' => Yii::t('YupeModule.yupe', 'companyApplicationQR'),
+            'companyApplicationAppStore' => Yii::t('YupeModule.yupe', 'companyApplicationAppStore'),
+            'companyApplicationGooglePlay' => Yii::t('YupeModule.yupe', 'companyApplicationGooglePlay'),
+            'footerWarningText' => Yii::t('YupeModule.yupe', 'footerWarningText'),
+            'footerDisclaimerText' => Yii::t('YupeModule.yupe', 'footerDisclaimerText'),
 
         ];
     }
@@ -415,6 +440,18 @@ class YupeModule extends WebModule
             'companyWorkTime',
             'companySpanPhone',
             'companyDescription',
+            'companyPostalCode',
+            'citiesList',
+            'companyTelegram',
+            'companyIMO',
+            'mainPageTitle',
+            'mainPageDescription',
+            'mainPageKeywords',
+            'companyApplicationQR',
+            'companyApplicationAppStore',
+            'companyApplicationGooglePlay',
+            'footerWarningText',
+            'footerDisclaimerText',
         ];
     }
 
@@ -433,6 +470,9 @@ class YupeModule extends WebModule
                     'siteName',
                     'siteDescription',
                     'siteKeyWords',
+                    'mainPageTitle',
+                    'mainPageDescription',
+                    'mainPageKeywords',
                 ],
             ],
 
@@ -445,14 +485,29 @@ class YupeModule extends WebModule
                     'companyCity',
                     'companyStreet',
                     'companyOffice',
+                    'companyPostalCode',
                     'companyPhone',
                     'companyEmail',
                     'companyInstagramm',
                     'companyVk',
                     'companyYoutube',
+                    'companyTelegram',
+                    'companyIMO',
                     'companyWorkTime',
                     'companySpanPhone',
-                    'companyDescription'
+                    'companyDescription',
+                    'citiesList',
+                    'companyApplicationQR',
+                    'companyApplicationAppStore',
+                    'companyApplicationGooglePlay',
+                ],
+            ],
+
+            'footer' => [
+                'label' => Yii::t('YupeModule.yupe', 'Footer'),
+                'items' => [
+                    'footerWarningText',
+                    'footerDisclaimerText',
                 ],
             ],
 

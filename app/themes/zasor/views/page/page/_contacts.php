@@ -10,7 +10,7 @@ $this->title = $model->meta_title ?: $model->title;
 $this->description = $model->meta_description ?: Yii::app()->getModule('yupe')->siteDescription;
 $this->keywords = $model->meta_keywords ?: Yii::app()->getModule('yupe')->siteKeyWords;
 
-$this->canonical = Yii::app()->createAbsoluteUrl('/page/page/view', ['slug' => $model->slug]);;
+$this->canonical = Yii::app()->createAbsoluteUrl('/page/page/view', ['slug' => $model->slug]);
 
 $this->pageH1 = $model->title;
 
@@ -20,30 +20,49 @@ $this->breadcrumbs = isset($breadcrumbs) ? $breadcrumbs : [
 ];
 $this->schema = $model->json_head;
 ?>
+<?php $yupe = Yii::app()->getModule('yupe'); ?>
 <div class="page-contacts">
     <div class="container">
         <div class="contacts">
             <h1>Контакты</h1>
             <div class="contacts-block">
-                <img src="/images/24_7.webp" alt="Круглосуточно">
+                <?php if (!empty($yupe->companyWorkTime)): ?><img src="/images/24_7.webp" alt="<?= CHtml::encode($yupe->companyWorkTime) ?>"><?php endif; ?>
+                <?php if (!empty($yupe->companyPostalCode) || !empty($yupe->companyCountry) || !empty($yupe->companyCity) || !empty($yupe->companyStreet)): ?>
                 <div class="contacts-adres">
-                    <span class="icon-location"></span>420061 <br>Россия, Республика Татарстан, Казань,<br> ул. Николая Ершова, 27И
+                    <span class="icon-location"></span>
+                    <?php
+                    $addrParts = array_filter([
+                        $yupe->companyPostalCode,
+                        $yupe->companyCountry,
+                        $yupe->companyRegion,
+                        $yupe->companyCity,
+                        $yupe->companyStreet,
+                        $yupe->companyOffice,
+                    ]);
+                    echo nl2br(CHtml::encode(implode(' ', $addrParts)));
+                    ?>
                 </div>
+                <?php endif; ?>
                 <div class="contacts-connection">
-                    <div class="contacts-phone"><span class="icon-phone"></span><a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a></div>
-                    <a class="mail" href="mailto:zasor116@mail.ru">zasor116@mail.ru</a>
+                    <?php if (!empty($yupe->companyPhone)): ?>
+                    <div class="contacts-phone"><span class="icon-phone"></span><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
+                    <?php endif; ?>
+                    <?php if (!empty($yupe->companyEmail)): ?>
+                    <a class="mail" href="mailto:<?= CHtml::encode($yupe->companyEmail) ?>"><?= CHtml::encode($yupe->companyEmail) ?></a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<?php if (!empty($yupe->citiesList)): ?>
 <div class="sector-work">
     <div class="container">
         <h2>Область обслуживания</h2>
-        <div class="position-work">Набережных Челнах, Нижнекамске,Альметевске, Лениногорске, Менделеевске А также города: Зеленодольск, Айша, Столбище, Высокая Гора, Арск, Ореховка, Загородный клуб, Базарные матаки, Залесный, Нагорный, Дербышки, Рыбная слобода, Мирный, Куюки, Большие клыки, Малые клыки, Самосырово, Орловка, Осиново, Верхний Услон, Васильево, Пестрецы, Волжск, Лаишево, Богатые Сабы, Займище, Набережные Моркваши, Богородское, Салмычи, Алтан, Константиновка, Усады, Бор. Матюшино, Борисково, Вознесение
-        </div>
+        <div class="position-work"><?= nl2br(CHtml::encode($yupe->citiesList)) ?></div>
     </div>
 </div>
+<?php endif; ?>
 <div class="contacts-map">
     <div class="container">
         <h3>Базируемся в Казани</h3>
@@ -55,32 +74,40 @@ $this->schema = $model->json_head;
 <div class="tszh-uk-contacts">
     <div class="container">
         <div class="tszh-uk-contacts-block">
+            <?php if (!empty($yupe->companyPhone)): ?>
             <div class="col">
-                <h4>Специальные условиядля УК и ТСЖ</h4>
-                <a href="tel:+79172612455" title="контактный телефон">Подробности - 8 (917) 261 24 55</a>
+                <h4>Специальные условия для УК и ТСЖ</h4>
+                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон">Подробности - <?= CHtml::encode($yupe->companyPhone) ?></a>
             </div>
+            <?php endif; ?>
+            <?php if (!empty($yupe->companyApplicationQR) || !empty($yupe->companyApplicationAppStore) || !empty($yupe->companyApplicationGooglePlay)): ?>
             <div class="col">
                 <div class="footer-app-commercial-section">
                     <div class="footer-app-commercial-section-sub">
-                        <img src="/images/AppStore.webp" alt="">
-                        <img src="/images/GooglePlay.webp" alt="">
+                        <?php if (!empty($yupe->companyApplicationAppStore)): ?><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img src="/images/AppStore.webp" alt="App Store"></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyApplicationGooglePlay)): ?><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img src="/images/GooglePlay.webp" alt="Google Play"></a><?php endif; ?>
                     </div>
+                    <?php if (!empty($yupe->companyApplicationQR)): ?>
                     <div class="footer-qr-commercial-block">
-                        <img src="/images/qr.webp" alt="qr-app">
+                        <img src="/<?= ltrim($yupe->companyApplicationQR, '/') ?>" alt="qr-app">
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
+<?php if (!empty($yupe->companyPhone)): ?>
 <div class="section-12">
     <div class="container">
         <div class="question">
             Остались вопросы ?
-            <span>Спросите <img src="/images/24_7.webp" alt=""> <a href="tel:+79172612455" title="контактный телефон">8 (917) 261 24 55</a></span>
+            <span>Спросите <img src="/images/24_7.webp" alt=""> <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></span>
         </div>
     </div>
 </div>
+<?php endif; ?>
 <?php /* ?>
 <div class="contacts slide-up">
     <div class="contacts__map">

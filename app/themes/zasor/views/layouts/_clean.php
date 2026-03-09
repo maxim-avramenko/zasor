@@ -41,7 +41,9 @@
         <meta name="language" content="ru"/>
         <meta name="geo.region" content="RU" />
         <meta name="author" content="zmweb.ru" />   
-        <meta name="geo.placename" content="Казань" />
+        <?php $yupe = Yii::app()->getModule('yupe'); if (!empty($yupe->companyCity)): ?>
+        <meta name="geo.placename" content="<?= CHtml::encode($yupe->companyCity) ?>" />
+        <?php endif; ?>
         <meta name="geo.position" content="55.7279352 49.1740352" />
         <meta name="ICBM" content="55.7279352 49.1740352" />
 

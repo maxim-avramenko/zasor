@@ -72,8 +72,11 @@ Yii::import('application.components.UniversalAltHelper');
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- Гео-метатеги -->
+    <?php $yupe = Yii::app()->getModule('yupe'); ?>
     <meta name="geo.region" content="RU" />
-    <meta name="geo.placename" content="Казань" />
+    <?php if (!empty($yupe->companyCity)): ?>
+    <meta name="geo.placename" content="<?= CHtml::encode($yupe->companyCity) ?>" />
+    <?php endif; ?>
     <meta name="geo.position" content="55.848509;49.156316" />
     <meta name="ICBM" content="55.848509, 49.156316" />
     <meta property="og:url" content="https://zasorunetkzn.ru/">
@@ -99,90 +102,55 @@ Yii::import('application.components.UniversalAltHelper');
         var yupeCartWidgetUrl = '<?= Yii::app()->createUrl('/cart/cart/widget/'); ?>';
     </script>
 
-    <?php /*  ?>
-    <!-- Микроразметка WebSite -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Устранение засоров в Казани по доступным ценам",
-        "alternateName": "Устранение засоров в Казани",
-        "description": "Услуги по устранению засоров в Казани и пригороде по разумным ценам с наличным и безналичным расчетом. Даем гарантию на все виды выполняемых нами работ. Возможно как единоразовое так и постоянное сотрудничество. Звоните!",
-        "url": "https://zasorunetkzn.ru",
-        "inLanguage": "ru",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Устранение засоров в Казани",
-            "legalName": "",
-            "url": "https://zasorunetkzn.ru/",
-            "logo": "https://zasorunetkzn.ru/web/img/icons/logo.png",
-            "foundingDate": "2016",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "",
-                "addressLocality": "Казань",
-                "addressRegion": "Республика Татарстан", 
-                "postalCode": "",
-                "addressCountry": "RU"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "",
-                "contactType": "customer service",
-                "email": "",
-                "areaServed": "RU",
-                "availableLanguage": ["Russian"]
-            },
-            "sameAs": [
-                "https://zasorunetkzn.ru"
-            ]
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://zasorunetkzn.ru/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-        }
+    <?php
+    $baseUrl = Yii::app()->getRequest()->getHostInfo() . Yii::app()->getBaseUrl();
+    $localBusiness = [
+        '@context' => 'https://schema.org',
+        '@type' => 'LocalBusiness',
+        'url' => rtrim($baseUrl, '/') . '/',
+    ];
+    if (!empty($yupe->siteName)) {
+        $localBusiness['name'] = $yupe->siteName;
     }
-    </script>
-
-    <!-- schema json -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "",
-            "url": "https://zasorunetkzn.ru/",
-            "logo": "/icon192x192.png",
-            "image": "/logo.png",
-            "description": "Услуги по устранению засоров в Казани и пригороде по разумным ценам с наличным и безналичным расчетом. Даем гарантию на все виды выполняемых нами работ. Возможно как единоразовое так и постоянное сотрудничество. Звоните!",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "ул. Николая Ершова, 27И",
-                "addressLocality": "Казань",
-                "addressRegion": "Татарстан Республика",
-                "postalCode": "420061",
-                "addressCountry": "Россия"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "55.848509",
-                "longitude": "49.156316"
-            },
-            "openingHours": "Mo-Su",
-            "telephone": "+7 (917) 261 24 55",
-            "priceRange": "$$",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+7 (917) 261 24 55",
-                "contactType": "sales"
-            }
-        }
-    </script>
-    <!-- schema json END -->
-    <?php */ ?>
+    if (!empty($yupe->siteDescription)) {
+        $localBusiness['description'] = $yupe->siteDescription;
+    }
+    if (!empty($yupe->logo)) {
+        $localBusiness['logo'] = rtrim($baseUrl, '/') . '/' . ltrim($yupe->logo, '/');
+        $localBusiness['image'] = $localBusiness['logo'];
+    }
+    $hasAddress = !empty($yupe->companyStreet) || !empty($yupe->companyCity);
+    if ($hasAddress) {
+        $localBusiness['address'] = [
+            '@type' => 'PostalAddress',
+            'streetAddress' => $yupe->companyStreet ?: '',
+            'addressLocality' => $yupe->companyCity ?: '',
+            'addressRegion' => $yupe->companyRegion ?: '',
+            'postalCode' => !empty($yupe->companyPostalCode) ? $yupe->companyPostalCode : '',
+            'addressCountry' => $yupe->companyCountry ?: 'RU',
+        ];
+    }
+    $localBusiness['geo'] = [
+        '@type' => 'GeoCoordinates',
+        'latitude' => '55.848509',
+        'longitude' => '49.156316',
+    ];
+    if (!empty($yupe->companyWorkTime)) {
+        $localBusiness['openingHours'] = 'Mo-Su';
+    }
+    if (!empty($yupe->companyPhone)) {
+        $localBusiness['telephone'] = $yupe->companyPhone;
+        $localBusiness['contactPoint'] = [
+            '@type' => 'ContactPoint',
+            'telephone' => $yupe->companyPhone,
+            'contactType' => 'sales',
+        ];
+    }
+    if (!empty($yupe->companyEmail) && isset($localBusiness['contactPoint'])) {
+        $localBusiness['contactPoint']['email'] = $yupe->companyEmail;
+    }
+    ?>
+    <script type="application/ld+json"><?= json_encode($localBusiness, JSON_UNESCAPED_UNICODE) ?></script>
     <?php if (!empty($this->schema)): ?>
         <script type="application/ld+json">
           <?php echo $this->schema; ?>

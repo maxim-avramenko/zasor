@@ -7,6 +7,7 @@
 ?>
 
 <?php
+$yupe = Yii::app()->getModule('yupe');
 
 $this->title = $model->meta_title ?: $model->title;
 $this->description = $model->meta_description;
@@ -36,10 +37,12 @@ $this->breadcrumbs = $breadcrumbs;
                     Цена от:<div class="price-view"><?php echo $model->price; ?></div>руб.
                 </div>
                 <div class="txt-call-serves-page"><span>Звоните</span> <img src="/images/hd-24_7.webp" alt=""></div>
+                <?php if (!empty($yupe->companyPhone)): ?>
                 <div class="phone-call-serves-page">
-                    <a class="btn-phone-serves-page" href="tel:+<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a>
-                    <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                    <a class="btn-phone-serves-page" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                    <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
                 </div>
+                <?php endif; ?>
             </div>
             <div class="block-two-serves-page">
                 <div class="image-block-two-serves-page">
@@ -136,15 +139,17 @@ $this->breadcrumbs = $breadcrumbs;
                 <div class="list-serves-slist">
                     <?php echo $model->text_4; ?>
                 </div>
+                <?php if (!empty($yupe->companyPhone)): ?>
                 <div class="list-serves-contacts">
                     <div class="ls-box-contacts">
-                        <div class="ls-contacts"><a href="tel:<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a></div>
-                        <time>Круглосуточно 24 / 7</time>
+                        <div class="ls-contacts"><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
+                        <?php if (!empty($yupe->companyWorkTime)): ?><time><?= CHtml::encode($yupe->companyWorkTime) ?></time><?php endif; ?>
                     </div>
                     <div class="ls-wh">
-                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?php echo \Yii::app()->getModule('yupe')->companyPhone; ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
                     </div>
                 </div>
+                <?php endif; ?>
             </div>
             <div class="list-serves-images">
                 <div class="sl-img">
@@ -178,26 +183,36 @@ $this->breadcrumbs = $breadcrumbs;
             <!-- 2 -->
             <div class="block-sr-price-two">
                 <div class="ring-box">
+                    <?php if (!empty($yupe->logo)): ?>
                     <div class="ring-box-logo">
-                        <img src="images/logo.webp" alt="Logo zasorunet">
+                        <img src="<?= CHtml::encode($yupe->getLogo()) ?>" alt="<?= CHtml::encode($yupe->siteName) ?>">
+                        <?php if (!empty($yupe->companyDescription)): ?>
                         <div class="header-logo-description">
-                            Устранение засоров в Казани
+                            <?= CHtml::encode($yupe->companyDescription) ?>
                         </div>
+                        <?php endif; ?>
                     </div>
+                    <?php endif; ?>
+                    <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="ring-box-phone">
-                        <a href="tel:<?php echo '+'.preg_replace('/\D+/', '', \Yii::app()->getModule('yupe')->companyPhone); ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a>
+                        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                        <?php if (!empty($yupe->companyWorkTime)): ?>
                         <div class="work-24">
                             <img src="images/24_7.webp" alt="">
-                            <time><b>Круглосуточно</b></time>
+                            <time><b><?= CHtml::encode($yupe->companyWorkTime) ?></b></time>
                         </div>
+                        <?php endif; ?>
                     </div>
+                    <?php endif; ?>
                     <div class="ring-box-content">
                         Все подробности узнавайте по телефону.
                         Оказываем бесплатную подробную консультацию.
                     </div>
+                    <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="ring-box-wh-btn">
-                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?php echo preg_replace('/\D+/', '', \Yii::app()->getModule('yupe')->companyPhone); ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -232,12 +247,14 @@ $this->breadcrumbs = $breadcrumbs;
 <?php } ?>
 <div>
     <div class="container">
+        <?php if (!empty($yupe->companyPhone)): ?>
         <div class="btn-work-area-time">
             <div class="btn-work-area-time-item">
-                <a class="btn-wh" href="whatsapp://send?phone=<?php echo preg_replace('/\D+/', '', \Yii::app()->getModule('yupe')->companyPhone); ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
-                <div class="section-10-block-tel">Остались вопросы ? - <a class="tel-light" href="tel:<?php echo '+'.preg_replace('/\D+/', '', \Yii::app()->getModule('yupe')->companyPhone); ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a></div>
+                <a class="btn-wh" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                <div class="section-10-block-tel">Остались вопросы ? - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
             </div>
         </div>
+        <?php endif; ?>
     </div>
 </div>
 
@@ -287,17 +304,20 @@ $this->breadcrumbs = $breadcrumbs;
             <img src="images/mapserv.jpg" alt="">
         </div>
         <div class="serves-map-content-box">
+            <?php if (!empty($yupe->citiesList)): ?>
             <div class="serves-map-content">
-                Агрыз, Арск, Бавлы. Заинск, Болгар, Азнакаево, Нижнекамск, Бугульма, Елабуга, Менделеевск, Буинск, Мензелинск, Альметьевск, Сарманово,
-                Заинск, Чистополь, Зеленодольск, Бугульма, Иннополис, Кукмор, Лаишево, Лениногорск, Мамадыш, Мензелинск.
+                <?= nl2br(CHtml::encode($yupe->citiesList)) ?>
             </div>
+            <?php endif; ?>
+            <?php if (!empty($yupe->companyPhone)): ?>
             <div class="serves-map-contacts">
-                <a class="" href="tel:<?php echo '+'.preg_replace('/\D+/', '', \Yii::app()->getModule('yupe')->companyPhone); ?>" title="контактный телефон"><span class="icon-phone"></span><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a>
-                <strong>Круглосуточно</strong>
+                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><span class="icon-phone"></span><?= CHtml::encode($yupe->companyPhone) ?></a>
+                <?php if (!empty($yupe->companyWorkTime)): ?><strong><?= CHtml::encode($yupe->companyWorkTime) ?></strong><?php endif; ?>
                 <div class="btn-serves-map">
-                    <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?php echo preg_replace('/\D+/', '', \Yii::app()->getModule('yupe')->companyPhone); ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                    <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -310,12 +330,14 @@ $this->breadcrumbs = $breadcrumbs;
                 </div>
                 <div class="serves-content-images">
                     <div class="ring-box-serves-content">
+                        <?php if (!empty($yupe->logo)): ?>
                         <div class="ring-box-logo">
-                            <img src="images/logo.webp" alt="Logo zasorunet">
+                            <img src="<?= CHtml::encode($yupe->getLogo()) ?>" alt="<?= CHtml::encode($yupe->siteName) ?>">
                             <div class="header-logo-description">
-                                <?php echo $model->title; ?>
+                                <?= CHtml::encode($model->title) ?>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -329,14 +351,16 @@ $this->breadcrumbs = $breadcrumbs;
     </div>
 
 
+<?php if (!empty($yupe->companyPhone)): ?>
 <div class="vopros-section">
     <div class="container">
         <div class="question">
             Остались вопросы ?
-            <span>Спросите <img src="/images/24_7.webp" alt=""> <a href="tel:<?php echo '+'.preg_replace('/\D+/', '', \Yii::app()->getModule('yupe')->companyPhone); ?>" title="контактный телефон"><?php echo \Yii::app()->getModule('yupe')->companyPhone; ?></a></span>
+            <span>Спросите <img src="/images/24_7.webp" alt=""> <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></span>
         </div>
     </div>
 </div>
+<?php endif; ?>
 
 <?php /* ?>
 <div class="service">
