@@ -17,7 +17,40 @@ $this->pageH1 = $model->title;
 $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
 
 ?>
-
+<div class="page-contacts">
+    <div class="container">
+        <div class="contacts">
+            <h1><?php echo CHtml::encode($model->title);?></h1>
+            <div class="contacts-block">
+                <?php if (!empty($yupe->companyWorkTime)): ?><img src="/images/24_7.webp" alt="<?= CHtml::encode($yupe->companyWorkTime) ?>"><?php endif; ?>
+                <?php if (!empty($yupe->companyPostalCode) || !empty($yupe->companyCountry) || !empty($yupe->companyCity) || !empty($yupe->companyStreet)): ?>
+                    <div class="contacts-adres">
+                        <span class="icon-location"></span>
+                        <?php
+                        $addrParts = array_filter([
+                                $yupe->companyPostalCode,
+                                $yupe->companyCountry,
+                                $yupe->companyRegion,
+                                $yupe->companyCity,
+                                $yupe->companyStreet,
+                                $yupe->companyOffice,
+                        ]);
+                        echo nl2br(CHtml::encode(implode(' ', $addrParts)));
+                        ?>
+                    </div>
+                <?php endif; ?>
+                <div class="contacts-connection">
+                    <?php if (!empty($yupe->companyPhone)): ?>
+                        <div class="contacts-phone"><span class="icon-phone"></span><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
+                    <?php endif; ?>
+                    <?php if (!empty($yupe->companyEmail)): ?>
+                        <a class="mail" href="mailto:<?= CHtml::encode($yupe->companyEmail) ?>"><?= CHtml::encode($yupe->companyEmail) ?></a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="portfolio">
     <div class="container">
     <div class="portfolio__block">
