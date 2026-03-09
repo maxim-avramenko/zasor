@@ -262,7 +262,10 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                 <div class="column">
                     <h2>Специальные условия<br>для УК и ТСЖ</h2>
                     <div class="tszh-uk-block-content">
-                        <p><strong>Большой объём - большая скидка</strong> Особые условия для ТСЖ и ЖКХ. Подробнеости уточняйте по телефону</p>
+                        <?php $this->widget(
+                                "application.modules.contentblock.widgets.ContentBlockWidget",
+                                array("code" => "spec-uk-tszh"));
+                        ?>
                     </div>
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="tszh-uk-block-tel">
