@@ -53,3 +53,30 @@ $this->breadcrumbs = $breadcrumbs;
         <?php endif; ?>
     </div>
 </div>
+<div class="serves-seo">
+    <div class="container">
+        <div class="serves-content block-flex">
+            <div class="serves-content-seo">
+                <?php echo $model->text_6; ?>
+            </div>
+            <div class="serves-content-images">
+                <div class="ring-box-serves-content">
+                    <?php if (!empty($yupe->logo)): ?>
+                        <div class="ring-box-logo">
+                            <img src="<?= CHtml::encode($yupe->getLogo()) ?>" alt="<?= CHtml::encode($yupe->siteName) ?>">
+                            <div class="header-logo-description">
+                                <?= CHtml::encode($model->title) ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <div class="serves-content serves-content-seo">
+            <?php echo $model->text_7; ?>
+        </div>
+        <div class="serves-content serves-content-seo">
+            <?php echo $model->text_8; ?>
+        </div>
+    </div>
+</div>
