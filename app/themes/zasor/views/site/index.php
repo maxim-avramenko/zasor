@@ -186,30 +186,26 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
             </div>
         </div>
     </div>
+    <?php if (!empty($portfolioGalleryImages) || !empty($portfolioPage)): ?>
     <div class="gallery">
         <div class="container">
             <div class="about__gallery">
-                <a href="images/uslugi/kombinirovannaya-kanalopromyvochnaya-mashina/59.webp" data-fancybox="gallery" class="about__pic">
-                    <img src="images/uslugi/kombinirovannaya-kanalopromyvochnaya-mashina/59.webp" alt="">
+                <?php foreach ($portfolioGalleryImages as $itg): ?>
+                    <?php if ($itg->image): ?>
+                <a href="<?= CHtml::encode($itg->image->getImageUrl()) ?>" data-fancybox="gallery" class="about__pic">
+                    <img src="<?= CHtml::encode($itg->image->getImageUrl(490, 245, true)) ?>" alt="<?= CHtml::encode($itg->image->alt) ?>">
                 </a>
-                <a href="images/uslugi/ustanovka-pnevmozaglushki/2.webp" data-fancybox="gallery" class="about__pic">
-                    <img src="images/uslugi/ustanovka-pnevmozaglushki/2.webp" alt="">
-                </a>
-                <a href="images/uslugi/ilosos/10.webp" data-fancybox="gallery" class="about__pic">
-                    <img src="images/uslugi/ilosos/10.webp" alt="">
-                </a>
-                <a href="images/uslugi/vodovoz/6.webp" data-fancybox="gallery" class="about__pic">
-                    <img src="images/uslugi/vodovoz/6.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/3.webp" data-fancybox="gallery" class="about__pic">
-                    <img src="images/uslugi/ustranenie-zasora/3.webp" alt="">
-                </a>
-                <a href="javascript:void(0)" class="btn-main-gallery">
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php if (!empty($portfolioPage)): ?>
+                <a href="<?= CHtml::encode(Yii::app()->createUrl('/page/page/view', ['slug' => $portfolioPage->path])) ?>" class="btn-main-gallery">
                     <span class="icon-arrow-right2 ring-btn-main"></span>Показать еще
                 </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
+    <?php endif; ?>
     <div class="completed-works-gallery">
         <div class="container">
             <h2>Выполненные работы</h2>

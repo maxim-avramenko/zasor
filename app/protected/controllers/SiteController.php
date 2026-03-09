@@ -26,6 +26,7 @@ class SiteController extends FrontController
     public function actionIndex()
     {
         \Yii::import('application.components.UniversalAltHelper');
+        \Yii::import('application.modules.gallery.models.ImageToGallery');
 
         $yupe = \Yii::app()->getModule('yupe');
         $this->title = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : $yupe->siteName;
@@ -38,7 +39,29 @@ class SiteController extends FrontController
             ->language(\Yii::app()->getLanguage())
             ->findAll(['order' => 't.order ASC, t.date DESC']);
 
-        $this->render('index', ['servicePages' => $servicePages]);
+        $portfolioPage = null;
+        $portfolioGalleryImages = [];
+        if (\Yii::app()->hasModule('gallery')) {
+            $portfolioPage = \Page::model()
+                ->published()
+                ->findByAttributes(['slug' => 'portfolio']);
+            if ($portfolioPage && $portfolioPage->one_gallery_id) {
+                $criteria = new \CDbCriteria([
+                    'condition' => 't.gallery_id = :gallery_id',
+                    'params' => [':gallery_id' => $portfolioPage->one_gallery_id],
+                    'order' => 't.position DESC, t.id DESC',
+                    'limit' => 5,
+                    'with' => ['image'],
+                ]);
+                $portfolioGalleryImages = \ImageToGallery::model()->findAll($criteria);
+            }
+        }
+
+        $this->render('index', [
+            'servicePages' => $servicePages,
+            'portfolioPage' => $portfolioPage,
+            'portfolioGalleryImages' => $portfolioGalleryImages,
+        ]);
     }
 
     /**
