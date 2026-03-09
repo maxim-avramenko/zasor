@@ -84,6 +84,7 @@ class PageController extends FrontController
             'order' => 't.`order` ASC, t.id DESC',
             'with' => [
                 'childPages' => [
+                    'together' => false,
                     'condition' => 'childPages.status = :child_status',
                     'params' => [':child_status' => Page::STATUS_PUBLISHED],
                     'order' => 'childPages.`order` ASC, childPages.id DESC',
