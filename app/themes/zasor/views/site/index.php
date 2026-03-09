@@ -35,7 +35,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                                 <span>Заказать аварийную службу</span></a>
                         </div>
                         <div class="first-area-phone">
-                            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -131,7 +131,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                 <h2>Услуги</h2>
                 <div class="snip">
                     <div class="box-snip">Осуществляем прочистку засоров <?php if (!empty($yupe->companyWorkTime)): ?><?= CHtml::encode($yupe->companyWorkTime) ?><?php else: ?>круглосуточно<?php endif; ?> – <strong>24 часа в сутки 7 дней в неделю</strong></div>
-                    <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
+                    <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
                 </div>
             </div>
             <div class="main-services">
@@ -183,10 +183,10 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                         <?php if (!empty($yupe->companyTelegram) || !empty($yupe->companyPhone)): ?>
                         <ul>
                             <?php if (!empty($yupe->companyTelegram)): ?><li><a href="<?= CHtml::encode($yupe->companyTelegram) ?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span></a></li><?php endif; ?>
-                            <?php if (!empty($yupe->companyTelegram)): ?><li><a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a></li><?php endif; ?><?php if (!empty($yupe->companyPhone)): ?><li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>"><span class="icon-phone"></span></a></li><?php endif; ?>
+                            <?php if (!empty($yupe->companyTelegram)): ?><li><a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a></li><?php endif; ?><?php if (!empty($yupe->companyPhone)): ?><li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>"><span class="icon-phone"></span></a></li><?php endif; ?>
                         </ul>
                         <?php endif; ?>
-                        <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
                         <?php if (!empty($yupe->companyWorkTime)): ?><time><?= CHtml::encode($yupe->companyWorkTime) ?></time><?php endif; ?>
                     </div>
                     <?php endif; ?>
@@ -227,7 +227,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                 <?php endforeach; ?>
                 <div class="info-completed-works-gallery">
                     <div>Более 10 лет <br>опыта</div>
-                    <?php if (!empty($yupe->companyPhone)): ?><div><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><br></div><?php endif; ?>
+                    <?php if (!empty($yupe->companyPhone)): ?><div><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><br></div><?php endif; ?>
                     <div class="info-completed-works-gallery-description">
                         <strong>10897</strong><span>+</span>
                         <span>Успешно<br>выполненных задач</span>
@@ -252,7 +252,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     </div>
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="btn-work-area">
-                        <a class="tel" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                        <a class="tel" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                         <a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                     </div>
                     <?php endif; ?>
@@ -277,7 +277,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     </div>
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="tszh-uk-block-tel">
-                        Подробности - <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                        Подробности - <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -305,7 +305,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     <li>
                         <div class="btn-work-area">
                             <a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
-                            <div class="section-10-block-tel">Подробности - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
+                            <div class="section-10-block-tel">Подробности - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
                         </div>
                     </li>
                     <?php endif; ?>
@@ -364,7 +364,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
         <div class="container">
             <div class="question">
                 Остались вопросы ?
-                <span>Спросите <img src="images/24_7.webp" alt=""> <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></span>
+                <span>Спросите <img src="images/24_7.webp" alt=""> <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></span>
             </div>
         </div>
     </div>

@@ -60,7 +60,7 @@
                         <li><a href="<?= CHtml::encode($yupe->companyIMO) ?>" rel="nofollow" target="_blank"><span class="icon-imo"></span></a></li>
                         <?php endif; ?>
                         <?php if (!empty($yupe->companyPhone)): ?>
-                        <li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><span class="icon-phone"></span></a></li>
+                        <li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><span class="icon-phone"></span></a></li>
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -68,7 +68,7 @@
                 <?php if (!empty($yupe->companyPhone) || !empty($yupe->companyWorkTime)): ?>
                 <div class="header-phone">
                     <?php if (!empty($yupe->companyPhone)): ?>
-                    <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                    <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyWorkTime)): ?>
                     <time><?= CHtml::encode($yupe->companyWorkTime) ?></time>

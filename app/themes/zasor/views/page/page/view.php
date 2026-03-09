@@ -39,7 +39,7 @@ $this->breadcrumbs = $breadcrumbs;
                 <div class="txt-call-serves-page"><span>Звоните</span> <img src="/images/hd-24_7.webp" alt=""></div>
                 <?php if (!empty($yupe->companyPhone)): ?>
                 <div class="phone-call-serves-page">
-                    <a class="btn-phone-serves-page" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                    <a class="btn-phone-serves-page" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                     <a class="btn-wh-serves-page" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                 </div>
                 <?php endif; ?>
@@ -142,7 +142,7 @@ $this->breadcrumbs = $breadcrumbs;
                 <?php if (!empty($yupe->companyPhone)): ?>
                 <div class="list-serves-contacts">
                     <div class="ls-box-contacts">
-                        <div class="ls-contacts"><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
+                        <div class="ls-contacts"><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
                         <?php if (!empty($yupe->companyWorkTime)): ?><time><?= CHtml::encode($yupe->companyWorkTime) ?></time><?php endif; ?>
                     </div>
                     <div class="ls-wh">
@@ -195,7 +195,7 @@ $this->breadcrumbs = $breadcrumbs;
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="ring-box-phone">
-                        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                         <?php if (!empty($yupe->companyWorkTime)): ?>
                         <div class="work-24">
                             <img src="images/24_7.webp" alt="">
@@ -251,7 +251,7 @@ $this->breadcrumbs = $breadcrumbs;
         <div class="btn-work-area-time">
             <div class="btn-work-area-time-item">
                 <a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
-                <div class="section-10-block-tel">Остались вопросы ? - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
+                <div class="section-10-block-tel">Остались вопросы ? - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
             </div>
         </div>
         <?php endif; ?>
@@ -311,7 +311,7 @@ $this->breadcrumbs = $breadcrumbs;
             <?php endif; ?>
             <?php if (!empty($yupe->companyPhone)): ?>
             <div class="serves-map-contacts">
-                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><span class="icon-phone"></span><?= CHtml::encode($yupe->companyPhone) ?></a>
+                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><span class="icon-phone"></span><?= CHtml::encode($yupe->companyPhone) ?></a>
                 <?php if (!empty($yupe->companyWorkTime)): ?><strong><?= CHtml::encode($yupe->companyWorkTime) ?></strong><?php endif; ?>
                 <div class="btn-serves-map">
                     <a class="btn-wh-serves-page" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
@@ -356,7 +356,7 @@ $this->breadcrumbs = $breadcrumbs;
     <div class="container">
         <div class="question">
             Остались вопросы ?
-            <span>Спросите <img src="/images/24_7.webp" alt=""> <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></span>
+            <span>Спросите <img src="/images/24_7.webp" alt=""> <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></span>
         </div>
     </div>
 </div>

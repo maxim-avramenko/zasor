@@ -56,6 +56,7 @@ class YupeModule extends WebModule
     public $companyStreet;
     public $companyOffice;
     public $companyPhone;
+    public $companyUrlPhone;
     public $companyEmail;
     public $companyInstagramm;
     public $companyVk;
@@ -376,6 +377,7 @@ class YupeModule extends WebModule
             'companyStreet' => Yii::t('YupeModule.yupe', 'companyStreet'),
             'companyOffice' => Yii::t('YupeModule.yupe', 'companyOffice'),
             'companyPhone' => Yii::t('YupeModule.yupe', 'companyPhone'),
+            'companyUrlPhone' => Yii::t('YupeModule.yupe', 'companyUrlPhone'),
             'companyEmail' => Yii::t('YupeModule.yupe', 'companyEmail'),
             'companyInstagramm' => Yii::t('YupeModule.yupe', 'companyInstagramm'),
             'companyVk' => Yii::t('YupeModule.yupe', 'companyVk'),
@@ -433,6 +435,7 @@ class YupeModule extends WebModule
             'companyStreet',
             'companyOffice',
             'companyPhone',
+            'companyUrlPhone',
             'companyEmail',
             'companyInstagramm',
             'companyVk',
@@ -487,6 +490,7 @@ class YupeModule extends WebModule
                     'companyOffice',
                     'companyPostalCode',
                     'companyPhone',
+                    'companyUrlPhone',
                     'companyEmail',
                     'companyInstagramm',
                     'companyVk',

@@ -49,7 +49,7 @@ foreach ($footerServicePages as $page):
                 <?php endif; ?>
                 <?php if (!empty($yupe->companyPhone)): ?>
                 <div class="footer-tel">
-                    <span class="icon-phone"></span><a itemprop="telephone" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
+                    <span class="icon-phone"></span><a itemprop="telephone" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
                     <?php if (!empty($yupe->companyWorkTime)): ?>
                     <span><?= CHtml::encode($yupe->companyWorkTime) ?></span>
                     <?php endif; ?>

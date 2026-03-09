@@ -39,7 +39,7 @@
     </div>
     <div class="heading__contacts">
         <?php if (!empty($yupe->companyPhone)): ?>
-            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" class="heading__tel"><span class="icon-phone"></span> <?= CHtml::encode($yupe->companyPhone) ?></a>
+            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" class="heading__tel"><span class="icon-phone"></span> <?= CHtml::encode($yupe->companyPhone) ?></a>
         <?php endif; ?>
 
         <?php

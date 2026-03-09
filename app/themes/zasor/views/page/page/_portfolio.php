@@ -41,7 +41,7 @@ $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
                 <?php endif; ?>
                 <div class="contacts-connection">
                     <?php if (!empty($yupe->companyPhone)): ?>
-                        <div class="contacts-phone"><span class="icon-phone"></span><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
+                        <div class="contacts-phone"><span class="icon-phone"></span><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyEmail)): ?>
                         <a class="mail" href="mailto:<?= CHtml::encode($yupe->companyEmail) ?>"><?= CHtml::encode($yupe->companyEmail) ?></a>
