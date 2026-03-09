@@ -210,39 +210,13 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
         <div class="container">
             <h2>Выполненные работы</h2>
             <div class="works__gallery">
-                <a href="images/uslugi/ustranenie-zasora/1.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/1.webp" alt="">
+                <?php foreach ($homepageGallery2Images as $itg): ?>
+                    <?php if ($itg->image): ?>
+                <a href="<?= CHtml::encode($itg->image->getImageUrl()) ?>" data-fancybox="gallery" class="works__pic">
+                    <img src="<?= CHtml::encode($itg->image->getImageUrl()) ?>" alt="<?= CHtml::encode($itg->image->alt) ?>">
                 </a>
-                <a href="images/uslugi/ustranenie-zasora/2.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/2.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/5.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/5.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/16.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/16.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/38.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/38.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/40.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/40.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/30.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/30.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/17.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/17.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/16.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/16.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/15.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/15.webp" alt="">
-                </a>
-                <a href="images/uslugi/ustranenie-zasora/20.webp" data-fancybox="gallery" class="works__pic">
-                    <img src="images/uslugi/ustranenie-zasora/20.webp" alt="">
-                </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
                 <div class="info-completed-works-gallery">
                     <div>Более 10 лет <br>опыта</div>
                     <?php if (!empty($yupe->companyPhone)): ?><div><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><br></div><?php endif; ?>

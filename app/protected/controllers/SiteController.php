@@ -27,6 +27,7 @@ class SiteController extends FrontController
     {
         \Yii::import('application.components.UniversalAltHelper');
         \Yii::import('application.modules.gallery.models.ImageToGallery');
+        \Yii::import('application.modules.gallery.models.Gallery');
 
         $yupe = \Yii::app()->getModule('yupe');
         $this->title = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : $yupe->siteName;
@@ -41,6 +42,7 @@ class SiteController extends FrontController
 
         $portfolioPage = null;
         $portfolioGalleryImages = [];
+        $homepageGallery2Images = [];
         if (\Yii::app()->hasModule('gallery')) {
             $portfolioPage = \Page::model()
                 ->published()
@@ -55,12 +57,25 @@ class SiteController extends FrontController
                 ]);
                 $portfolioGalleryImages = \ImageToGallery::model()->findAll($criteria);
             }
+
+            $homepageGallery2 = \Gallery::model()->published()->findByAttributes(['name' => 'homepage-gallery-2']);
+            if ($homepageGallery2) {
+                $criteria2 = new \CDbCriteria([
+                    'condition' => 't.gallery_id = :gallery_id',
+                    'params' => [':gallery_id' => $homepageGallery2->id],
+                    'order' => 't.position ASC, t.id ASC',
+                    'limit' => 11,
+                    'with' => ['image'],
+                ]);
+                $homepageGallery2Images = \ImageToGallery::model()->findAll($criteria2);
+            }
         }
 
         $this->render('index', [
             'servicePages' => $servicePages,
             'portfolioPage' => $portfolioPage,
             'portfolioGalleryImages' => $portfolioGalleryImages,
+            'homepageGallery2Images' => $homepageGallery2Images,
         ]);
     }
 
