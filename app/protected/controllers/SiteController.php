@@ -71,11 +71,20 @@ class SiteController extends FrontController
             }
         }
 
+        $homepageDopContent = \Page::model()
+            ->findByAttributes(['slug' => 'homepage-content']);
+
+        $homepageImage1 = \Image::model()->findByAttributes(['name' => 'homepage-image-1']);
+        $homepageImage2 = \Image::model()->findByAttributes(['name' => 'homepage-image-2']);
+
         $this->render('index', [
             'servicePages' => $servicePages,
             'portfolioPage' => $portfolioPage,
             'portfolioGalleryImages' => $portfolioGalleryImages,
             'homepageGallery2Images' => $homepageGallery2Images,
+            'homepageDopContent' => $homepageDopContent,
+            'homepageImage1' => $homepageImage1,
+            'homepageImage2' => $homepageImage2,
         ]);
     }
 
