@@ -92,7 +92,7 @@ $this->menu = [
             ],
             [
                 'name'  => 'parent_id',
-                'value' => $model->parent,
+                'value' => $model->getParent(),
             ],
             [
                 'name'  => 'condition_name',
