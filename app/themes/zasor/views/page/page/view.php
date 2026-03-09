@@ -40,7 +40,7 @@ $this->breadcrumbs = $breadcrumbs;
                 <?php if (!empty($yupe->companyPhone)): ?>
                 <div class="phone-call-serves-page">
                     <a class="btn-phone-serves-page" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
-                    <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                    <a class="btn-wh-serves-page" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                 </div>
                 <?php endif; ?>
             </div>
@@ -146,7 +146,7 @@ $this->breadcrumbs = $breadcrumbs;
                         <?php if (!empty($yupe->companyWorkTime)): ?><time><?= CHtml::encode($yupe->companyWorkTime) ?></time><?php endif; ?>
                     </div>
                     <div class="ls-wh">
-                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                        <a class="btn-wh-serves-page" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                     </div>
                 </div>
                 <?php endif; ?>
@@ -210,7 +210,7 @@ $this->breadcrumbs = $breadcrumbs;
                     </div>
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="ring-box-wh-btn">
-                        <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                        <a class="btn-wh-serves-page" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -250,7 +250,7 @@ $this->breadcrumbs = $breadcrumbs;
         <?php if (!empty($yupe->companyPhone)): ?>
         <div class="btn-work-area-time">
             <div class="btn-work-area-time-item">
-                <a class="btn-wh" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                <a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                 <div class="section-10-block-tel">Остались вопросы ? - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
             </div>
         </div>
@@ -314,7 +314,7 @@ $this->breadcrumbs = $breadcrumbs;
                 <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><span class="icon-phone"></span><?= CHtml::encode($yupe->companyPhone) ?></a>
                 <?php if (!empty($yupe->companyWorkTime)): ?><strong><?= CHtml::encode($yupe->companyWorkTime) ?></strong><?php endif; ?>
                 <div class="btn-serves-map">
-                    <a class="btn-wh-serves-page" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                    <a class="btn-wh-serves-page" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                 </div>
             </div>
             <?php endif; ?>

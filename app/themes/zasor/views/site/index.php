@@ -31,7 +31,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="first-area-zakaz">
                         <div class="first-area-wh">
-                            <a href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>&text=Добрый день!"><img src="/images/hd-24_7.webp" alt="">
+                            <a href="<?php echo $yupe->companyTelegram; ?>"><img src="/images/hd-24_7.webp" alt="">
                                 <span>Заказать аварийную службу</span></a>
                         </div>
                         <div class="first-area-phone">
@@ -183,7 +183,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                         <?php if (!empty($yupe->companyTelegram) || !empty($yupe->companyPhone)): ?>
                         <ul>
                             <?php if (!empty($yupe->companyTelegram)): ?><li><a href="<?= CHtml::encode($yupe->companyTelegram) ?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span></a></li><?php endif; ?>
-                            <?php if (!empty($yupe->companyPhone)): ?><li><a href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span></a></li><li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>"><span class="icon-phone"></span></a></li><?php endif; ?>
+                            <?php if (!empty($yupe->companyTelegram)): ?><li><a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a></li><?php endif; ?><?php if (!empty($yupe->companyPhone)): ?><li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>"><span class="icon-phone"></span></a></li><?php endif; ?>
                         </ul>
                         <?php endif; ?>
                         <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
@@ -253,7 +253,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="btn-work-area">
                         <a class="tel" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a>
-                        <a class="btn-wh" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                        <a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -304,7 +304,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <li>
                         <div class="btn-work-area">
-                            <a class="btn-wh" href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank"><span class="icon-whatsapp"></span>Написать в WhatsApp</a>
+                            <a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a>
                             <div class="section-10-block-tel">Подробности - <a class="tel-light" href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
                         </div>
                     </li>

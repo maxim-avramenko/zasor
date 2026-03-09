@@ -33,19 +33,6 @@ Yii::import('application.components.UniversalAltHelper');
     <?php
     \yupe\components\TemplateEvent::fire(GalleryThemeEvents::HEAD_START);
     
-    // Preload критических ресурсов
-//    Yii::app()->clientScript->registerLinkTag('preload', null, '/css/main.css', null, [
-//        'as' => 'style'
-//    ]);
-    
-    // CSS файлы
-//    Yii::app()->clientScript->registerCssFile('/css/swiper.css');
-//    Yii::app()->clientScript->registerCssFile('/web/css/fix.css');
-    
-    // Preload для jQuery
-//    Yii::app()->clientScript->registerLinkTag('preload', null, Yii::app()->clientScript->getCoreScriptUrl() . '/jquery.min.js', null, [
-//        'as' => 'script'
-//    ]);
     ?>
 
     <!-- css -->
@@ -56,8 +43,6 @@ Yii::import('application.components.UniversalAltHelper');
     <!-- js -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 
 
 
@@ -217,43 +202,9 @@ Yii::import('application.components.UniversalAltHelper');
 
 <!-- Подключаем скрипты с оптимизацией -->
 <?php
-// jQuery с defer
-//Yii::app()->clientScript->registerCoreScript('jquery', [
-//    'defer' => 'defer'
-//]);
-//
-//// Основные скрипты с defer
-//Yii::app()->clientScript->registerScriptFile(
-//    '/web/js/main.min.js',
-//    CClientScript::POS_END,
-//    ['defer' => 'defer']
-//);
-//
-//Yii::app()->clientScript->registerScriptFile(
-//    '/js/swiper-main.js',
-//    CClientScript::POS_END,
-//    ['defer' => 'defer']
-//);
 
-// Яндекс.Метрика с async
-//$yandexMetrika = "
-//    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-//    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-//    (window, document, 'script', 'https://yastatic.net/metrika/tag.js', 'ym');
-//
-//    ym(87534884, 'init', {
-//        clickmap:true,
-//        trackLinks:true,
-//        accurateTrackBounce:true,
-//        webvisor:true
-//    });
-//";
-//
-//Yii::app()->clientScript->registerScript('yandex-metrika', $yandexMetrika, CClientScript::POS_END, [
-//    'async' => true
-//]);
 ?>
-<!--<script type="text/javascript" src="/js/swiper-main.js"></script>-->
+<script type="text/javascript" src="/js/swiper-main.js"></script>
 <script type="text/javascript" src="/js/main.min.js"></script>
 </body>
 </html>
