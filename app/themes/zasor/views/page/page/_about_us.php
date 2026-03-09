@@ -46,3 +46,13 @@ $this->schema = $model->json_head;
         <?php echo $model->full_text; ?>
     </div>
 </div>
+<div class="content-about-us">
+    <div class="container">
+        <?php echo $model->text_3; ?>
+    </div>
+</div>
+<div class="content-about-us">
+    <div class="container">
+        <?php echo $model->text_4; ?>
+    </div>
+</div>
