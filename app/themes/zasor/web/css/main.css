@@ -3169,8 +3169,6 @@ a.btn-wh-serves-page {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	filter: blur(5px);
-	pointer-events: none;
 }
 
 .list-serves-page-serves li::before {

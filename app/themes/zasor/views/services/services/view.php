@@ -135,7 +135,7 @@ $this->breadcrumbs = array_merge(
             <?= $model->text_3 ?>
         </div>
         <div class="caption__img">
-            <img src="/web/img/service/2.png" alt="">
+            <img src="/web/img/service/#.png" alt="">
         </div>
     </div>
 

@@ -21,7 +21,7 @@ $this->pageH1 = 'Услуги';
             <?php endif; ?>
         </div>
         <div data-fancybox="pic" class="caption__img">
-            <img src="/web/img/about/1.png" alt="">
+            <img src="/web/img/about/#.png" alt="">
         </div>
     </div>
 
@@ -66,20 +66,7 @@ $this->pageH1 = 'Услуги';
         } ?>
     </div>
 
-    <div class="start start-note slide-up">
-        <a href="#modal" data-fancybox class="start__wp">
-              <span class="start__note">
-                Есть идея ?
-            </span>
-            <span class="start__icon">
-                <img src="/web/img/icons/lamp.png" alt="">
-            </span>
-            <span class="icon-arrow-right"></span>
-            <span class="start__text">
-          Давайте поговорим
-            </span>
-        </a>
-    </div>
+
     <div class="footing">
         <div class="footing__text slide-left">
             <?php if (Yii::app()->hasModule('contentblock')): ?>
