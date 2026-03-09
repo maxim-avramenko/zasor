@@ -72,6 +72,8 @@ class PageBackendController extends yupe\components\controllers\BackController
 
             if ($model->save()) {
 
+                $this->syncServicePageToMenu($model);
+
                 Yii::app()->user->setFlash(
                     yupe\widgets\YFlashMessages::SUCCESS_MESSAGE,
                     Yii::t('PageModule.page', 'Page article was created!')
@@ -170,6 +172,8 @@ class PageBackendController extends yupe\components\controllers\BackController
 
             if ($model->save()) {
 
+                $this->syncServicePageToMenu($model);
+
                 Yii::app()->user->setFlash(
                     yupe\widgets\YFlashMessages::SUCCESS_MESSAGE,
                     Yii::t('PageModule.page', 'Page article was updated!')
@@ -265,12 +269,87 @@ class PageBackendController extends yupe\components\controllers\BackController
     }
 
     /**
+     * Добавляет пункт меню для страницы-услуги (is_service=true), если родительская
+     * страница уже есть в меню. Новый пункт добавляется дочерним к пункту,
+     * ссылающемуся на parent_id.
+     *
+     * @param Page $model созданная или обновлённая страница
+     *
+     * @return void
+     */
+    protected function syncServicePageToMenu($model)
+    {
+        $parentId = (int)$model->parent_id;
+        if ($parentId <= 0) {
+            return;
+        }
+
+        Yii::import('application.modules.menu.models.*');
+
+        $parentMenuItem = MenuItem::model()->find(
+            'entity_module_name = :module AND entity_name = :entity AND entity_id = :parent_id',
+            [
+                ':module' => 'page',
+                ':entity' => 'page',
+                ':parent_id' => $parentId,
+            ]
+        );
+
+        if ($parentMenuItem === null) {
+            return;
+        }
+
+        $existingItem = MenuItem::model()->find(
+            'entity_module_name = :module AND entity_name = :entity AND entity_id = :page_id AND menu_id = :menu_id',
+            [
+                ':module' => 'page',
+                ':entity' => 'page',
+                ':page_id' => (int)$model->id,
+                ':menu_id' => (int)$parentMenuItem->menu_id,
+            ]
+        );
+
+        if ($existingItem !== null) {
+            return;
+        }
+
+        $href = Yii::app()->menu->getEntityItemUrl('page', 'page', (int)$model->id);
+        if ($href === null || $href === '') {
+            return;
+        }
+
+        $maxSort = (int)Yii::app()->db->createCommand()
+            ->select('COALESCE(MAX(sort), 0) + 1')
+            ->from('{{menu_menu_item}}')
+            ->where('parent_id = :parent_id AND menu_id = :menu_id', [
+                ':parent_id' => (int)$parentMenuItem->id,
+                ':menu_id' => (int)$parentMenuItem->menu_id,
+            ])
+            ->queryScalar();
+
+        $menuItem = new MenuItem();
+        $menuItem->setAttributes([
+            'parent_id' => (int)$parentMenuItem->id,
+            'menu_id' => (int)$parentMenuItem->menu_id,
+            'title' => $model->title,
+            'href' => $href,
+            'regular_link' => false,
+            'status' => MenuItem::STATUS_ACTIVE,
+            'sort' => $maxSort,
+            'entity_module_name' => 'page',
+            'entity_name' => 'page',
+            'entity_id' => (int)$model->id,
+        ]);
+        $menuItem->save();
+    }
+
+    /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      *
-     * @param integer the ID of the model to be loaded
+     * @param integer $id the ID of the model to be loaded
      *
-     * @return void
+     * @return Page
      *
      * @throws CHttpException If record not found
      */
