@@ -16,7 +16,7 @@ return array(
         ]
     ],
     'rules' => [
-        '/services' => 'page/page/index',
+//        '/services' => 'page/page/index',
         '/<slug>' => 'page/page/view',
 
     ],
