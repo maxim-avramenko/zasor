@@ -140,7 +140,7 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     <li>
                         <div class="img-main-services">
                             <?php if ($page->image): ?>
-                            <img src="<?= CHtml::encode($page->getImageUrl()) ?>" loading="lazy" alt="<?= CHtml::encode($page->title) ?>">
+                            <img src="<?= CHtml::encode($page->getImageUrl()) ?>" loading="lazy"  width="740" height="300" alt="<?= CHtml::encode($page->title) ?>">
                             <?php endif; ?>
                         </div>
                         <div class="text-main-services">
@@ -179,16 +179,34 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     </div>
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyPhone) || !empty($yupe->companyTelegram) || !empty($yupe->companyWorkTime)): ?>
+
                     <div class="phone-col-commercial">
                         <?php if (!empty($yupe->companyTelegram) || !empty($yupe->companyPhone)): ?>
                         <ul>
-                            <?php if (!empty($yupe->companyTelegram)): ?><li><a href="<?= CHtml::encode($yupe->companyTelegram) ?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span></a></li><?php endif; ?>
-                            <?php if (!empty($yupe->companyTelegram)): ?><li><a class="btn-wh" href="<?php echo $yupe->companyTelegram;?>" rel="nofollow" target="_blank"><span class="icon-telegram"></span>Написать в Telegram</a></li><?php endif; ?><?php if (!empty($yupe->companyPhone)): ?><li><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>"><span class="icon-phone"></span></a></li><?php endif; ?>
+                            <?php if (!empty($yupe->companyTelegram)): ?>
+
+                                <li><a href="<?= CHtml::encode($yupe->companyTelegram) ?>" rel="nofollow" target="_blank">
+                                    <span class="icon-telegram"></span></a>
+                                </li><?php endif; ?>
+                                <?php if (!empty($yupe->companyTelegram)): ?>
+
+                                <li><a href="whatsapp://send?phone=<?= preg_replace('/[^0-9+]/', '', $yupe->companyPhone) ?>" rel="nofollow" target="_blank">
+                                    <span class="icon-whatsapp"></span></a>
+                                </li>
+
+                                <?php endif; ?><?php if (!empty($yupe->companyPhone)): ?>
+
+                                <li>
+                                    <a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>">
+                                        <span class="icon-phone"></span></a>
+                                </li>
+                                <?php endif; ?>
                         </ul>
                         <?php endif; ?>
                         <?php if (!empty($yupe->companyPhone)): ?><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a><?php endif; ?>
                         <?php if (!empty($yupe->companyWorkTime)): ?><time><?= CHtml::encode($yupe->companyWorkTime) ?></time><?php endif; ?>
                     </div>
+
                     <?php endif; ?>
                 </div>
             </div>

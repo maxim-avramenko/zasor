@@ -20,10 +20,10 @@
                 <div class="header-app-description">Удобное приложение для наших клиентов <span class="icon-question" rel="tooltip" data-title="На данный момент приложение на доработке" title=""></span></div>
                 <ul>
                     <?php if (!empty($yupe->companyApplicationAppStore)): ?>
-                    <li><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img src="/images/AppStore.webp" alt="AppStore"></a></li>
+                    <li><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img class="ico-app" src="/images/app-store-download.svg" alt="AppStore"></a></li>
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyApplicationGooglePlay)): ?>
-                    <li><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img src="/images/GooglePlay.webp" alt="GooglePlay"></a></li>
+                    <li><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img class="ico-app" src="/images/google-play-and.svg" alt="GooglePlay"></a></li>
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyApplicationQR)): ?>
                     <li><img src="/<?= ltrim($yupe->companyApplicationQR, '/') ?>" alt="qr app"></li>
@@ -33,12 +33,14 @@
             <?php endif; ?>
             <div class="header-contacts">
                 <div class="around-the-clock">
-                    <button type="button" class="around-the-clock-btn" aria-label="Прослушать сообщение">
+                    <img src="/images/24_7.webp" alt="Круглосуточно">
+                </div>
+                    <!-- <button type="button" class="around-the-clock-btn" aria-label="Прослушать сообщение">
                         <img src="/images/24_7.webp" alt="Круглосуточно">
                     </button>
                     <audio id="audio-24-7" preload="metadata">
                         <source src="/robots.m4a" type="audio/mp4">
-                    </audio>
+                    </audio> 
                 </div>
                 <script>
                 (function() {
@@ -54,7 +56,7 @@
                         }
                     });
                 })();
-                </script>
+                </script> -->
                 <?php
                 $hasSocial = !empty($yupe->companyTelegram) || !empty($yupe->companyPhone) || !empty($yupe->companyYoutube) || !empty($yupe->companyInstagramm) || !empty($yupe->companyVk) || !empty($yupe->companyIMO);
                 if ($hasSocial):
@@ -100,84 +102,3 @@
     </div>
 </header>
 
-<?php /*
-<header class="header">
-    <div class="container">
-<a href="/" class="header__logo">
-    <img itemprop="logo" src="/web/img/icons/logo.png" alt="<?php echo UniversalAltHelper::generateAlt('/web/img/icons/logo.png', 'Логотип'); ?>">
-    <img src="/web/img/icons/logo-sm.png" alt="<?php echo UniversalAltHelper::generateAlt('/web/img/icons/logo-sm.png', 'Логотип мобильный'); ?>" class="hidden">
-</a>
-        <nav class="wrap-nav">
-            <div class="close-nav">
-                <span class="icon-close"></span>
-            </div>
-            <div class="header__mail">
-
-                <?php if (Yii::app()->hasModule('menu')): ?>
-                    <?php $this->widget('application.modules.menu.widgets.MenuWidget', ['name' => 'main-menu', 'view' => 'main']); ?>
-                <?php endif; ?>
-
-                <div class="socials">
-                    <?php if (Yii::app()->getModule('yupe')->companyEmail) { ?>
-                        <a href="mailto:<?= Yii::app()->getModule('yupe')->companyEmail ?>" target="_blank">
-                            <span class="icon-mail4"></span>
-                        </a>
-                    <?php } ?>
-
-                    <?php if (Yii::app()->getModule('yupe')->companyInstagramm) { ?>
-                        <a href="<?= Yii::app()->getModule('yupe')->companyInstagramm ?>" target="_blank">
-                            <span class="icon-telegram"></span>
-                        </a>
-                    <?php } ?>
-
-                    <?php if (Yii::app()->getModule('yupe')->companyVk) { ?>
-                        <a href="<?= Yii::app()->getModule('yupe')->companyVk ?>" target="_blank">
-                            <span class="icon-vk"></span>
-                        </a>
-                    <?php } ?>
-
-                    <?php if (Yii::app()->getModule('yupe')->companyYoutube) { ?>
-                        <a href="<?= Yii::app()->getModule('yupe')->companyYoutube ?>" target="_blank">
-                            <span class="icon-youtube"></span>
-                        </a>
-                    <?php } ?>
-
-                </div>
-
-            </div>
-            <div class="header__info">
-
-                <?php if (Yii::app()->getModule('yupe')->companyPhone) {
-                    $cleanPhone = yupe\helpers\YTel::cleanPh(Yii::app()->getModule('yupe')->companyPhone); ?>
-                    <a href="tel:<?= $cleanPhone ?>"><?= Yii::app()->getModule('yupe')->companyPhone ?></a>
-                <?php } ?>
-
-                <p>
-
-                    <?php if (Yii::app()->getModule('yupe')->companyWorkTime) { ?>
-                        <span> График работы с</span> <?= Yii::app()->getModule('yupe')->companyWorkTime ?>
-                    <?php } ?>
-
-                </p>
-                <p>
-                    <span class="icon-location">
-                        <a class="navigator-yandex-desktop" href="https://yandex.ru/maps/-/CCUBYHVyhA" target="_blank"></a>
-                        <a class="navigator-yandex" href="yandexnavi://map_search?text=Галерея стиля"></span></a>
-                    </span>
-                
-                    <?= Yii::app()->getModule('yupe')->companyStreet ?>
-                    , <?= Yii::app()->getModule('yupe')->companyOffice ?>
-                </p>
-            </div>
-        </nav>
-        <div class="open-nav" aria-label="Открыть меню" aria-expanded="false">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
-        <div class="overlay"></div>
-    </div>
-
-</header>
-
-<?php */ ?>

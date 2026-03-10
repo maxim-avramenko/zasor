@@ -62,9 +62,9 @@ foreach ($footerServicePages as $page):
                 <div class="adres" itemprop="address" itemscope="" itemtype="https://schema.org/PostalAddress">
                     <?php if (!empty($yupe->companyPostalCode)): ?><span itemprop="postalCode"><?= CHtml::encode($yupe->companyPostalCode) ?></span> <br><?php endif; ?>
                     <?php if (!empty($yupe->companyCountry)): ?><span itemprop="addressCountry"><?= CHtml::encode($yupe->companyCountry) ?></span><?php endif; ?>
-                    <?php if (!empty($yupe->companyRegion)): ?>, <span itemprop="addressRegion"><?= CHtml::encode($yupe->companyRegion) ?></span><?php endif; ?>
-                    <?php if (!empty($yupe->companyCity)): ?>, <span itemprop="addressLocality"><?= CHtml::encode($yupe->companyCity) ?></span><?php endif; ?>
-                    <?php if (!empty($yupe->companyStreet)): ?>,<br> <span itemprop="streetAddress"><?= CHtml::encode($yupe->companyStreet) ?><?php if (!empty($yupe->companyOffice)): ?>, <?= CHtml::encode($yupe->companyOffice) ?><?php endif; ?></span><?php endif; ?>
+                    <?php if (!empty($yupe->companyRegion)): ?><span itemprop="addressRegion"><?= CHtml::encode($yupe->companyRegion) ?></span><?php endif; ?>
+                    <?php if (!empty($yupe->companyCity)): ?><span itemprop="addressLocality"><?= CHtml::encode($yupe->companyCity) ?></span><?php endif; ?>
+                    <?php if (!empty($yupe->companyStreet)): ?><br> <span itemprop="streetAddress"><?= CHtml::encode($yupe->companyStreet) ?><?php if (!empty($yupe->companyOffice)): ?><?= CHtml::encode($yupe->companyOffice) ?><?php endif; ?></span><?php endif; ?>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($yupe->companyEmail)): ?>
@@ -75,16 +75,18 @@ foreach ($footerServicePages as $page):
             </div>
             <div class="col">
                 <h4>Информация :</h4>
-                <?php if (!empty($yupe->footerDisclaimerText)): ?>
-                <div class="prav-info">
-                    <?= $yupe->footerDisclaimerText ?>
-                </div>
-                <?php endif; ?>
-                <?php if (!empty($yupe->footerWarningText)): ?>
-                <div class="prav-info prav-info-warning">
-                    <?= $yupe->footerWarningText ?>
-                </div>
-                <?php endif; ?>
+                    <div class="prav-info-box">
+                        <?php if (!empty($yupe->footerDisclaimerText)): ?>
+                        <div class="prav-info">
+                            <?= $yupe->footerDisclaimerText ?>
+                        </div>
+                        <?php endif; ?>
+                        <?php if (!empty($yupe->footerWarningText)): ?>
+                        <div class="prav-info prav-info-warning">
+                            <?= $yupe->footerWarningText ?>
+                        </div>
+                        <?php endif; ?>
+                    </div>
                 <?php
                 $hasFooterApp = !empty($yupe->companyApplicationQR) || !empty($yupe->companyApplicationAppStore) || !empty($yupe->companyApplicationGooglePlay);
                 if ($hasFooterApp):

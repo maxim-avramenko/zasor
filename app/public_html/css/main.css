@@ -291,7 +291,12 @@ input[type=search]::-webkit-search-cancel-button {
 
 .full-img img {
   width: 100%; }
-
+img.ico-app {
+  width: 100%;
+  height: 100%;
+  max-width: 100px;
+  max-height: 30px;
+}
 figure {
   text-align: center;
   /* margin-bottom: 30px; 
@@ -412,9 +417,8 @@ body {
 }
 /* =========!!!======== */
 .breadcrumbs-container {
-  width: 100%;
+  padding: 1% 0;
   background: #fff;
-  padding-top: 2%;
 }
 .breadcrumbs {
   display: flex;
@@ -422,7 +426,7 @@ body {
   font-size: 10px;
 }
 .breadcrumbs span:last-child {
-  color: #22b5cd;
+  color: #03a0f5;
 }
 .breadcrumbs span a {
   color: #282828;
@@ -1666,6 +1670,14 @@ a.btn-wh:hover {
 	top: 2px;
 }
 
+
+.btn-wh .icon-telegram::before {
+  padding-right: 10px;
+  color: #fff;
+  position: relative;
+  top: 2px;
+}
+
 .tszh-uk-section {
 	margin: 100px auto;
 	background: #fff;
@@ -1946,6 +1958,8 @@ footer a {
 }
 
 
+
+
 .footer-logo-box {
   display: flex;
   flex-direction: column;
@@ -2040,8 +2054,15 @@ footer a {
 	font-size: 10px;
 }
 .prav-info {
-	font-size: clamp(0.75rem, 0.6951rem + 0.2439vw, 1rem);
+	font-size: clamp(0.75rem, 0.7226rem + 0.122vw, 0.875rem);
 }
+
+.prav-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .footer-btn a.btn-wh {
 	font-size: clamp(0.75rem, 0.6951rem + 0.2439vw, 1rem);
 }
@@ -2552,10 +2573,18 @@ a.btn-wh-serves-page {
   position: relative;
   top: 2px;
 }
+.btn-wh-serves-page .icon-telegram::before {
+  padding-right: 10px;
+  color: #fff;
+  position: relative;
+  top: 2px;
+}
 .gallery-serves-page {
 	margin: 90px 0 30px 0;
 }
-
+.swiper-slide {
+  text-align: initial !important;
+}
 
 
 
