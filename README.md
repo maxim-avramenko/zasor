@@ -15,6 +15,7 @@ gAFMNB!JNUI@!F
 
 ```bash
 SERVER
+zasorunetkzn.ru
 ssh root@89.23.99.205
 
 m1zv@^,jXU85P,

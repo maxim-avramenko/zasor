@@ -7,7 +7,7 @@ http:
 
   routers:
     dashboard:
-      rule: "Host(`traefik.zasorunet.webtm.ru`)"
+      rule: "Host(`traefik.zasorunetkzn.ru`)"
       service: api@internal
       entryPoints:
         - websecure
