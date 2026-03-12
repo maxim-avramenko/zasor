@@ -53,13 +53,13 @@ $this->breadcrumbs = $breadcrumbs;
         <?php endif; ?>
     </div>
 </div>
-<div class="serves-seo">
+<div class="serves-content-uslugi">
     <div class="container">
         <div class="serves-content block-flex">
-            <div class="serves-content-seo">
+            <div class="serves-content-seo-uslugi">
                 <?php echo $model->text_6; ?>
             </div>
-            <div class="serves-content-images">
+           <!-- <div class="serves-content-images">
                 <div class="ring-box-serves-content">
                     <?php if (!empty($yupe->logo)): ?>
                         <div class="ring-box-logo">
@@ -70,12 +70,12 @@ $this->breadcrumbs = $breadcrumbs;
                         </div>
                     <?php endif; ?>
                 </div>
-            </div>
+            </div> -->
         </div>
-        <div class="serves-content serves-content-seo">
+        <div class="serves-content serves-content-seo-uslugi7">
             <?php echo $model->text_7; ?>
         </div>
-        <div class="serves-content serves-content-seo">
+        <div class="serves-content serves-content-seo-uslugi8">
             <?php echo $model->text_8; ?>
         </div>
     </div>

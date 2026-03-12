@@ -166,8 +166,19 @@ $this->breadcrumbs = $breadcrumbs;
             <!-- 1 -->
             <div class="block-sr-price-one">
                 <h2><?php echo $model->title; ?></h2>
+              <!--  <div class="whats-the-price-block">
+                    <//?php echo $model->text_5; ?>
+                </div> -->
                 <div class="whats-the-price-block">
-                    <?php echo $model->text_5; ?>
+                    <?php if (!empty($model->text_5)): ?>
+                        <?php echo $model->text_5; ?>
+                    <?php else: ?>
+                        <p>
+                            <span>Сколько стоит очистка труб канализации и каким</span>
+                            <span>способом необходимо чистить трубы, определят мастера</span>
+                            <span>аварийной бригады на месте.</span>
+                        </p>
+                    <?php endif; ?>
                 </div>
                 <div class="block-sr-oplata-nds">
                     Работаем с
