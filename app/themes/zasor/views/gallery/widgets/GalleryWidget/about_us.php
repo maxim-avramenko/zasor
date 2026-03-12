@@ -4,13 +4,10 @@ if ($dataProvider->itemCount > 0) { ?>
     <div class="gallery">
         <div class="container">
             <div class="about__gallery">
-                <?php foreach ($dataProvider->items as $item) { ?>
-                    <a href="<?= Yii::app()->createUrl(
-                        '/gallery/gallery/image',
-                        ['id' => $item->image->id]); ?>" data-fancybox="gallery" class="about__pic">
-                        <img src="<?= Yii::app()->createUrl(
-                            '/gallery/gallery/image',
-                            ['id' => $item->image->id]); ?>" alt="">
+                <?php foreach ($dataProvider->getData() as $item) { ?>
+                    <a href="<?= $item->image->getImageUrl(); ?>" data-fancybox="gallery" class="about__pic">
+                        <img src="<?= $item->image->getImageUrl(490, 245, true) ?>"/>
+
                     </a>
                 <?php }?>
             </div>

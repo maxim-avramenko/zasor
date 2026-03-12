@@ -34,13 +34,18 @@ $this->schema = $model->json_head;
         </div>
     </div>
 </div>
-<?php $this->widget(
-        'gallery.widgets.GalleryWidget',
-        [
-            'galleryId' => $model->one_gallery_id,
-            'view' => 'about_us', 'limit' => 3
-        ]
-); ?>
+<?php if ($model->one_gallery_id && Yii::app()->hasModule('gallery')) : ?>
+
+    <?php $this->widget(
+            'gallery.widgets.GalleryWidget',
+            [
+                    'galleryId' => $model->one_gallery_id,
+                    'limit' => 1000,
+                    'view' => 'about_us'
+            ]
+    ); ?>
+
+<?php endif; ?>
 <div class="content-about-us">
     <div class="container">
         <?php echo $model->full_text; ?>
