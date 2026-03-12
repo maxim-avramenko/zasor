@@ -39,35 +39,19 @@ $this->breadcrumbs = [Yii::t('PageModule.page', $model->title)];
                         ?>
                     </div>
                 <?php endif; ?>
-                <div class="contacts-connection">
-                    <?php if (!empty($yupe->companyPhone)): ?>
-                        <div class="contacts-phone"><span class="icon-phone"></span><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
-                    <?php endif; ?>
-                    <?php if (!empty($yupe->companyEmail)): ?>
-                        <a class="mail" href="mailto:<?= CHtml::encode($yupe->companyEmail) ?>"><?= CHtml::encode($yupe->companyEmail) ?></a>
-                    <?php endif; ?>
-                </div>
+
             </div>
         </div>
     </div>
 </div>
 <div class="portfolio">
     <div class="container">
-        <div class="portfolio__block">
-
-            <?php $this->widget(
-                'gallery.widgets.GalleryWidget',
-                ['galleryId' => $model->one_gallery_id,
-                    'view' => 'doc', 'limit' => 9]
-            ); ?>
-
+    <div class="footing">
+        <div class="footing__text  slide-left">
+            <p>
+                <?= $this->decodeWidgets($model->full_text); ?>
+            </p>
         </div>
-        <div class="footing">
-            <div class="footing__text">
-                <p>
-                    <?= $this->decodeWidgets($model->full_text); ?>
-                </p>
-            </div>
-        </div>
+    </div>
     </div>
 </div>

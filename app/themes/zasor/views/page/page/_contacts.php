@@ -25,24 +25,44 @@ $this->schema = $model->json_head;
     <div class="container">
         <div class="contacts">
             <h1>Контакты</h1>
-            <div class="contacts-block">
-                <?php if (!empty($yupe->companyWorkTime)): ?><img src="/images/24_7.webp" alt="<?= CHtml::encode($yupe->companyWorkTime) ?>"><?php endif; ?>
-                <?php if (!empty($yupe->companyPostalCode) || !empty($yupe->companyCountry) || !empty($yupe->companyCity) || !empty($yupe->companyStreet)): ?>
-                <div class="contacts-adres">
+
+                <div class="contacts-block">
+                    <img src="images/24_7.webp" alt="Круглосуточно">
+                    
+                    
+                    <div class="contacts-adres">
                     <span class="icon-location"></span>
+
                     <?php
-                    $addrParts = array_filter([
-                        $yupe->companyPostalCode,
-                        $yupe->companyCountry,
-                        $yupe->companyRegion,
-                        $yupe->companyCity,
-                        $yupe->companyStreet,
-                        $yupe->companyOffice,
-                    ]);
-                    echo nl2br(CHtml::encode(implode(' ', $addrParts)));
+                    if (isset($yupe)) {
+                        $addrParts = [];
+                        
+                        if (!empty($yupe->companyPostalCode)) {
+                            $addrParts[] = '<span class="address-postal">' . CHtml::encode($yupe->companyPostalCode) . '</span> <br>';
+                        }
+                        if (!empty($yupe->companyCountry)) {
+                            $addrParts[] = '<span class="address-country">' . CHtml::encode($yupe->companyCountry) . '</span>';
+                        }
+                        if (!empty($yupe->companyRegion)) {
+                            $addrParts[] = '<span class="address-region">' . CHtml::encode($yupe->companyRegion) . '</span>';
+                        }
+                        if (!empty($yupe->companyCity)) {
+                            $addrParts[] = '<span class="address-city">' . CHtml::encode($yupe->companyCity) . '</span> <br>';
+                        }
+                        if (!empty($yupe->companyStreet)) {
+                            $addrParts[] = '<span class="address-street">' . CHtml::encode($yupe->companyStreet) . '</span>';
+                        }
+                        if (!empty($yupe->companyOffice)) {
+                            $addrParts[] = '<span class="address-office">' . CHtml::encode($yupe->companyOffice) . '</span>';
+                        }
+                        
+                        echo implode(' ', $addrParts);
+                    }
                     ?>
+
                 </div>
-                <?php endif; ?>
+
+               
                 <div class="contacts-connection">
                     <?php if (!empty($yupe->companyPhone)): ?>
                     <div class="contacts-phone"><span class="icon-phone"></span><a href="tel:<?= preg_replace('/[^0-9+]/', '', $yupe->companyUrlPhone) ?>" title="контактный телефон"><?= CHtml::encode($yupe->companyPhone) ?></a></div>
@@ -84,8 +104,8 @@ $this->schema = $model->json_head;
             <div class="col">
                 <div class="footer-app-commercial-section">
                     <div class="footer-app-commercial-section-sub">
-                        <?php if (!empty($yupe->companyApplicationAppStore)): ?><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img src="/images/AppStore.webp" alt="App Store"></a><?php endif; ?>
-                        <?php if (!empty($yupe->companyApplicationGooglePlay)): ?><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img src="/images/GooglePlay.webp" alt="Google Play"></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyApplicationAppStore)): ?><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img class="ico-app" src="/images/app-store-download.svg" alt="App Store"></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyApplicationGooglePlay)): ?><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img class="ico-app" src="/images/google-play-app.png" alt="Google Play"></a><?php endif; ?>
                     </div>
                     <?php if (!empty($yupe->companyApplicationQR)): ?>
                     <div class="footer-qr-commercial-block">

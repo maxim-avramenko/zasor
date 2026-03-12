@@ -3,7 +3,8 @@
     <div class="container">
         <?php if (!empty($yupe->logo)): ?>
         <div class="header-logo">
-            <img src="<?= CHtml::encode($yupe->getLogo()) ?>" alt="<?= CHtml::encode($yupe->siteName) ?>">
+            <!-- <img src="<?= CHtml::encode($yupe->getLogo()) ?>" alt="<?= CHtml::encode($yupe->siteName) ?>"> -->
+            <img src="images/logo.webp" alt="<?= CHtml::encode($yupe->siteName) ?>">
             <?php if (!empty($yupe->companyDescription)): ?>
             <div class="header-logo-description">
                 <?= CHtml::encode($yupe->companyDescription) ?>
@@ -23,7 +24,7 @@
                     <li><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img class="ico-app" src="/images/app-store-download.svg" alt="AppStore"></a></li>
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyApplicationGooglePlay)): ?>
-                    <li><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img class="ico-app" src="/images/google-play-and.svg" alt="GooglePlay"></a></li>
+                    <li><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img class="ico-app" src="/images/google-play-app.png" alt="GooglePlay"></a></li>
                     <?php endif; ?>
                     <?php if (!empty($yupe->companyApplicationQR)): ?>
                     <li><img src="/<?= ltrim($yupe->companyApplicationQR, '/') ?>" alt="qr app"></li>

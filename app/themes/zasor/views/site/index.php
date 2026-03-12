@@ -169,8 +169,8 @@ $mainH1 = !empty($yupe->mainPageTitle) ? $yupe->mainPageTitle : (!empty($yupe->c
                     <?php if (!empty($yupe->companyApplicationQR) || !empty($yupe->companyApplicationAppStore) || !empty($yupe->companyApplicationGooglePlay)): ?>
                     <div class="app-commercial-section">
                         Отслеживание<br>через приложение
-                        <?php if (!empty($yupe->companyApplicationAppStore)): ?><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img src="images/AppStore.webp" alt=""></a><?php endif; ?>
-                        <?php if (!empty($yupe->companyApplicationGooglePlay)): ?><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img src="images/GooglePlay.webp" alt=""></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyApplicationAppStore)): ?><a href="<?= CHtml::encode($yupe->companyApplicationAppStore) ?>" target="_blank" rel="nofollow"><img src="images/app-store-download.svg" alt=""></a><?php endif; ?>
+                        <?php if (!empty($yupe->companyApplicationGooglePlay)): ?><a href="<?= CHtml::encode($yupe->companyApplicationGooglePlay) ?>" target="_blank" rel="nofollow"><img src="images/google-play-app.png" alt=""></a><?php endif; ?>
                         <?php if (!empty($yupe->companyApplicationQR)): ?>
                         <div class="qr-commercial-block">
                             <img src="/<?= ltrim($yupe->companyApplicationQR, '/') ?>" alt="qr">

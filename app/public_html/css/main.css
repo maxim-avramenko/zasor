@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
-@import url(../css/swiper.min.css);
-@import url(../css/settings.scss);
+/*@import url(../css/swiper.min.css);
+@import url(../css/settings.scss);*/
 @import url(../css/header.scss); 
 /* CSS Document */
 /* FONT */
@@ -553,14 +553,15 @@ footer {
 	min-width: 245px;
 }
 .header-logo img {
-	height: 26px;
+	/*height: 26px;*/
 }
 .header-logo-description {
 	font-size: 12px;
 	font-weight: normal;
 	text-align: center;
 	line-height: 1.7;
-	left: -6px;
+	/* left: -6px; */
+  left: 0;
 }
 .header-app {
 	width: 100%;
@@ -644,6 +645,7 @@ span[data-title] {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+  gap: 15px;
 }
 .app-box li {
 	flex-grow: 2;
@@ -845,15 +847,16 @@ nav li:hover > .submenu {
 	pointer-events: painted;
   	/*transform: translateY(10px);
   	transition: .3s ease-in-out;*/
+    z-index: 1;
 }
 
-/*.sub-menu {
+.sub-menu {
 	transform: translateY(10px);
   	transition: .3s ease-in-out;
 }
 .sub-menu:hover {
 	transform: translateY(0px);
-}*/
+}
 
 
  nav li > .sub-sub-menu {
@@ -2297,6 +2300,7 @@ footer a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+  margin-bottom: 20%;
 }
 .box-menu-sp-item {
 	width: 100%;
@@ -2724,10 +2728,58 @@ a.btn-wh-serves-page {
 .service .footing {padding-bottom: 85px; }
 
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 6% auto;
+}
+.pagination a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00a4fe;
+  min-width: 30px;
+  min-height: 30px;
+  color: gray;
+}
+.next {
+  transform: rotate(0.5turn);
+}
+.pagination li.active a::after {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(15,146,218,1) 0%, rgba(0,165,255,1) 100%);
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+.pagination li.active a {
+  font-weight: bold;
+  color: #0f92da;
+}
+.pagination a:first-child span, .pagination a:last-child span {
+  color: #fff;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  -moz-transition: .5s;
+  transition: .5s;
+}
 
-
-
-
+.pagination a:first-child span {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
 
 
@@ -2771,6 +2823,9 @@ a.btn-wh-serves-page {
 .serves-content-seo {
 	margin-top: 15px;
 	min-height: 450px;
+}
+.serves-seo .serves-content.serves-content-seo:last-child {
+  min-height: auto;
 }
 .serves-content-seo ul {
 	margin-bottom: 10px;
@@ -3225,7 +3280,7 @@ a.btn-wh-serves-page {
 	font-size: clamp(0.75rem, 0.6951rem + 0.2439vw, 1rem);
 	font-weight: normal;
 	max-width: 710px;
-	max-height: 330px;
+	max-height: 100%;
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -3324,6 +3379,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f92da",endCo
 .list-serves-page-serves-box {
 	display: flex;
 	flex-direction: column;
+  margin-top: 6%;
 }
 
 .heading-serves, .description-serves, .list-serves-page-serves-box {z-index: 2;}
@@ -3368,6 +3424,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f92da",endCo
 	font-weight: bold;
 	font-size: 50px;
 	transform: translateX(0%) translateY(-50%);
+  padding-top: 26px;
 }
 
 .technical-specifications ul {
@@ -3525,6 +3582,253 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0f92da",endCo
 .vopros-section {
   margin: 0px auto 100px auto;
   background: #fff;
+}
+
+/* =========!!! ФИКСИРОВАННАЯ КНОПКА ВНИЗУ ПО ЦЕНТРУ !!!========= */
+.fixed-call-button {
+    position: fixed;
+    bottom: 20px; /* Отступ от низа */
+    left: 50%;
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+    z-index: 1000; /* Чтобы кнопка была поверх всего */
+    display: flex;
+    width: auto;
+    white-space: nowrap; /* Запрещаем перенос текста на мобильных */
+justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.fixed-call-button a {
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(15,146,218,1) 0%, rgba(0,165,255,1) 100%); /* Ваш фирменный градиент */
+    color: #ffffff; /* Белый текст */
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 50px; /* Скругленные края */
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 165, 255, 0.3); /* Тень как у вас в дизайне */
+    font-size: 18px; /* Базовый размер */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.fixed-call-button a:hover {
+    background: linear-gradient(90deg, rgba(0,165,255,1) 0%, rgba(15,146,218,1) 100%);
+    box-shadow: 0 15px 25px rgba(15, 146, 218, 0.5);
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+    color: #ffffff;
+}
+
+.fixed-call-button a:active {
+    transform: scale(0.98); /* Эффект нажатия */
+    box-shadow: 0 5px 10px rgba(15, 146, 218, 0.5);
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 1024px) {
+    .fixed-call-button a {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
+
+/* Адаптация для мобильных телефонов */
+@media (max-width: 767px) {
+    .fixed-call-button {
+        bottom: 15px; /* Немного уменьшаем отступ */
+        width: 90%; /* На очень маленьких экранах кнопка может стать широкой */
+        text-align: center;
+    }
+    
+    .fixed-call-button a {
+        padding: 12px 20px;
+        font-size: 18px; /* Делаем текст покрупнее для удобного нажатия */
+        white-space: normal; /* Разрешаем перенос текста, если номер очень длинный */
+        width: 100%; /* Кнопка на всю ширину на телефонах */
+        max-width: 350px; /* Но не больше 350px */
+        display: block;
+        margin: 0 auto; /* Центрируем блок */
+    }
+}
+
+/* Для очень маленьких экранов (до 360px) */
+@media (max-width: 360px) {
+    .fixed-call-button a {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+.fixed-call-button span {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 2%;
+  border-radius: 100%;
+}
+
+
+
+
+/* =========!!! COOKIE CONSENT BANNER !!!========= */
+.cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(15, 146, 218, 0.2);
+    z-index: 9999;
+    padding: 20px;
+    transform: translateY(0);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border: 1px solid rgba(15, 146, 218, 0.1);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.cookie-consent.hidden {
+    transform: translateY(200%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cookie-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #0f92da 0%, #00a5ff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.cookie-icon span {
+    color: white;
+    font-size: 20px;
+}
+
+.cookie-text h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #232944;
+    margin: 0 0 8px 0;
+}
+
+.cookie-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+.cookie-text a {
+    color: #0f92da;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.cookie-text a:hover {
+    color: #00a5ff;
+    text-decoration: none;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cookie-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cookie-btn-accept {
+    background: linear-gradient(90deg, #0f92da 0%, #00a5ff 100%);
+    color: white;
+    box-shadow: 0 5px 15px rgba(15, 146, 218, 0.3);
+}
+
+.cookie-btn-accept:hover {
+    background: linear-gradient(90deg, #00a5ff 0%, #0f92da 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 146, 218, 0.4);
+}
+
+.cookie-btn-decline {
+    background: #f0f0f0;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.cookie-btn-decline:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .cookie-consent {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        max-width: none;
+        padding: 16px;
+    }
+    
+    .cookie-buttons {
+        flex-direction: column;
+    }
+    
+    .cookie-btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+    
+    .cookie-text h4 {
+        font-size: 16px;
+    }
+    
+    .cookie-text p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cookie-consent {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .cookie-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .cookie-icon span {
+        font-size: 18px;
+    }
 }
 
 
@@ -3704,6 +4008,124 @@ h1::before {
 	top: 1% !important;
 	left: -20px !important;
 }
+
+/* Стили только для мобильных устройств (до 1024px) */
+@media (max-width: 1024px) {
+    /* Основное меню должно быть блочным (вертикальным) */
+    .topmenu {
+        display: block;
+        width: 100%;
+    }
+    
+    .topmenu > li {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ECF1F2;
+    }
+    
+    .topmenu > li > a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+    
+    /* Скрываем подменю по умолчанию */
+    .sub-menu,
+    .sub-sub-menu {
+        position: static !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        left: 0 !important;
+        pointer-events: auto !important;
+        
+        /* Плавная анимация */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.3s ease, margin 0.3s ease;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+    }
+    
+    /* Показываем подменю при активном классе с плавным появлением */
+    .sub-menu.active,
+    .sub-sub-menu.active {
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in, padding 0.3s ease, margin 0.3s ease;
+    }
+    
+    /* Стили для пунктов подменю */
+    .sub-menu li,
+    .sub-sub-menu li {
+        display: block;
+        width: 100%;
+    }
+    
+    .sub-menu a,
+    .sub-sub-menu a {
+        display: block;
+        padding: 12px 20px 12px 30px !important;
+        background: #f9f9f9 !important;
+        border: none !important;
+        border-bottom: 1px solid #ECF1F2 !important;
+        font-size: 14px !important;
+    }
+    
+    .sub-sub-menu a {
+        padding-left: 45px !important;
+        background: #fff !important;
+    }
+    
+    /* Убираем псевдоэлементы */
+    .sub-menu li:after,
+    .sub-sub-menu li:after {
+        display: none !important;
+    }
+    
+    /* Индикатор для пунктов с подменю */
+    .has-child > a:after {
+        content: '▼' !important;
+        float: right;
+        margin-right: 10px;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+    }
+    
+    .has-child > a.open:after {
+        transform: rotate(180deg);
+    }
+    
+    /* Плавное появление контента */
+    .sub-menu li,
+    .sub-sub-menu li {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .sub-menu.active li,
+    .sub-sub-menu.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Последовательное появление пунктов */
+    .sub-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+    .sub-menu.active li:nth-child(2) { transition-delay: 0.15s; }
+    .sub-menu.active li:nth-child(3) { transition-delay: 0.2s; }
+    .sub-menu.active li:nth-child(4) { transition-delay: 0.25s; }
+    .sub-menu.active li:nth-child(5) { transition-delay: 0.3s; }
+    .sub-menu.active li:nth-child(6) { transition-delay: 0.35s; }
+    .sub-menu.active li:nth-child(7) { transition-delay: 0.4s; }
+    .sub-menu.active li:nth-child(8) { transition-delay: 0.45s; }
+    .sub-menu.active li:nth-child(9) { transition-delay: 0.5s; }
+    .sub-menu.active li:nth-child(10) { transition-delay: 0.55s; }
+}
+
 
 /* ========================= */
 /* ========================= */
@@ -4549,6 +4971,7 @@ h1::before {
 	}
 	.topmenu > li > a {
 		font-size: clamp(0.875rem, 0.8201rem + 0.2439vw, 1.125rem);
+    padding-bottom: 12px !important;
 	}
 	.header-social {
 		width: 100%;
